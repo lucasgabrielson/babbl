@@ -22,7 +22,6 @@ function TrendingNews(){
 
     return(
         <>
-        <h3>Trending News</h3>
         <div style={{ height: 400, width: '100%' }}>
       <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
     </div>
