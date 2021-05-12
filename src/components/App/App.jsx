@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Community from '../Community/Community';
 
 import './App.css';
 
@@ -44,6 +45,14 @@ function App() {
             path="/about"
           >
             <AboutPage />
+          </Route>
+
+          <Route
+            // access to community page should is free and doesn't require a login or account
+            exact
+            path="/community"
+          >
+            <Community />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
