@@ -12,11 +12,7 @@
 
 _Duration: 3 Week Sprint_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
-
-Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
+Babbl is here to synthesize financial news and provide users with an easy to digest ‘babbl score’ that lets users understand the future and current sentiments of stocks and cryptocurrencies based on financial news articles. Babbl allows the general public to see the stocks with the most positive and negative forward looking sentiments. In addition they are given access to the stocks that have received the most recent mentions, babbl specific metrics on financial articles and key snippets pertaining to the forward looking sentiments. Babbl members are able to create a watchlist of 10 stocks and see the babbl metrics for each article that references their watchlist. They will also be given articles and snippets regarding their watchlist.
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
