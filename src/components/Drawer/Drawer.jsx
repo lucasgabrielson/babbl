@@ -1,8 +1,7 @@
 import React from 'react';
-import ChatIcon from '@material-ui/icons/Chat';
 import { makeStyles } from '@material-ui/core/styles';
-import {Link} from 'react-router-dom'
-import {Drawer as MUIDrawer} from '@material-ui/core/';
+import { Link } from 'react-router-dom'
+import { Drawer as MUIDrawer } from '@material-ui/core/';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -45,38 +44,31 @@ const Drawer = () => {
     return(
         <MUIDrawer classes={{paper: classes.MuiDrawer}} onClose={() => closeDrawer()}  open={drawerState}>
             <List>
-                <Link to = '/user' style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
+                <Link to = {`/dashboard/${user.id}`} style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
                     <ListItem >
                         {<ListItemIcon><HomeIcon/></ListItemIcon>}
-                        <ListItemText primary='Home' />
+                        <ListItemText primary='Dashboard' />
                     </ListItem>
                 </Link>
                 
-                <Link to = '/flora' style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
+                <Link to = '/community' style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
                     <ListItem >
                         {<ListItemIcon><FaSeedling/></ListItemIcon>}
-                        <ListItemText primary='Flora' />
+                        <ListItemText primary='Community' />
                     </ListItem>
                 </Link>
 
-                <Link to = '/natural-areas' style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
+                <Link to = {`/bookmarks/${user.id}`} style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
                     <ListItem >
                         {<ListItemIcon><Landscape/></ListItemIcon>}
-                        <ListItemText primary='Natural Areas' />
+                        <ListItemText primary='Bookmarks' />
                     </ListItem>
                 </Link>
 
-                <Link to = {`/my-hunts/${user.id}`} params={user.id} style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
+                <Link to = {`/about`} params={user.id} style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
                     <ListItem >
                         {<ListItemIcon><FavoriteBorderIcon /></ListItemIcon>}
-                        <ListItemText primary='My Hunts' />
-                    </ListItem>
-                </Link>
-
-                <Link to = {`/leaderboard/${user.id}`} params={user.id} style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
-                    <ListItem >
-                        {<ListItemIcon><FaListOl /></ListItemIcon>}
-                        <ListItemText primary='Leaderboard' />
+                        <ListItemText primary='About' />
                     </ListItem>
                 </Link>
             </List>
