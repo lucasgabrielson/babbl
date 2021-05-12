@@ -6,7 +6,7 @@ const Community = () => {
   return (
     <div>
       <header>
-        <h1>Header here</h1>
+        <h1>Community page header</h1>
       </header>
       <Tabs />
     </div>
