@@ -44,7 +44,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: '75vw',
   },
 }));
 
@@ -72,9 +72,10 @@ export default function FullWidthTabs() {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Overview" {...a11yProps(0)} />
+          <Tab label="Trending News" {...a11yProps(1)} />
+          <Tab label="Community News" {...a11yProps(2)} />
+          <Tab label="Snippets" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -90,6 +91,9 @@ export default function FullWidthTabs() {
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           Item Three
+        </TabPanel>
+        <TabPanel value={value} index={3} dir={theme.direction}>
+          Item Four
         </TabPanel>
       </SwipeableViews>
     </div>
