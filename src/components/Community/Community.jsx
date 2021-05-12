@@ -1,6 +1,4 @@
 import React from 'react'
-import TrendingNews from './TrendingNews/TrendingNews'
-
 import Tabs from '../Community/Tabs/Tabs';
 
 const Community = () => {
