@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box';
 // import components
 import Overview from '../Overview/Overview';
 import TrendingNews from '../TrendingNews/TrendingNews';
+import Snippet from '../Snippet/Snippet'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -97,7 +98,7 @@ export default function FullWidthTabs() {
           Item Three
         </TabPanel>
         <TabPanel value={value} index={3} dir={theme.direction}>
-          Item Four
+          <Snippet />
         </TabPanel>
       </SwipeableViews>
     </div>
