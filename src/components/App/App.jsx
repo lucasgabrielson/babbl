@@ -32,6 +32,7 @@ function App() {
     <Router>
       <div>
         <Nav />
+        {/* <img src="//logo.clearbit.com/facebook.com"/> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
