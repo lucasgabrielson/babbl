@@ -26,12 +26,18 @@ router.get('/:id', (req, res) => {
 
 /**
  * POST http://localhost:300/api/user_articles/1
+ * Accepts req.query from axios:
+ * {
+ *  "id" : 1
+ *	"slug" : insert api slug / endpoint here
+ *	"ticker" : 'AMZN'
+ * }
  * Posts an article object:
  * {
  *  "id" : 1
  *  "user_id" : 2
  *	"slug" : insert api slug / endpoint here
- *	"ticker" : 'amzn'
+ *	"ticker" : 'AMZN'
  * }
  */
 router.post('/:id', (req, res) => {
@@ -45,5 +51,33 @@ router.post('/:id', (req, res) => {
                 res.sendStatus(500);
             })    
 });
+
+/**
+ * DELETE http://localhost:300/api/user_articles/?user_id=1&slug=
+ * Accepts req.query from axios:
+ * {
+ *  "id" : 1
+ *	"slug" : insert api slug / endpoint here
+ * }
+ * Deletes an article object:
+ * {
+ *  "id" : 1
+ *  "user_id" : 2
+ *	"slug" : insert api slug / endpoint here
+ *	"ticker" : 'AMZN'
+ * }
+ */
+
+router.delete('/', (req,res) => {
+    console.log( 'in api/user_articles DELETE');
+    let sqlText =  `DELETE FROM articles WHERE user_id = $1 and slug = $2`
+        pool.query(sqlText, [req.query.id, req.query.slug])
+            .then( results => {
+                res.sendStatus(200)
+            }).catch( err => {
+                console.log( err );
+                res.sendStatus(500);
+            })
+})
 
 module.exports = router;
