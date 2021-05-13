@@ -8,8 +8,8 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '20vw',
-    width: '20vw',
+    minWidth: '200px',
+    width: '200px',
     marginBottom: '30px',
     boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
   },
