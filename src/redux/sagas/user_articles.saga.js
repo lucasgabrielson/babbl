@@ -14,8 +14,8 @@ function* fetchUserArticles(action) {
 function* addUserArticles(action) {
   try {
       console.log( 'fetchUserArticles' );
-      const response = yield axios.post(`/api/user_articles/${action.payload}`);
-      yield put({ type: 'SET_USER_ARTICLES', payload: response.data} )
+      const response = yield axios.post(`/api/user_articles/?id=${action.payload.userID}&ticker=${action.payload.ticker}&slug=${action.payload.slug}`);
+      yield put({ type: 'FETCH_USER_ARTICLES' } )
   } catch (error) {
       console.log('Error getting user articles from database', error);
   }
