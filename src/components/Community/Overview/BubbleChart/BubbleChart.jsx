@@ -45,4 +45,4 @@ const BubbleChart = () => {
   )
 }
 
-export default BubbleChart
+export default BubbleChart;
