@@ -25,7 +25,7 @@ const Snippet = () => {
                         <Grid container spacing={4}>
                             {snippetz.map((snippet)=>(         
                                 <Grid item key={snippet.source} xs={12}>
-                                    <Card width={1}>
+                                    <Card width={1} className={classes.card}>
                                         <CardContent className={classes.cardContent}>
                                             <div className={classes.tickerOne}>
                                                 <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -46,10 +46,46 @@ const Snippet = () => {
                                                     CNN
                                                 </Typography>
                                                 <Typography className={classes.pos} color="primary">
-                                                    5/10/21
+                                                    May 10th, 2021
                                                 </Typography>
                                                 <Typography className={classes.pos} color="primary">
                                                     Future-Outlook
+                                                </Typography>
+                                                <Typography className={classes.pos} color="primary">
+                                                    Pessimistic
+                                                </Typography>
+                                            </div>
+                                            <Typography variant="body2" component="p">
+                                                "By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, 
+                                                which helps explain the stonk's steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown.
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                    <Card width={1} className={classes.card}>
+                                        <CardContent className={classes.cardContent}>
+                                            <div className={classes.tickerOne}>
+                                                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                                                    Source
+                                                </Typography>
+                                                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                                                    Date
+                                                </Typography>
+                                                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                                                    Outlook
+                                                </Typography>
+                                                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                                                    Feeling
+                                                </Typography>
+                                            </div>
+                                            <div className={classes.tickerOne}>
+                                                <Typography className={classes.pos} color="primary">
+                                                    CNN
+                                                </Typography>
+                                                <Typography className={classes.pos} color="primary">
+                                                    May 10th, 2021
+                                                </Typography>
+                                                <Typography className={classes.pos} color="primary">
+                                                    Past-History
                                                 </Typography>
                                                 <Typography className={classes.pos} color="primary">
                                                     Optimistic
