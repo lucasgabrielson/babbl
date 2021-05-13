@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '20vw',
     width: '20vw',
-    marginBottom: '30px',
     boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
   },
   bullet: {
