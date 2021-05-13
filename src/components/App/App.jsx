@@ -48,6 +48,7 @@ function App() {
             // with authRedirect:
             // - if logged in, redirects to "/user"
             // - else shows RegisterPage at "/registration"
+
             exact
             path="/dashboard/:id"
             authRedirect="/home"
