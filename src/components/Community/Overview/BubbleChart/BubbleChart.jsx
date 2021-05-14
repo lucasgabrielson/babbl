@@ -5,8 +5,8 @@ const BubbleChart = () => {
   return (
     <div>
       <Chart
-  width={'500px'}
-  height={'300px'}
+  width={'600px'}
+  height={'500px'}
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
   data={[
