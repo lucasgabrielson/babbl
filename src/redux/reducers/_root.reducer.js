@@ -21,6 +21,7 @@ const rootReducer = combineReducers({
   populated_tickers, // contains the available tickers with their corresponding mentions
   babbl_api_articles, // contains the articles regarding the ticker(s) requested
   ticker_snippets, // contains the snippets regaridng the ticker(s) requested
+  userWatchlistReducer, // contains the tickers in a users watchlist
 });
 
 export default rootReducer;
