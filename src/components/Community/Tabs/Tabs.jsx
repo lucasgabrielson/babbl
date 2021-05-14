@@ -13,6 +13,7 @@ import Overview from '../Overview/Overview';
 import TrendingNews from '../TrendingNews/TrendingNews';
 import CommunityNews from '../CommunityNews/CommunityNew';
 import Snippet from '../Snippet/Snippet'
+import WatchList from '../../WatchList/WatchList';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -94,6 +95,7 @@ export default function FullWidthTabs() {
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           <TrendingNews />
+          <WatchList />
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           <CommunityNews />
