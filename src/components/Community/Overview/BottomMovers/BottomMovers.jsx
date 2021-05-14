@@ -53,7 +53,7 @@ export default function SimpleCard() {
     <Card className={classes.root}>
       <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Top 3 Movers
+            Bottom 3 Movers
           </Typography>
 
         <div className={classes.ticker}>
