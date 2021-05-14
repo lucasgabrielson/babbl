@@ -22,7 +22,7 @@ function CommunityNews(){
 
     return(
         <>
-        <div style={{ height: 400, width: '100%' }}>
+        <div style={{ height: 400, width: '68%' }}>
       <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
     </div>
         </>
