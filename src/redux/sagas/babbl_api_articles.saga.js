@@ -1,0 +1,20 @@
+import axios from 'axios';
+import { put, takeLatest } from 'redux-saga/effects';
+
+// action.payload should be tickers in a string in the form 'APPL, AMZN, ... etc'
+
+function* fetchApiArticles(action) {
+    try {
+        console.log( 'fetchApiArticles' );
+        const response = yield axios.get(`/api/babbl_api_articles/?tickers=${action.payload}`);
+        yield put({ type: 'SET_API_ARTICLES', payload: response.data} )
+    } catch (error) {
+        console.log('Error getting articles from api', error);
+    }
+}
+
+function* fetchApiArticlesSaga() {
+    yield takeLatest('FETCH_API_ARTICLES', fetchApiArticles);
+}
+
+export default fetchApiArticlesSaga;

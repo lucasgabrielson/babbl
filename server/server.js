@@ -9,7 +9,11 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
-const userArticlesRouter = require('./routes/user_articles.router')
+const userArticlesRouter = require('./routes/user_articles.router');
+const populatedTickersRouter = require('./routes/populated_tickers.router');
+const babblApiArticlesRouter = require('./routes/babbl_api_articles.router');
+const tickerSnippetsRouter = require('./routes/ticker_snippets.router');
+const userWatchlistRouter = require('./routes/user_watchlist.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -25,6 +29,10 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/user_articles/', userArticlesRouter)
+app.use('/api/populated_tickers', populatedTickersRouter);
+app.use('/api/babbl_api_articles', babblApiArticlesRouter);
+app.use('/api/ticker_snippets/', tickerSnippetsRouter);
+app.use('/api/user_watchlist/', userWatchlistRouter);
 
 // Serve static files
 app.use(express.static('build'));
