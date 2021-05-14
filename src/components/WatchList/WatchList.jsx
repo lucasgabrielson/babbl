@@ -20,26 +20,33 @@ const useStyles = makeStyles((theme) => ({
   
 function WatchList(){
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
+    const [stock, setStock] = React.useState('');
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        setStock(event.target.value);
       };
 
     return(
     <>
          <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">WatchList</InputLabel>
+        <InputLabel id="watchlist">WatchList</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
+          labelId="watchlist"
+          id="watchlist"
           onChange={handleChange}
+          value={stock}
         >
-          <MenuItem>Tesla</MenuItem>
-          <MenuItem>Gamestop</MenuItem>
-          <MenuItem>Amazon</MenuItem>
-          <MenuItem>Netflix</MenuItem>
+          <MenuItem value ={0}>Tesla</MenuItem>
+          <MenuItem value ={1}>GameStop</MenuItem>
+          <MenuItem value ={2}>Amazon</MenuItem>
+          <MenuItem value ={3}>AMC</MenuItem>
+          <MenuItem value ={4}>GE</MenuItem>
+          <MenuItem value ={5}>Microsoft</MenuItem>
+          <MenuItem value ={6}>Nokia</MenuItem>
+          <MenuItem value ={7}>Facebook</MenuItem>
+          <MenuItem value ={8}>Netflix</MenuItem>
+          <MenuItem value ={9}>Twitter</MenuItem>
+          
         </Select>
       </FormControl>
 
