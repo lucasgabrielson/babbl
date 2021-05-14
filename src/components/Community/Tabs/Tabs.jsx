@@ -7,13 +7,13 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/paper';
 
 // import components
 import Overview from '../Overview/Overview';
 import TrendingNews from '../TrendingNews/TrendingNews';
 import CommunityNews from '../CommunityNews/CommunityNew';
 import Snippet from '../Snippet/Snippet'
-import WatchList from '../../WatchList/WatchList';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -70,7 +70,7 @@ export default function FullWidthTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <Box position="static" color="default">
         <Tabs
           value={value}
           onChange={handleChange}
@@ -84,7 +84,7 @@ export default function FullWidthTabs() {
           <Tab label="Community News" {...a11yProps(2)} />
           <Tab label="Snippets" {...a11yProps(3)} />
         </Tabs>
-      </AppBar>
+      </Box>
       <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
@@ -95,7 +95,6 @@ export default function FullWidthTabs() {
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           <TrendingNews />
-          <WatchList />
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           <CommunityNews />
