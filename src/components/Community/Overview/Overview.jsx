@@ -30,7 +30,13 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
+  },
+  middle: {
+    display:'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   }
+
  
 }));
 
@@ -46,8 +52,11 @@ const Overview = () => {
         <TopMovers />
         <BottomMovers />
       </div>
-      <div className={classes.bubbleChartContainer}>
-        <BubbleChart />
+      <div className={classes.middle}>
+        <h3>Sentiment Chart</h3>
+        <div className={classes.bubbleChartContainer}>
+          <BubbleChart />
+        </div>
       </div>
       <div className={classes.TopTenContainer}>
         <h3>Top Ten Movers</h3>
