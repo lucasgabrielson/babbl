@@ -7,11 +7,14 @@ const theme = createMuiTheme({
       main: green[900],
     },
     secondary: {
-      main: green[500],
+      main: '#a7a7a7',
     },
     danger: {
       main: '#be1738'
-    }
+    },
+    black: {
+      main: '#000000'
+    },
   },
 });
 
