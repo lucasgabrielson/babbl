@@ -18,6 +18,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Community from '../Community/Community';
+import AppBar from '../AppBar/AppBar';
 
 import './App.css';
 
@@ -31,7 +32,8 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        {/* <Nav /> */}
+        <AppBar />
         {/* <img src="//logo.clearbit.com/facebook.com"/> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}

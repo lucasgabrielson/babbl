@@ -5,7 +5,6 @@ root: {
     minWidth: '20vw',
     width: '20vw',
     },
-
     cardGrid: {
         padding: '20x 0',
         width: '100%',
@@ -20,10 +19,6 @@ root: {
     cardContent:{
         flexGrow: 1,
     },
-    root: {
-    minWidth: '20vw',
-    width: '20vw',
-  },
   title: {
     fontSize: 14,
   },
