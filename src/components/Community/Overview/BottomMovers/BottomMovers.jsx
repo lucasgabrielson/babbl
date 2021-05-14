@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '200px',
     width: '200px',
-    marginBottom: '30px',
     boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
   },
   bullet: {
@@ -47,14 +46,14 @@ const useStyles = makeStyles((theme) => ({
 export default function SimpleCard() {
 
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+ 
 
 
   return (
     <Card className={classes.root}>
       <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Top 3 Movers
+            Bottom 3 Movers
           </Typography>
 
         <div className={classes.ticker}>
