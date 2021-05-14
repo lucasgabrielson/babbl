@@ -1,11 +1,11 @@
 import React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 const columns = [
-    { field: 'date', headerName: 'Date', width: 130 },
+    { field: 'date', headerName: 'Date', width: 150 },
     { field: 'title', headerName: 'Title',  width: 300},
-    { field: 'source', headerName: 'Source', width: 130 },
-    { field: 'mentions', headerName: 'Mentions', width: 130 },
-    { field: 'score', headerName: 'Babbl Score', width: 130 },
+    { field: 'source', headerName: 'Source', width: 300 },
+    { field: 'mentions', headerName: 'Mentions', width: 300 },
+    { field: 'score', headerName: 'Babbl Score', width: 150 },
  
   ];
   
@@ -21,7 +21,7 @@ function TrendingNews(){
 
     return(
         <>
-        <div style={{ height: 400, width: '68%' }}>
+        <div style={{ height: 400, width: '100%' }}>
       <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
     </div>
         </>
