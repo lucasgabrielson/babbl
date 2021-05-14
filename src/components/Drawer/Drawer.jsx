@@ -7,14 +7,16 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import HomeIcon from '@material-ui/icons/Home';
-import Landscape from '@material-ui/icons/Landscape';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import {FaSeedling} from 'react-icons/fa'
 import {FaListOl} from 'react-icons/fa'
+import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutlined';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import GroupOutlinedIcon from '@material-ui/icons/GroupOutlined';
 
 const Drawer = () => {
     const user = useSelector((store) => store.user);
@@ -31,43 +33,43 @@ const Drawer = () => {
 
     const drawerState = useSelector((store) => store.drawer)
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles((theme) => ({
         MuiDrawer: {
-            backgroundColor: "burlywood",
+            backgroundColor: 'green',
             color: 'white'
         },
         menuBtn: {
             textDecoration: 'none'
         },
-    });
+    }));
     const classes = useStyles();
     return(
-        <MUIDrawer classes={{paper: classes.MuiDrawer}} onClose={() => closeDrawer()}  open={drawerState}>
+        <MUIDrawer classes={{paper: classes.MuiDrawer}} onClose={() => closeDrawer()}  open={drawerState} anchor='right'>
             <List>
                 <Link to = {`/dashboard/${user.id}`} style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
                     <ListItem >
-                        {<ListItemIcon><HomeIcon/></ListItemIcon>}
+                        {<ListItemIcon><HomeOutlinedIcon/></ListItemIcon>}
                         <ListItemText primary='Dashboard' />
                     </ListItem>
                 </Link>
                 
                 <Link to = '/community' style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
                     <ListItem >
-                        {<ListItemIcon><FaSeedling/></ListItemIcon>}
+                        {<ListItemIcon><GroupOutlinedIcon/></ListItemIcon>}
                         <ListItemText primary='Community' />
                     </ListItem>
                 </Link>
 
                 <Link to = {`/bookmarks/${user.id}`} style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
                     <ListItem >
-                        {<ListItemIcon><Landscape/></ListItemIcon>}
+                        {<ListItemIcon><BookmarkBorderOutlinedIcon/></ListItemIcon>}
                         <ListItemText primary='Bookmarks' />
                     </ListItem>
                 </Link>
 
                 <Link to = {`/about`} params={user.id} style={{ textDecoration: 'none', color: 'white' }} onClick={() => closeDrawer()}>
                     <ListItem >
-                        {<ListItemIcon><FavoriteBorderIcon /></ListItemIcon>}
+                        {<ListItemIcon><InfoOutlinedIcon /></ListItemIcon>}
                         <ListItemText primary='About' />
                     </ListItem>
                 </Link>
