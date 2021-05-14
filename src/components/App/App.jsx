@@ -19,6 +19,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Community from '../Community/Community';
 import AppBar from '../AppBar/AppBar';
+import Drawer from '../Drawer/Drawer';
 
 import './App.css';
 
@@ -32,6 +33,7 @@ function App() {
   return (
     <Router>
       <div>
+      <Drawer />
         {/* <Nav /> */}
         <AppBar />
         {/* <img src="//logo.clearbit.com/facebook.com"/> */}
