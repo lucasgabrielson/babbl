@@ -6,6 +6,7 @@ import userArticles from './user_articles.reducer';
 import populated_tickers from './populated_tickers.reducer';
 import babbl_api_articles from './babbl_api_articles.reducer';
 import ticker_snippets from './tickler_snippets.reducer';
+import userWatchlistReducer from './user_watchlist.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.

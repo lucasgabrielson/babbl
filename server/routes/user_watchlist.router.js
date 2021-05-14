@@ -1,3 +1,7 @@
+const express = require('express');
+const pool = require('../modules/pool');
+const router = express.Router();
+
 /**
  * GET http://localhost:300/api/user_articles/1
  * Returns an array of watchlist objects:
