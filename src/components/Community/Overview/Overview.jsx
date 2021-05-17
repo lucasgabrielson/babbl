@@ -5,7 +5,7 @@ import TopMovers from '../Overview/TopMovers/TopMovers';
 import BottomMovers from '../Overview/BottomMovers/BottomMovers';
 import BubbleChart from  '../Overview/BubbleChart/BubbleChart';
 import TopTen from '../Overview/TopTen/TopTen';
-
+import Snippets from '../Overview/Snippets/Snippets';
 
 
 
@@ -40,9 +40,12 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  }
-
- 
+  },
+  snippets: {
+    display:'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  } 
 }));
 
 
@@ -66,6 +69,9 @@ const Overview = () => {
       <div className={classes.TopTenContainer}>
         <h3>Top Ten Movers</h3>
         <TopTen />
+      </div>
+      <div className={classes.snippets}>
+        <Snippets />
       </div>
     </div>
   )
