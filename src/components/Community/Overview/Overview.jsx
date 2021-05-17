@@ -15,23 +15,28 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    
     // flexDirection: 'column',
   }, 
   carousel: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '800px',
+    width: '90vw',
     height: '350px',
     margin: '20px',
     padding: '10px',
     borderRadius: '5px',
     boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    
+    
+    
   },
   topThreeItemsContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    width: '90vw'
     // flexWrap: 'nowrap',
   },
   movers: {
@@ -63,7 +68,13 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  } 
+  },
+  carouselHeaders: {
+    padding: '20px',
+    margin: '10px',
+    color: 'gray',
+    
+  }
 }));
 
 
@@ -91,7 +102,9 @@ const Overview = () => {
         </div>
         <div className={classes.topThreeItemsContainer}>
           <div className={classes.carousel}>
+            <h1 className={classes.carouselHeaders}>Check out the top trending tweets</h1>
               <SnippetsCarousel />
+              <h1 className={classes.carouselHeaders}>Bookmark the article where the snippet originated</h1>
           </div>
         </div>
      
