@@ -18,10 +18,13 @@ const useStyles = makeStyles((theme) => ({
   }, 
   movers: {
     display:'flex',
+    flexGrow: 1,
     flexDirection: 'column',
     alignItems: 'center',
   },
   bubbleChartContainer: {
+    display: 'flex',
+    flexGrow: 3,
     margin: '0px 20px 0px 20px',
     border: '1px solid white',
     borderRadius: '4px',
@@ -29,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   TopTenContainer: {
     display:'flex',
+    flexGrow: 1,
     flexDirection: 'column',
     alignItems: 'center',
   },
