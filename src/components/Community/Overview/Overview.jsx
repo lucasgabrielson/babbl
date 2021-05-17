@@ -58,9 +58,12 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  }
-
- 
+  },
+  snippets: {
+    display:'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  } 
 }));
 
 
@@ -91,7 +94,7 @@ const Overview = () => {
               <SnippetsCarousel />
           </div>
         </div>
-      
+     
     </div>
     
   )
