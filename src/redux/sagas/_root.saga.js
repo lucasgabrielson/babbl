@@ -5,6 +5,7 @@ import userSaga from './user.saga';
 import userArticlesSaga from './user_articles.saga';
 import populatedTickersSaga from './populated_tickers.saga';
 import fetchApiArticlesSaga from './babbl_api_articles.saga';
+import topMoversSaga from './top_movers.saga'
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -21,5 +22,6 @@ export default function* rootSaga() {
     userArticlesSaga(),
     populatedTickersSaga(),
     fetchApiArticlesSaga(),
+    topMoversSaga(),
   ]);
 }
