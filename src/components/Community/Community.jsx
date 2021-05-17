@@ -9,9 +9,11 @@ const Community = () => {
 
      
 
+
       <header>
         {/* <h1>Community page header</h1> */}
       </header>
+
       <Tabs />
     </div>
   )
