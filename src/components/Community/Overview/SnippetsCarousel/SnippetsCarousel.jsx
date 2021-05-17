@@ -1,4 +1,5 @@
 import React from 'react';
+import './SnippetsCarousel.css';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -6,6 +7,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -32,10 +34,11 @@ const useStyles = makeStyles((theme) => ({
     padding: '10px',
   },
   titleBar: {
-    position: 'relative',
+    position: 'absolute',
     display: 'flex',
     height: 'fit-content',
-    background: 'gray',
+    background: 'white',
+    
     
       
   },
@@ -57,37 +60,37 @@ const useStyles = makeStyles((theme) => ({
   let tileData = [
     {
       snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      title: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
+      source: 'CNN',
       author: 'author',
     },
     {
-      img: 'image',
-      title: 'Image',
+      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
+      source: 'CNN',
       author: 'author',
     },
     {
-      img: 'image',
-      title: 'Image',
+      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
+      source: 'CNN',
       author: 'author',
     },
     {
-      img: 'image',
-      title: 'Image',
+      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
+      source: 'CNN',
       author: 'author',
     },
     {
-      img: 'image',
-      title: 'Image',
+      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
+      source: 'CNN',
       author: 'author',
     },
     {
-      img: 'image',
-      title: 'Image',
+      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
+      source: 'CNN',
       author: 'author',
     },
     {
-      img: 'image',
-      title: 'Image',
+      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
+      source: 'CNN',
       author: 'author',
     },
     
@@ -95,6 +98,8 @@ const useStyles = makeStyles((theme) => ({
  
 export default function SingleLineGridList() {
   const classes = useStyles();
+
+  
 
   return (
     <div className={classes.root}>
@@ -104,8 +109,10 @@ export default function SingleLineGridList() {
           style={{height: 300, padding: '20px 20px 20px 20px', width: '300px',}}
           >
             <p>{tile.snippet} </p> 
+            <hr />
+            
             <GridListTileBar
-              title={tile.title}
+              title={tile.source}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
