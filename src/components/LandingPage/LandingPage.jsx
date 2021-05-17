@@ -25,10 +25,23 @@ function LandingPage() {
     history.push('/login');
   };
 
+  const handleLogin = async googleData => {
+    const res = await fetch("/api/v1/auth/google", {
+        method: "POST",
+        body: JSON.stringify({
+        token: googleData.tokenId
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    const data = await res.json()
+    // store returned user somehow
+  }
+
   return (
     <div className="container">
       <h2>{heading}</h2>
-
       <div className="grid">
         <div className="grid-col grid-col_8">
           <p>
