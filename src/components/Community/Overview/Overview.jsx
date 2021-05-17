@@ -18,9 +18,10 @@ const useStyles = makeStyles((theme) => ({
   }, 
   carousel: {
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'center',
-    // width: '100vw',
-    height: '300px',
+    width: '800px',
+    height: '350px',
     margin: '20px',
     padding: '10px',
     borderRadius: '5px',
@@ -84,7 +85,9 @@ const Overview = () => {
         </div>
         
         <div className={classes.carousel}>
-          <SnippetsCarousel />
+          
+            <SnippetsCarousel />
+          
         </div>
       
     </div>
