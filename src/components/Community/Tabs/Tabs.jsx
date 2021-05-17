@@ -76,6 +76,7 @@ export default function FullWidthTabs() {
 
   return (
     <div className={classes.root}>
+
       <Box position="static" color="default">
         <Tabs
           value={value}
