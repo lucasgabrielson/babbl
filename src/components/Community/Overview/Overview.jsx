@@ -14,22 +14,26 @@ const useStyles = makeStyles((theme) => ({
   overview: {
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: 'center',
     // flexDirection: 'column',
   }, 
   carousel: {
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'center',
-    // width: '100vw',
-    height: '300px',
+    width: '800px',
+    height: '350px',
     margin: '20px',
     padding: '10px',
     borderRadius: '5px',
     boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
   },
-  // topThreeItemsContainer: {
-  //   display: 'flex',
-  //   // flexWrap: 'nowrap',
-  // },
+  topThreeItemsContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // flexWrap: 'nowrap',
+  },
   movers: {
     display:'flex',
     flexGrow: 1,
@@ -85,9 +89,10 @@ const Overview = () => {
           <h3>Top Ten Movers</h3>
           <TopTen />
         </div>
-        
-        <div className={classes.carousel}>
-          <SnippetsCarousel />
+        <div className={classes.topThreeItemsContainer}>
+          <div className={classes.carousel}>
+              <SnippetsCarousel />
+          </div>
         </div>
      
     </div>
