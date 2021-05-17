@@ -7,7 +7,8 @@ import populated_tickers from './populated_tickers.reducer';
 import babbl_api_articles from './babbl_api_articles.reducer';
 import ticker_snippets from './tickler_snippets.reducer';
 import userWatchlistReducer from './user_watchlist.reducer';
-import drawer from './drawer.reducer'
+import drawer from './drawer.reducer';
+import top_movers from './top_movers.reducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -25,6 +26,8 @@ const rootReducer = combineReducers({
   ticker_snippets, // contains the snippets regaridng the ticker(s) requested
   userWatchlistReducer, // contains the tickers in a users watchlist
   drawer, // will open and close drawer
+  top_movers, // contains the top and bottom 3 movers
+
 });
 
 export default rootReducer;
