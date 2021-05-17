@@ -1,6 +1,7 @@
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
+import { useHistory, NavLink } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -78,15 +79,25 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+    link: {
+        marginRight: theme.spacing(2),
+  },
 }));
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  const toggleDrawer = () =>{
-    dispatch({type: 'SET_DRAWER'})
-  }
+// Enable for use with drawer for mobile
+//   const toggleDrawer = () =>{
+//     dispatch({type: 'SET_DRAWER'})
+//   }
+
+    const Logout = () =>{
+        dispatch({ type: 'LOGOUT' })
+        console.log('in Logout');
+    }
 
 
   return (
@@ -110,7 +121,15 @@ export default function PrimarySearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
+          
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/">Dashboard</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/community">Community</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/about">About</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/bookmarks">Bookmarks</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/home" onClick={Logout()}>LogOut</NavLink>
+        
           <div className={classes.grow} />
+            {/* This will enable a drawer for mobile
             <IconButton
             edge="start"
             className={classes.menuButton}
@@ -118,8 +137,9 @@ export default function PrimarySearchAppBar() {
             aria-label="open drawer"
             >
             <MenuIcon onClick={() => toggleDrawer()} />
-          </IconButton>
+          </IconButton> */}
         </Toolbar>
+        
       </AppBar>
     </div>
   );
