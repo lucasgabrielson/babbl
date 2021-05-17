@@ -77,7 +77,7 @@ export default function FullWidthTabs() {
   return (
     <div className={classes.root}>
 
-      <AppBar className={classes.tabs} position="static" color="default" boxShadow={0}>
+      {/* <AppBar className={classes.tabs} position="static" color="default" boxShadow={0}> */}
 
       <Box position="static" color="default">
         <Tabs
