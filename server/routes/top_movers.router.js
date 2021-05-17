@@ -4,7 +4,7 @@ const router = express.Router();
 require('dotenv').config();
 
 router.get('/', (req, res) => {
-    console.log( 'in GET /api/top_movers);
+    console.log( 'in GET /api/top_movers');
         axios.get(`https://api.babbl.dev/v1/top_movers?key=${process.env.BABBL_TOKEN}`)
             .then( response => {
                 res.send(response.data)

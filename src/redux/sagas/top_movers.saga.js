@@ -15,4 +15,4 @@ function* topMoversSaga() {
     yield takeLatest('FETCH_TOP_MOVERS', topMovers);
 }
 
-export default popultopMoversSagaatedTickersSaga;
+export default topMoversSaga;
