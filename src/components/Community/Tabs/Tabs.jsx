@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { shadows } from '@material-ui/system';
 
 // import components
 import Overview from '../Overview/Overview';
@@ -50,9 +51,13 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
+    boxShadow: 'none',
+    backgroundColor: 'white',
     width: '100vw',
   },
+  tabs: {
+    backgroundColor: 'white'
+  }
 }));
 
 export default function FullWidthTabs() {
@@ -70,9 +75,10 @@ export default function FullWidthTabs() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar className={classes.tabs} position="static" color="default" boxShadow={0}>
         <Tabs
           value={value}
+          boxShadow={0}
           onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
