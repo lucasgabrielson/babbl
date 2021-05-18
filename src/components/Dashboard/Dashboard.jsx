@@ -6,21 +6,15 @@ import TickerCard from '../Dashboard/TickerCard/TickerCard';
 
 const useStyles = makeStyles({
   root: {
+    // display: 'flex',
+    margin: '20px',
+  },
+  tickerContainer: {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    width: '400px',
-    height: '75px',
-    border: '2px solid gray',
-    borderRadius: '5px'
+    justifyContent: 'flex-end',
   },
   
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
+  
 });
 
 
@@ -29,11 +23,9 @@ const Dashboard = () => {
   const classes = useStyles();
 
   return (
-    <div>
-      <header>
-        <h1>This is Dashboard</h1>
-      </header>
-      <div className="tickerContainer">
+    <div className={classes.root}>
+      
+      <div className={classes.tickerContainer}>
         <TickerCard />
       </div>
     </div>
