@@ -5,10 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Overview from '../Community/Overview/Overview';
 import News from '../Community/News/News';
 
-<<<<<<< HEAD
-    <Overview />
-    <News />
-=======
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +24,7 @@ const Community = () => {
     <div className={classes.communityContainer}>
       <Overview />
       {/* <News /> */}
->>>>>>> c3ece2c5e9a188dc589a76aa599302e8cc9968ec
+
     </div>
   )
 }
