@@ -31,10 +31,10 @@ function* deleteWatchlistArticle(action) {
     }  
 }
 
-function* userArticlesSaga() {
-    yield takeLatest('FETCH_USER_WATCHLIST', fetchUserArticles);
-    yield takeLatest('ADD_WATCHLIST_ARTICLE', addUserArticle);
-    yield takeLatest('DELETE_WATCHLIST_ARTICLE', deleteUserArticle)
+function* userWatchlistSaga() {
+    yield takeLatest('FETCH_USER_WATCHLIST', fetchUserWatchlist);
+    yield takeLatest('ADD_WATCHLIST_ARTICLE', addWatchlistArticle);
+    yield takeLatest('DELETE_WATCHLIST_ARTICLE', deleteWatchlistArticle);
 }
 
-export default userArticlesSaga;
+export default userWatchlistSaga;
