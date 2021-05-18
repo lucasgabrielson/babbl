@@ -33,6 +33,7 @@ function App() {
     dispatch({type: 'FETCH_USER_WATCHLIST', payload: 1});
   }, [dispatch]);
   return (
+    <div className="page-container">
     <Router>
       <div>
       <Drawer />
@@ -148,6 +149,8 @@ function App() {
         {/* <Footer /> */}
       </div>
     </Router>
+    <Footer />
+    </div>
   );
 }
 

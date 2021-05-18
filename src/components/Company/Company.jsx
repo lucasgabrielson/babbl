@@ -7,6 +7,9 @@ import Typography from '@material-ui/core/Typography';
 
 import Articles from '../Company/Articles/Articles';
 import Sentiments from '../Company/Sentiments/Sentiments';
+import CompanySnippets from '../Company/CompanySnippets/CompanySnippets';
+import LineChart from '../Company/LineChart/LineChart';
+import TopTen from '../Company/TopTen/TopTen';
 
 const useStyles = makeStyles({
     root: {
@@ -23,6 +26,27 @@ const useStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
+    carousel: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '90vw',
+      height: '350px',
+      margin: '20px',
+      padding: '10px',
+      borderRadius: '5px',
+      boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    },
+    chart: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    topten: {
+      display: 'flex',
+      margin: '20px',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
   });
 
 function Company (){
@@ -38,8 +62,21 @@ function Company (){
         </Typography>
       </CardContent>
     </Card>
+        <div className={classes.chart}>
+        <LineChart />
+        </div>
+        <div className={classes.sentiments}>
         <Sentiments />
+        </div>
+        <div className={classes.topten}>
+          <TopTen />
+        </div>
+        <div className={classes.carousel}>
+        <CompanySnippets />
+        </div>
+        <div className={classes.articles}>
         <Articles />
+        </div>
         </>
     )
 }

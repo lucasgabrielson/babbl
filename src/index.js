@@ -12,6 +12,8 @@ import App from './components/App/App';
 import {ThemeProvider} from '@material-ui/core/styles';
 import theme from './theme'
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const sagaMiddleware = createSagaMiddleware();
 
 // this line creates an array of all of redux middleware you want to use
