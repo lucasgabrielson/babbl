@@ -16,6 +16,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import AutoComplete from './AutoComplete'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
-      width: 'auto',
+      width: '250',
     },
   },
   searchIcon: {
@@ -110,25 +111,15 @@ export default function PrimarySearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             Babbl
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
+          <div>
+            <AutoComplete />
           </div>
           
-            <NavLink className={classes.link} to="/">Dashboard</NavLink>
-            <NavLink className={classes.link} to="/community">Community</NavLink>
-            <NavLink className={classes.link} to="/about">About</NavLink>
-            <NavLink className={classes.link} to="/bookmarks">Bookmarks</NavLink>
-            <NavLink className={classes.link} to="/home" onClick={Logout()}>LogOut</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/">Dashboard</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/community">Community</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/about">About</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/bookmarks/1">Bookmarks</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/home" onClick={Logout()}>LogOut</NavLink>
         
           <div className={classes.grow} />
             {/* This will enable a drawer for mobile
