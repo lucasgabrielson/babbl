@@ -32,6 +32,7 @@ function App() {
   }, [dispatch]);
 
   return (
+    <div className="page-container">
     <Router>
       <div>
       <Drawer />
@@ -159,6 +160,8 @@ function App() {
         {/* <Footer /> */}
       </div>
     </Router>
+    <Footer />
+    </div>
   );
 }
 
