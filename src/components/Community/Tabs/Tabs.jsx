@@ -13,8 +13,8 @@ import Paper from '@material-ui/core/paper';
 
 // import components
 import Overview from '../Overview/Overview';
-import TrendingNews from '../TrendingNews/TrendingNews';
-import CommunityNews from '../CommunityNews/CommunityNew';
+import TrendingNews from '../News/TrendingNews/TrendingNews';
+import CommunityNews from '../News/CommunityNews/CommunityNew';
 import Snippet from '../Snippet/Snippet'
 
 function TabPanel(props) {

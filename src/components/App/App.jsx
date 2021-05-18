@@ -20,6 +20,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import Community from '../Community/Community';
 import AppBar from '../AppBar/AppBar';
 import Drawer from '../Drawer/Drawer';
+import Company from '../Company/Company';
 
 import './App.css';
 
@@ -91,7 +92,7 @@ function App() {
             path="/company/:id"
             authRedirect="/home"
           >
-            <Community />
+            <Company />
           </ProtectedRoute>
 
           {/* For protected routes, the view could show one of several things on the same route.
