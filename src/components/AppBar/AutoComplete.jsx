@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,11 +20,16 @@ export default function TickerSelect() {
     const classes = useStyles();
     const tickers = useSelector( store => store.populated_tickers.meta.all_tickers)
     const [search, setSearch] = useState('');
+    const history = useHistory();
 
     // const countries = [
     // { code: 'AD', label: 'Andorra', phone: '376' },
 
     // const tickers = []
+
+    const handleChange = (value) => {
+        history.push(`/company/${value}`, {params: value})
+    }
 
     return (
         <Autocomplete
@@ -34,7 +40,7 @@ export default function TickerSelect() {
             option: classes.option,
         }}
         autoHighlight
-        onChange={(event, value) => console.log(value)}
+        onChange={(event, value) => handleChange(value)}
         getOptionLabel={(option) => option}
         renderOption={(option) => (
             <React.Fragment>
