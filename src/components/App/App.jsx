@@ -30,6 +30,7 @@ function App() {
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
     dispatch({type: 'FETCH_USER_WATCHLIST', payload: 1});
+    dispatch({type: 'FETCH_POPULATED_TICKERS'});
   }, [dispatch]);
   return (
     <Router>

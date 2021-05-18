@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
+import AutoComplete from '../AppBar/AutoComplete';
 const columns = [
     { field: 'date', headerName: 'Date', width: 150 },
     { field: 'title', headerName: 'Title',  width: 300},
@@ -24,8 +25,11 @@ function Bookmarks(){
 
     return(
         <>
-        <h1>Hello</h1>
+        <AutoComplete />
         {JSON.stringify(bookmarks)}
+        {/* <div style={{ height: 400, width: '100%' }}>
+            <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+        </div> */}
         </>
     )
 }
