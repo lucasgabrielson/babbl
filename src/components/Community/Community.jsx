@@ -6,8 +6,6 @@ import Overview from '../Community/Overview/Overview';
 import News from '../Community/News/News';
 
 
-
-
 const useStyles = makeStyles((theme) => ({
  
   communityContainer: {

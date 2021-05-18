@@ -38,6 +38,7 @@ router.get('/', (req, res) => {
     console.log( 'in GET /api/populated_tickers');
         axios.get(`https://api.babbl.dev/v1/populated_tickers?key=${process.env.BABBL_TOKEN}`)
             .then( response => {
+                console.log(response.data)
                 res.send(response.data)
             }).catch( err => {
                 console.log( 'erroing connecting with babbl api /populated_tickers GET');

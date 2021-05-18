@@ -21,16 +21,17 @@ import Community from '../Community/Community';
 import AppBar from '../AppBar/AppBar';
 import Drawer from '../Drawer/Drawer';
 import Company from '../Company/Company';
-
+import Bookmarks from '../Bookmarks/Bookmarks';
 import './App.css';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch({type: 'FETCH_POPULATED_TICKERS'});
     dispatch({ type: 'FETCH_USER' });
+    dispatch({type: 'FETCH_USER_WATCHLIST', payload: 1});
   }, [dispatch]);
-
   return (
     <div className="page-container">
     <Router>
@@ -64,34 +65,22 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // with authRedirect:
-            // - if logged in, redirects to "/user"
-            // - else shows RegisterPage at "/registration"
             exact
             path="/bookmarks/:id"
-            authRedirect="/home"
           >
-            <Community />
+            <Bookmarks />
           </ProtectedRoute>
 
           <ProtectedRoute
-            // with authRedirect:
-            // - if logged in, redirects to "/user"
-            // - else shows RegisterPage at "/registration"
             exact
             path="/dashboard/:id"
-            authRedirect="/home"
           >
             <Community />
           </ProtectedRoute>
 
           <ProtectedRoute
-            // with authRedirect:
-            // - if logged in, redirects to "/user"
-            // - else shows RegisterPage at "/registration"
             exact
             path="/company/:id"
-            authRedirect="/home"
           >
             <Company />
           </ProtectedRoute>

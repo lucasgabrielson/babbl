@@ -6,7 +6,7 @@ import userArticles from './user_articles.reducer';
 import populated_tickers from './populated_tickers.reducer';
 import babbl_api_articles from './babbl_api_articles.reducer';
 import ticker_snippets from './tickler_snippets.reducer';
-import userWatchlistReducer from './user_watchlist.reducer';
+import userWatchlist from './user_watchlist.reducer';
 import drawer from './drawer.reducer';
 import top_movers from './top_movers.reducer'
 
@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
   populated_tickers, // contains the available tickers with their corresponding mentions
   babbl_api_articles, // contains the articles regarding the ticker(s) requested
   ticker_snippets, // contains the snippets regaridng the ticker(s) requested
-  userWatchlistReducer, // contains the tickers in a users watchlist
+  userWatchlist, // contains the tickers in a users watchlist
   drawer, // will open and close drawer
   top_movers, // contains the top and bottom 3 movers
 
