@@ -125,7 +125,7 @@ export default function PrimarySearchAppBar() {
             <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/">Dashboard</NavLink>
             <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/community">Community</NavLink>
             <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/about">About</NavLink>
-            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/bookmarks">Bookmarks</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/bookmarks/1">Bookmarks</NavLink>
             <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/home" onClick={Logout()}>LogOut</NavLink>
         
           <div className={classes.grow} />
