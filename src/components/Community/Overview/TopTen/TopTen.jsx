@@ -32,8 +32,8 @@ export default function FlexLayoutGrid() {
 
   return (
 
-    <div style={{ height: '503px', width: '320px'}}>
-      <div style={{ display: 'flex', flexDirection: 'column',  height: '100%' }}>
+    <div style={{ height: '503px', width: '320px', }}>
+      <div style={{ display: 'flex', flexDirection: 'column',  height: '100%', }}>
         <div style={{ flexGrow: 1 }}>
           <DataGrid rows={rows} columns={columns} pageSize={10}  />
         </div>

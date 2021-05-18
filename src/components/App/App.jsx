@@ -21,7 +21,9 @@ import Community from '../Community/Community';
 import AppBar from '../AppBar/AppBar';
 import Drawer from '../Drawer/Drawer';
 import Company from '../Company/Company';
+import Dashboard from '../Dashboard/Dashboard';
 import Bookmarks from '../Bookmarks/Bookmarks';
+
 import './App.css';
 
 function App() {
@@ -52,7 +54,15 @@ function App() {
             <Community />
           </Route>
 
-          <ProtectedRoute
+          <Route
+            // access to community page should is free and doesn't require a login or account
+            exact
+            path="/dashboard"
+          >
+            <Dashboard />
+          </Route>
+
+          {/* <ProtectedRoute
             // with authRedirect:
             // - if logged in, redirects to "/user"
             // - else shows RegisterPage at "/registration"
@@ -61,8 +71,8 @@ function App() {
             path="/dashboard/:id"
             authRedirect="/home"
           >
-            <Community />
-          </ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute> */}
 
           <ProtectedRoute
             exact

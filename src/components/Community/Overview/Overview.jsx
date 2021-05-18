@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    marginTop: '80px'
+    // marginTop: '80px'
     // border: '2px solid black',
     
     
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '90vw',
+    width: '100%',
     height: '350px',
     margin: '20px 0px 20px 0px',
     padding: '10px',

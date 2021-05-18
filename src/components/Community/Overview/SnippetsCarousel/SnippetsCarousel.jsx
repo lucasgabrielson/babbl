@@ -116,8 +116,8 @@ export default function SingleLineGridList() {
                 title: classes.title,
               }}
               actionIcon={
-                <IconButton aria-label={`Source `}>
-                  <BookmarkBorderIcon className={classes.title} />
+                <IconButton aria-label={`Source`}>
+                  <BookmarkBorderIcon />
                 </IconButton>
               }
             />
