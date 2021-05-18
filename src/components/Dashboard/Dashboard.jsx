@@ -12,6 +12,10 @@ const useStyles = makeStyles({
     // display: 'flex',
     margin: '20px',
   },
+  title: {
+    borderBottom: '5px solid gray',
+    borderRadius: '5px'
+  },
   tickerContainer: {
     display: 'flex',
     justifyContent: 'flex-end',
@@ -21,6 +25,11 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-between'
   },
+  watchlistContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  }
   
 });
 
@@ -37,7 +46,10 @@ const Dashboard = () => {
       </div>
       <div className={classes.chartContainer}>
         <Tabs />
-        <WatchList />
+        <div className={classes.watchlistContainer}>
+          <h4 className={classes.title}>Watchlist</h4>
+          <WatchList />
+        </div>
       </div>
     </div>
   )

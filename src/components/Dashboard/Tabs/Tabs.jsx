@@ -13,6 +13,7 @@ import Paper from '@material-ui/core/paper';
 
 // import components
 import BubbleChart from '../BubbleChart/BubbleChart';
+import LineChart from '../LineChart/LineChart';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -99,7 +100,7 @@ export default function FullWidthTabs() {
           <BubbleChart />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          
+          <LineChart />
         </TabPanel>
         
       </SwipeableViews>
