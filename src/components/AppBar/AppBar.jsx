@@ -81,6 +81,8 @@ const useStyles = makeStyles((theme) => ({
   },
     link: {
         marginRight: theme.spacing(2),
+        textDecoration: 'none',
+        color: 'white',
   },
 }));
 
@@ -122,11 +124,11 @@ export default function PrimarySearchAppBar() {
             />
           </div>
           
-            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/">Dashboard</NavLink>
-            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/community">Community</NavLink>
-            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/about">About</NavLink>
-            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/bookmarks">Bookmarks</NavLink>
-            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/home" onClick={Logout()}>LogOut</NavLink>
+            <NavLink className={classes.link} to="/">Dashboard</NavLink>
+            <NavLink className={classes.link} to="/community">Community</NavLink>
+            <NavLink className={classes.link} to="/about">About</NavLink>
+            <NavLink className={classes.link} to="/bookmarks">Bookmarks</NavLink>
+            <NavLink className={classes.link} to="/home" onClick={Logout()}>LogOut</NavLink>
         
           <div className={classes.grow} />
             {/* This will enable a drawer for mobile
