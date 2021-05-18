@@ -14,6 +14,7 @@ import TopTen from '../Company/TopTen/TopTen';
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
+      marginTop: '100px',
     },
     bullet: {
       display: 'inline-block',
