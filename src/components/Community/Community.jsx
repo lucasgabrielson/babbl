@@ -8,12 +8,6 @@ const Community = () => {
   return (
     <div>
 
-     
-
-
-      <header>
-        <h1>Community</h1>
-      </header>
     <Overview />
     <News />
     </div>
