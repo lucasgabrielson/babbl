@@ -6,6 +6,7 @@ import BottomMovers from '../Overview/BottomMovers/BottomMovers';
 import BubbleChart from  '../Overview/BubbleChart/BubbleChart';
 import TopTen from '../Overview/TopTen/TopTen';
 import SnippetsCarousel from '../Overview/SnippetsCarousel/SnippetsCarousel';
+import News from '../News/News';
 
 
 
@@ -15,29 +16,43 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    marginTop: '80px'
+    // border: '2px solid black',
+    
     
     // flexDirection: 'column',
   }, 
   carousel: {
+    position: 'relative',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     width: '90vw',
     height: '350px',
-    margin: '20px',
+    margin: '20px 0px 20px 0px',
     padding: '10px',
     borderRadius: '5px',
-    boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
     
     
     
   },
-  topThreeItemsContainer: {
+  CarouselContainer: {
+    position: 'relative',
+    width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90vw'
+    boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    margin: '20px 0px 20px 0px',
+    borderRadius: '5px',
+    // border: '2px solid black',
     // flexWrap: 'nowrap',
+  },
+  chartMovers: {
+    display: 'flex',
+    borderRadius: '5px',
+    boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
   },
   movers: {
     display:'flex',
@@ -51,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '0px 20px 0px 20px',
     border: '1px solid white',
     borderRadius: '4px',
-    boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
   },
   TopTenContainer: {
     display:'flex',
@@ -63,6 +78,13 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    
+  },
+  chartAndTen: {
+    display:'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    
   },
   snippets: {
     display:'flex',
@@ -90,24 +112,29 @@ const Overview = () => {
           <TopMovers />
           <BottomMovers />
         </div>
-        <div className={classes.middle}>
-          <h3>Sentiment Chart</h3>
-          <div className={classes.bubbleChartContainer}>
-            <BubbleChart />
+        <div className={classes.chartAndTen}>
+        <h3>Chart</h3>
+        <div className={classes.chartMovers}>
+          <div className={classes.middle}>
+            {/* <h3>Sentiment Chart</h3> */}
+            <div className={classes.bubbleChartContainer}>
+              <BubbleChart />
+            </div>
+          </div>
+          <div className={classes.TopTenContainer}>
+            {/* <h3>Top Ten Movers</h3> */}
+            <TopTen />
           </div>
         </div>
-        <div className={classes.TopTenContainer}>
-          <h3>Top Ten Movers</h3>
-          <TopTen />
         </div>
-        <div className={classes.topThreeItemsContainer}>
+        <div className={classes.CarouselContainer}>
           <div className={classes.carousel}>
             <h1 className={classes.carouselHeaders}>Check out the top trending tweets</h1>
               <SnippetsCarousel />
               <h1 className={classes.carouselHeaders}>Bookmark the article where the snippet originated</h1>
           </div>
         </div>
-     
+        <News />
     </div>
     
   )
