@@ -110,3 +110,9 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
