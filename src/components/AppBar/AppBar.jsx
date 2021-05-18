@@ -114,7 +114,7 @@ export default function PrimarySearchAppBar() {
           <div>
             <AutoComplete />
           </div>
-            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/">Dashboard</NavLink>
+            <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/dashboard">Dashboard</NavLink>
             <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/community">Community</NavLink>
             <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/about">About</NavLink>
             <NavLink className={classes.link} style={{ textDecoration: 'none', color: 'white' }} to="/bookmarks/1">Bookmarks</NavLink>
