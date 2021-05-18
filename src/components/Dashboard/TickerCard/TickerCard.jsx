@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
-import TickerCard from '../Dashboard/TickerCard/TickerCard';
 
 
 const useStyles = makeStyles({
@@ -23,21 +21,16 @@ const useStyles = makeStyles({
   },
 });
 
-
-const Dashboard = () => {
-
+export default function SimpleCard() {
   const classes = useStyles();
+  
 
   return (
-    <div>
-      <header>
-        <h1>This is Dashboard</h1>
-      </header>
-      <div className="tickerContainer">
-        <TickerCard />
-      </div>
+    <div className={classes.root}>
+      <h3>TESLA</h3>
+      <h5>$575</h5>
+      <h5>+0.30</h5>
+      <h5>-0.75</h5>
     </div>
-  )
+  );
 }
-
-export default Dashboard

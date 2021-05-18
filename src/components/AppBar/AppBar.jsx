@@ -124,7 +124,7 @@ export default function PrimarySearchAppBar() {
             />
           </div>
           
-            <NavLink className={classes.link} to="/">Dashboard</NavLink>
+            <NavLink className={classes.link} to="/dashboard">Dashboard</NavLink>
             <NavLink className={classes.link} to="/community">Community</NavLink>
             <NavLink className={classes.link} to="/about">About</NavLink>
             <NavLink className={classes.link} to="/bookmarks">Bookmarks</NavLink>
