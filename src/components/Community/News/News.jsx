@@ -47,8 +47,8 @@ function TabPanel(props) {
   const useStyles = makeStyles((theme) => ({
     root: {
       backgroundColor: theme.palette.background.paper,
-      width: 1634,
-      margin: 20,
+      width: '100vw',
+      // margin: 20,
     },
   }));
 

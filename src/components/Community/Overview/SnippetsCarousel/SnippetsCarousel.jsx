@@ -5,7 +5,6 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 
@@ -15,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
    
-    
     // justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
@@ -44,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
   GridListTile: {
     position: 'relative',
-    margin: '10px',
+    margin: '20px',
     borderRadius: '5px',
     boxShadow: '2px 5px 5px 5px rgba(0, 0, 0, 0.2)',
     overflow: 'hidden',
@@ -103,7 +101,7 @@ export default function SingleLineGridList() {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={3.5}>
+      <GridList className={classes.gridList} cols={3}>
         {tileData.map((tile) => (
           <GridListTile className={classes.GridListTile} key={tile.img}
           style={{height: 300, padding: '20px 20px 20px 20px', width: '300px',}}
