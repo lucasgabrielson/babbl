@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import TickerCard from '../Dashboard/TickerCard/TickerCard';
 import WatchList from '../Dashboard/WatchList/WatchList';
+import BubbleChart from '../Dashboard/BubbleChart/BubbleChart';
+import Tabs from '../Dashboard/Tabs/Tabs';
 
 
 const useStyles = makeStyles({
@@ -17,7 +19,7 @@ const useStyles = makeStyles({
   },
   chartContainer: {
     display: 'flex',
-    justifyContent: 'flex-end'
+    justifyContent: 'space-between'
   },
   
 });
@@ -34,6 +36,7 @@ const Dashboard = () => {
         <TickerCard />
       </div>
       <div className={classes.chartContainer}>
+        <Tabs />
         <WatchList />
       </div>
     </div>
