@@ -9,6 +9,7 @@ import Tabs from '../Dashboard/Tabs/Tabs';
 
 const useStyles = makeStyles({
   root: {
+    maxWidth: '1500px',
     // display: 'flex',
     margin: '20px',
   },
@@ -23,10 +24,12 @@ const useStyles = makeStyles({
   },
   chartContainer: {
     display: 'flex',
-    justifyContent: 'space-between'
+     flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
   watchlistContainer: {
     display: 'flex',
+    // flexWrap: 'wrap',
     flexDirection: 'column',
     alignItems: 'center',
   }

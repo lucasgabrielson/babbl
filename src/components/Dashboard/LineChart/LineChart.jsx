@@ -1,12 +1,27 @@
 import React from 'react'
 import Chart from "react-google-charts";
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
+const useStyles = makeStyles({
+  lineChartContainer: {
+    width: '50vw',
+    minWidth: '350px',
+    maxWidth: '900px',
+  }
+  
+});
+
 
 function LineChart (){
 
+  const classes = useStyles();
+
     return(
-        <>
+        <div className={classes.lineChartContainer}>
         <Chart
-  width={'50vw'}
+  
   height={'500px'}
   chartType="LineChart"
   loader={<div>Loading Chart</div>}
@@ -34,7 +49,7 @@ function LineChart (){
   }}
   rootProps={{ 'data-testid': '2' }}
 />
-        </>
+        </div>
     )
 }
 

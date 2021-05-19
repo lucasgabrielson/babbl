@@ -1,11 +1,28 @@
+
 import React from 'react'
 import Chart from "react-google-charts";
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles({
+  bubbleChartContainer: {
+    width: '50vw',
+    minWidth: '350px',
+    maxWidth: '900px',
+  }
+  
+});
 
 const BubbleChart = () => {
+
+
+  const classes = useStyles();
+
   return (
-    <div>
+
+    <div className={classes.bubbleChartContainer}>
       <Chart
-  width={'50vw'}
+  // width={'40vw'}
   height={'500px'}
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
