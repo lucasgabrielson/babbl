@@ -4,8 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import TickerCard from '../Dashboard/TickerCard/TickerCard';
 import WatchList from '../Dashboard/WatchList/WatchList';
 import BubbleChart from '../Dashboard/BubbleChart/BubbleChart';
-import Tabs from '../Dashboard/Tabs/Tabs';
+import Tabs from './ChartTabs/ChartTabs';
 import SnippetsCarousel from '../Dashboard/SnippetsCarousel/SnippetsCarousel';
+import ArticleTabs from '../Dashboard/ArticleTabs/ArticleTabs';
 
 
 const useStyles = makeStyles({
@@ -87,13 +88,15 @@ const Dashboard = () => {
         </div>
       </div>
       <div className={classes.CarouselContainer}>
-      
         <div className={classes.carousel}>
         <h3 className={classes.carouselHeaders}>Check out the top trending tweets</h3>
           <SnippetsCarousel />
         </div>
       </div>
 
+      <div>
+        <ArticleTabs />
+      </div>
     </div>
   )
 }
