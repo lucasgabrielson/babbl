@@ -51,12 +51,6 @@ function TabPanel(props) {
       backgroundColor: theme.palette.background.paper,
       width: '78vw',
     },
-    TopTenContainer: {
-        display:'flex',
-        flexGrow: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-      },
   }));
 
 
@@ -98,10 +92,7 @@ function Charts (){
               <LineChart />
             </TabPanel>
             <TabPanel value={value} index={1} dir={theme.direction}>
-                <div className={classes.TopTenContainer}>
               <Sentiments />
-              <TopTen />
-              </div>
             </TabPanel>
           </SwipeableViews>
         </div>

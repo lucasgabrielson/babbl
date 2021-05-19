@@ -5,6 +5,7 @@ import Charts from  '../Charts/Charts';
 import TopTen from '../TopTen/TopTen';
 import CompanySnippets from '../CompanySnippets/CompanySnippets';
 import Articles from '../Articles/Articles';
+import TickerCard from '../TickerCard/TickerCard';
 
 
 
@@ -87,8 +88,12 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px',
     margin: '10px',
     color: 'gray',
-    
-  }
+  },
+  tickerCard:{
+    padding: '10px',
+    display: 'flex',
+    flexDirection: 'column',
+  },
 }));
 
 
@@ -98,8 +103,9 @@ const Overview = () => {
 
   return (
     <div className={classes.overview}>
-      
-
+        <div className={classes.tickerCard}>
+        <TickerCard />
+        </div>
         <div className={classes.chartAndTen}>
         <div className={classes.chartMovers}>
           <div className={classes.middle}>
@@ -108,7 +114,7 @@ const Overview = () => {
             </div>
           </div>
           <div className={classes.TopTenContainer}>
-            {/* <TopTen /> */}
+            <TopTen />
           </div>
         </div>
         </div>
