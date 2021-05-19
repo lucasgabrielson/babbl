@@ -20,6 +20,9 @@ CREATE TABLE articles (
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES "user"(id),
-	slug VARCHAR(255),
-	ticker VARCHAR(6) UNIQUE NOT NULL
+	"date" DATE,
+	"title" VARCHAR(255),
+	"source" VARCHAR(50),
+	"mentions" VARCHAR(255),
+	"link" VARCHAR(255)
 );

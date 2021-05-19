@@ -28,9 +28,9 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({type: 'FETCH_POPULATED_TICKERS'});
     dispatch({ type: 'FETCH_USER' });
-    dispatch({type: 'FETCH_USER_WATCHLIST', payload: 1});
+    dispatch({type: 'FETCH_POPULATED_TICKERS'});
+
   }, [dispatch]);
   return (
     <div className="page-container">
