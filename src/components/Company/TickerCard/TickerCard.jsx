@@ -30,7 +30,7 @@ export default function TickerCard() {
       <h3>TESLA</h3>
       <h5>$575</h5>
       <h5>+0.30</h5>
-      <h5>-0.75</h5>
+      <h5>-0.76</h5>
     </div>
   );
 }
