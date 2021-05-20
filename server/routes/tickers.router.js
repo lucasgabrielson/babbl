@@ -9,8 +9,8 @@ router.get('/:ticker', (req, res) => {
             .then( response => {
                 const objectToSend = {
                     current_price: response.data[response.data.length - 1].close,
-                    percent_change: (response.data[0].open - response.data[response.data.length - 1].close) / response.data[0].open * 100,
-                    points_change: response.data[0].open - response.data[response.data.length - 1].close
+                    percent_change: ((response.data[0].open - response.data[response.data.length - 1].close) / response.data[0].open * 100).toFixed(2),
+                    points_change: (response.data[0].open - response.data[response.data.length - 1].close).toFixed(2)
                 }
                 res.send(objectToSend)
             }).catch( err => {
