@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
     dispatch({type: 'FETCH_POPULATED_TICKERS'});
-
+    dispatch({type: 'FETCH_TOP_MOVERS'})
   }, [dispatch]);
   return (
     <div className="page-container">
