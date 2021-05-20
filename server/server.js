@@ -15,6 +15,7 @@ const babblApiArticlesRouter = require('./routes/babbl_api_articles.router');
 const tickerSnippetsRouter = require('./routes/ticker_snippets.router');
 const userWatchlistRouter = require('./routes/user_watchlist.router');
 const topMoversRouter = require('./routes/top_movers.router');
+const cloudIexTickersRouter = require('./routes/tickers.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -35,6 +36,7 @@ app.use('/api/babbl_api_articles', babblApiArticlesRouter);
 app.use('/api/ticker_snippets/', tickerSnippetsRouter);
 app.use('/api/user_watchlist/', userWatchlistRouter);
 app.use('/api/top_movers', topMoversRouter)
+app.use('/api/tickers', cloudIexTickersRouter);
 
 // Serve static files
 app.use(express.static('build'));
