@@ -5,8 +5,8 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* fetchApiArticles(action) {
     try {
-        console.log( 'fetchApiArticles' );
-        const response = yield axios.get(`/api/babbl_api_articles/?tickers=${action.payload}`);
+        console.log( 'fetchApiArticles', action.payload.tickers );
+        const response = yield axios.get(`/api/babbl_api_articles/?tickers=${action.payload.tickers}`);
         yield put({ type: 'SET_API_ARTICLES', payload: response.data} )
     } catch (error) {
         console.log('Error getting articles from api', error);

@@ -35,12 +35,12 @@ require('dotenv').config();
  */
 
 router.get('/', (req, res) => {
-    console.log( 'in GET /api/babbl_api_articles');
+    console.log( 'in GET /api/babbl_api_articles', req.query);
         axios.get(`https://api.babbl.dev/v1/get_articles?key=${process.env.BABBL_TOKEN}&tickers=${req.query.tickers}`)
             .then( response => {
                 res.send(response.data)
             }).catch( err => {
-                console.log( 'erroing connecting with babbl api /populated_tickers GET');
+                console.log( 'error connecting with babbl api /babbl_api_articles GET');
                 res.sendStatus(500);
             })
 });

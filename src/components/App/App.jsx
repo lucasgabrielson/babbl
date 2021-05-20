@@ -6,7 +6,7 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
@@ -41,6 +41,16 @@ function App() {
     dispatch({type: 'FETCH_POPULATED_TICKERS'});
     dispatch({type: 'FETCH_TOP_MOVERS'})
   }, [dispatch]);
+
+  let tickers = useSelector( store => store.populated_tickers)
+
+  let latch = false;
+
+  if( !latch && tickers.meta !== undefined  ) {
+    dispatch({type: 'FETCH_API_ARTICLES', payload: {tickers: tickers.meta.all_tickers.join()} })
+    dispatch({type: 'FETCH_TICKER_SNIPPETS', payload: {tickers: tickers.meta.all_tickers.join(), days: 3, max: 10} })
+    latch = !latch;
+  }
   return (
     <div className="page-container">
     <Router>

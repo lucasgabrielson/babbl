@@ -41,7 +41,7 @@ router.get('/', (req, res) => {
                 console.log(response.data)
                 res.send(response.data)
             }).catch( err => {
-                console.log( 'erroing connecting with babbl api /populated_tickers GET');
+                console.log( 'error connecting with babbl api /populated_tickers GET');
                 res.sendStatus(500);
             })
 });
