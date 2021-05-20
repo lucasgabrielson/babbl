@@ -2,7 +2,6 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 
 import Charts from  '../Charts/Charts';
-import TopTen from '../TopTen/TopTen';
 import CompanySnippets from '../CompanySnippets/CompanySnippets';
 import Articles from '../Articles/Articles';
 import TickerCard from '../TickerCard/TickerCard';
@@ -61,12 +60,6 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid white',
     borderRadius: '4px',
   },
-  TopTenContainer: {
-    display:'flex',
-    flexGrow: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
   middle: {
     display:'flex',
     flexDirection: 'column',
@@ -112,9 +105,6 @@ const Overview = () => {
             <div className={classes.bubbleChartContainer}>
               <Charts />
             </div>
-          </div>
-          <div className={classes.TopTenContainer}>
-            <TopTen />
           </div>
         </div>
         </div>
