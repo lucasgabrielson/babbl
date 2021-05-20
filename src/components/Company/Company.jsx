@@ -2,6 +2,8 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 
 import Overview from '../Company/Overview/Overview';
+import Footer from '../Footer/Footer';
+import AppBar from '../AppBar/AppBar';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -18,7 +20,9 @@ const Company = () => {
 
   return (
     <div className={classes.communityContainer}>
+      <AppBar />
       <Overview />
+      <Footer />
     </div>
   )
 }

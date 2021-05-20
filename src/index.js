@@ -8,6 +8,11 @@ import logger from 'redux-logger';
 import rootReducer from './redux/reducers/_root.reducer'; // imports ./redux/reducers/index.js
 import rootSaga from './redux/sagas/_root.saga'; // imports ./redux/sagas/index.js
 
+// for landing page
+import './styles'
+import './scripts'
+import './index.css';
+
 import App from './components/App/App';
 import {ThemeProvider} from '@material-ui/core/styles';
 import theme from './theme'

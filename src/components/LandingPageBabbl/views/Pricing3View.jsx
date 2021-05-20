@@ -85,11 +85,9 @@ class Pricing3View extends React.Component {
               <div className="w-container">
                 <a href="index.html" className="af-class-logo-block w-nav-brand"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                  <a href="about-3.html" className="af-class-nav-link af-class-light">About</a>
-                  <a href="features-2.html" className="af-class-nav-link af-class-light">Features</a>
-                  <a href="pricing-3.html" aria-current="page" className="af-class-nav-link af-class-light w--current">Pricing</a>
-                  <a href="blog-3.html" className="af-class-nav-link af-class-light">Newsletter</a>
-                  <a href="contact-4.html" className="af-class-nav-link af-class-light">Contact</a>
+                  <a href="#/about" className="af-class-nav-link af-class-light">About</a>
+                  <a href="#/pricing" aria-current="page" className="af-class-nav-link af-class-light w--current">Pricing</a>
+                  <a href="#/contact" className="af-class-nav-link af-class-light">Contact</a>
                   <a href="#" className="af-class-navlink af-class-light af-class-nav-menu w-inline-block" />
                 </nav>
                 <div className="af-class-transparant-menu-button w-nav-button">
@@ -100,7 +98,7 @@ class Pricing3View extends React.Component {
             <div className="af-class-subpage-header af-class-pricing-3">
               <div className="af-class-container w-container">
                 <h2 data-ix="fade-in-on-load" className="af-class-subpage-title">Pricing Options</h2>
-                <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</div>
+                <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Would you like Lucas Gabrielson to call you at home? Often? Then you should definitely upgrade past FREE.</div>
               </div>
             </div>
             <div className="af-class-section af-class-pricing-section">
@@ -190,8 +188,8 @@ class Pricing3View extends React.Component {
                     </div>
                   </div>
                   <div className="af-class-image-section-overlay-block">
-                    <div className="af-class-image-section-overlay-title">"Using it since 1990. Their Professional Plan is the best option available".</div>
-                    <div className="af-class-image-section-overlay-title af-class-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim.</div>
+                    <div className="af-class-image-section-overlay-title">"Using it since 1990. Their Professional Plan is the best option available. It's like double Lucas".</div>
+                    <div className="af-class-image-section-overlay-title af-class-subtitle">- Gabin Williams. Anime Fan.</div>
                   </div>
                 </div>
               </div>
@@ -204,11 +202,11 @@ class Pricing3View extends React.Component {
                     <div className="af-class-footer-logo af-class-subtitle">Conquering Due Diligence</div>
                   </div>
                   <div className="af-class-footer-menu-column w-col w-col-6">
-                    <a href="/homepages/home-business-3" className="af-class-footer-inline-link">Home</a>
+                    {/* <a href="/homepages/home-business-3" className="af-class-footer-inline-link">Home</a>
                     <a href="/about/about-1" className="af-class-footer-inline-link">About</a>
                     <a href="/pricing/pricing-1" className="af-class-footer-inline-link">Pricing</a>
                     <a href="/contact/contact-1" className="af-class-footer-inline-link">Contact</a>
-                    <a href="/blog-variations/blog-1" className="af-class-footer-inline-link">Blog</a>
+                    <a href="/blog-variations/blog-1" className="af-class-footer-inline-link">Blog</a> */}
                   </div>
                   <div className="af-class-footer-social-col-right w-col w-col-3">
                     <a href="http://www.facebook.com" target="_blank" className="af-class-footer-social-icon w-inline-block"><img src="images/Icon-facebook_2.png" alt className="af-class-footer-small-social-icon" /></a>

@@ -24,8 +24,14 @@ import Company from '../Company/Company';
 import Dashboard from '../Dashboard/Dashboard';
 import Bookmarks from '../Bookmarks/Bookmarks';
 import IndexView from '../LandingPageBabbl/views/IndexView';
+import About3View from '../LandingPageBabbl/views/About3View';
+import Features2View from '../LandingPageBabbl/views/Features2View';
+import Pricing3View from '../LandingPageBabbl/views/Pricing3View';
+import Blog3View from '../LandingPageBabbl/views/Blog3View';
+import Contact4View from '../LandingPageBabbl/views/Contact4View';
 
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -39,9 +45,9 @@ function App() {
     <div className="page-container">
     <Router>
       <div>
-      <Drawer />
+      {/* uncomment this for mobile <Drawer /> */}
         {/* <Nav /> */}
-        <AppBar />
+        
         {/* <img src="//logo.clearbit.com/facebook.com"/> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
@@ -61,6 +67,38 @@ function App() {
             path="/landingpage"
           >
             <IndexView />
+          </Route>
+          
+          <Route
+            // access to community page should is free and doesn't require a login or account
+            exact
+            path="/about"
+          >
+            <About3View />
+          </Route>
+
+          <Route
+            // access to community page should is free and doesn't require a login or account
+            exact
+            path="/features"
+          >
+            <Features2View/>
+          </Route>
+
+          <Route
+            // access to community page should is free and doesn't require a login or account
+            exact
+            path="/pricing"
+          >
+            <Pricing3View />
+          </Route>
+
+          <Route
+            // access to community page should is free and doesn't require a login or account
+            exact
+            path="/contact"
+          >
+            <Contact4View />
           </Route>
 
           <Route
@@ -168,7 +206,7 @@ function App() {
         {/* <Footer /> */}
       </div>
     </Router>
-    <Footer />
+    
     </div>
   );
 }
