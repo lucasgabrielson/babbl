@@ -87,16 +87,12 @@ export default function SimpleCard() {
             {(company.movement).toFixed(2)}
           </Typography>
 
-          {/* <Typography className={classes.neg} >
-            -- babbl score
-          </Typography> */}
+         
 
         </div>
           ))}  
       </CardContent>
-      <CardActions>
-        {/* <Button size="small">Learn More</Button> */}
-      </CardActions>
+      
     </Card>
   );
 }
