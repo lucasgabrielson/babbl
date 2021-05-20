@@ -223,7 +223,7 @@ class IndexView extends React.Component {
               </div>
               <div className="w-container"><img src="images/jjkjfkldsajafklasdjflk.png" loading="lazy" alt className="af-class-image-2" /></div>
             </div>
-            <div className="af-class-simple-footer">
+            {/* <div className="af-class-simple-footer">
               <div className="af-class-container w-container">
                 <div className="af-class-footer-row w-row">
                   <div className="af-class-footer-logo-column-left w-col w-col-3"><img src="images/Untitled-design-15.png" loading="lazy" alt className="af-class-image-4" />
@@ -243,7 +243,7 @@ class IndexView extends React.Component {
                 </div>
               </div>
               <div className="af-class-simple-bottom-footer" />
-            </div>
+            </div> */}
             {/* [if lte IE 9]><![endif] */}
           </div>
         </span>

@@ -8,7 +8,7 @@ const scripts = [
 
 let Controller
 
-class DashboardAppBar extends React.Component {
+class UserPageAppBar extends React.Component {
   static get Controller() {
     if (Controller) return Controller
 
@@ -20,7 +20,7 @@ class DashboardAppBar extends React.Component {
     }
     catch (e) {
       if (e.code == 'MODULE_NOT_FOUND') {
-        Controller = DashboardAppBar
+        Controller = UserPageAppBar
 
         return Controller
       }
@@ -32,7 +32,7 @@ class DashboardAppBar extends React.Component {
 
 
   render() {
-    const proxies = DashboardAppBar.Controller !== DashboardAppBar ? transformProxies(this.props.children) : {
+    const proxies = UserPageAppBar.Controller !== UserPageAppBar ? transformProxies(this.props.children) : {
 
     }
 
@@ -63,8 +63,8 @@ class DashboardAppBar extends React.Component {
             </div>
             <div className="af-class-subpage-header af-class-about-3">
               <div className="af-class-container w-container">
-                <h2 data-ix="fade-in-on-load" className="af-class-subpage-title">Your Dashboard</h2>
-                <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Look over all of your Tickers with our convenient Sentiment Chart and Top Movers.</div>
+                <h2 data-ix="fade-in-on-load" className="af-class-subpage-title">Welcome, USER</h2>
+                <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Your ID is: USER ID</div>
               </div>
               </div>
             </div>
@@ -74,4 +74,4 @@ class DashboardAppBar extends React.Component {
  }
 }
 
-export default DashboardAppBar;
+export default UserPageAppBar;
