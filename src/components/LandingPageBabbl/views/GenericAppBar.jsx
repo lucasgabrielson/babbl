@@ -8,7 +8,7 @@ const scripts = [
 
 let Controller
 
-class DashboardAppBar extends React.Component {
+class GenericAppBar extends React.Component {
   static get Controller() {
     if (Controller) return Controller
 
@@ -20,7 +20,7 @@ class DashboardAppBar extends React.Component {
     }
     catch (e) {
       if (e.code == 'MODULE_NOT_FOUND') {
-        Controller = DashboardAppBar
+        Controller = GenericAppBar
 
         return Controller
       }
@@ -32,7 +32,7 @@ class DashboardAppBar extends React.Component {
 
 
   render() {
-    const proxies = DashboardAppBar.Controller !== DashboardAppBar ? transformProxies(this.props.children) : {
+    const proxies = GenericAppBar.Controller !== GenericAppBar ? transformProxies(this.props.children) : {
 
     }
 
@@ -74,4 +74,4 @@ class DashboardAppBar extends React.Component {
  }
 }
 
-export default DashboardAppBar;
+export default GenericAppBar;

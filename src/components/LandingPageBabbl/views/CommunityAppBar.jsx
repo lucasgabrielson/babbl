@@ -29,25 +29,6 @@ class CommunityAppBar extends React.Component {
     }
   }
 
-  componentDidMount() {
-    const htmlEl = document.querySelector('html')
-    htmlEl.dataset['wfPage'] = '609885bf0408da5cecc9e6de'
-    htmlEl.dataset['wfSite'] = '609885bf0408da8300c9e62e'
-
-    scripts.concat(null).reduce((active, next) => Promise.resolve(active).then((active) => {
-      const loading = active.loading.then((script) => {
-        new Function(`
-          with (this) {
-            eval(arguments[0])
-          }
-        `).call(window, script)
-
-        return next
-      })
-
-      return active.isAsync ? next : loading
-    }))
-  }
 
   render() {
     const proxies = CommunityAppBar.Controller !== CommunityAppBar ? transformProxies(this.props.children) : {
@@ -67,9 +48,8 @@ class CommunityAppBar extends React.Component {
               <div className="w-container">
                 <a href="index.html" className="af-class-logo-block w-nav-brand"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                  <a href="#/" className="af-class-nav-link af-class-light">Dashboard</a>
+                  <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
-                  <a href="#/about" className="af-class-nav-link af-class-light">About</a>
                   <a href="#/bookmarks" className="af-class-nav-link af-class-light">Bookmarks</a>
                   <a href="#/" className="af-class-nav-link af-class-light">LogOut</a>
                   <a href="#" className="af-class-navlink af-class-light af-class-nav-menu w-inline-block" />

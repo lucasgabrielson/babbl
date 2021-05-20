@@ -31,26 +31,6 @@ class Contact4View extends React.Component {
     }
   }
 
-  componentDidMount() {
-    const htmlEl = document.querySelector('html')
-    htmlEl.dataset['wfPage'] = '609885bf0408daa1eec9e6d9'
-    htmlEl.dataset['wfSite'] = '609885bf0408da8300c9e62e'
-
-    scripts.concat(null).reduce((active, next) => Promise.resolve(active).then((active) => {
-      const loading = active.loading.then((script) => {
-        new Function(`
-          with (this) {
-            eval(arguments[0])
-          }
-        `).call(window, script)
-
-        return next
-      })
-
-      return active.isAsync ? next : loading
-    }))
-  }
-
   render() {
     const proxies = Contact4View.Controller !== Contact4View ? transformProxies(this.props.children) : {
 
@@ -97,7 +77,7 @@ class Contact4View extends React.Component {
               </div>
             </div>
             <div className="af-class-section af-class-below-contact-form" />
-            <div className="af-class-simple-footer">
+            {/* <div className="af-class-simple-footer">
               <div className="af-class-container w-container">
                 <div className="af-class-footer-row w-row">
                   <div className="af-class-footer-logo-column-left w-col w-col-3"><img src="images/Untitled-design-15.png" loading="lazy" alt className="af-class-image-4" />
@@ -117,7 +97,7 @@ class Contact4View extends React.Component {
                 </div>
               </div>
               <div className="af-class-simple-bottom-footer" />
-            </div>
+            </div> */}
             {/* [if lte IE 9]><![endif] */}
           </div>
         </span>

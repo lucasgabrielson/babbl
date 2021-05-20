@@ -56,11 +56,11 @@ function App() {
       <div>
       {/* uncomment this for mobile <Drawer /> */}
         {/* <Nav /> */}
-        <AppBar />
+        {/* <AppBar /> */}
         {/* <img src="//logo.clearbit.com/facebook.com"/> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-          <Redirect exact from="/" to="/home" />
+          <Redirect exact from="/" to="/community" />
 
           <Route
             // access to community page should is free and doesn't require a login or account
