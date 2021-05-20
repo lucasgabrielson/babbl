@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './SnippetsCarousel.css';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -30,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: theme.palette.primary.light,
     padding: '10px',
+  },
+  subtitle: {
+    color: theme.palette.secondary.light,
   },
   titleBar: {
     position: 'absolute',
@@ -97,29 +101,54 @@ const useStyles = makeStyles((theme) => ({
 export default function SingleLineGridList() {
   const classes = useStyles();
 
+  const ticker_snippets = useSelector((store) => store.ticker_snippets);
+  let finalArray = [];
+
+  // let AAPL_snippets = ticker_snippets.AAPL.snippets;
+  let AMC_snippets = ticker_snippets.AMC.snippets;
+  // let AMD_snippets = ticker_snippets.AMD.snippets;
+  // let ARKK_snippets = ticker_snippets.ARKK.snippets;
+  // let EV_snippets = ticker_snippets.EV.snippets;
+  // let MSFT_snippets = ticker_snippets.MSFT.snippets;
+  // let NVDA_snippets = ticker_snippets.NVDA.snippets;
+  // let OS_snippets = ticker_snippets.OS.snippets;
+  // let PLTR_snippets = ticker_snippets.PLTR.snippets;
+  // let PTON_snippets = ticker_snippets.PTON.snippets;
+  // let SHOP_snippets = ticker_snippets.SHOP.snippets;
+  // let TSLA_snippets = ticker_snippets.TSLA.snippets;
+
   
 
+  const snippetsArray = () => {
+
+    // let AAPL_snippets = ticker_snippets.AAPL.snippets;
+
+    console.log('AMC Snippets', AMC_snippets);
+  }
+  console.log('FinalArray', finalArray);
+
+  snippetsArray();
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={3}>
-        {tileData.map((tile) => (
+        {AMC_snippets.map((tile) => (
           <GridListTile className={classes.GridListTile} key={tile.img}
           style={{height: 300, padding: '20px 20px 20px 20px', width: '300px',}}
           >
-            <p>{tile.snippet} </p> 
+            <p>{tile.title} </p> 
             <hr />
             
             <GridListTileBar
-              title={tile.source}
+              title={tile.tick}
+              subtitle={tile.timestamp}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
+                subtitle: classes.subtitle,
               }}
-              actionIcon={
-                <IconButton aria-label={`Source`}>
-                  <BookmarkBorderIcon />
-                </IconButton>
-              }
+              // actionIcon={
+                
+              // }
             />
           </GridListTile>
         ))}
