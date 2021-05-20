@@ -7,6 +7,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 
 
@@ -137,6 +138,7 @@ export default function SingleLineGridList() {
           >
             <p>{tile.title} </p> 
             <hr />
+            <p>{tile.text}</p>
             
             <GridListTileBar
               title={tile.tick}
@@ -146,9 +148,11 @@ export default function SingleLineGridList() {
                 title: classes.title,
                 subtitle: classes.subtitle,
               }}
-              // actionIcon={
-                
-              // }
+              actionIcon={
+                <IconButton>
+                  <ChromeReaderModeIcon />
+                </IconButton>
+              }
             />
           </GridListTile>
         ))}
