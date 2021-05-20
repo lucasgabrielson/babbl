@@ -16,6 +16,7 @@ const tickerSnippetsRouter = require('./routes/ticker_snippets.router');
 const userWatchlistRouter = require('./routes/user_watchlist.router');
 const topMoversRouter = require('./routes/top_movers.router');
 const cloudIexTickersRouter = require('./routes/tickers.router');
+const timeseriesSentimentsRouter = require('./routes/timeseries_sentiments.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -37,6 +38,7 @@ app.use('/api/ticker_snippets/', tickerSnippetsRouter);
 app.use('/api/user_watchlist/', userWatchlistRouter);
 app.use('/api/top_movers', topMoversRouter)
 app.use('/api/tickers', cloudIexTickersRouter);
+app.use('/api/timeseries_sentiments', timeseriesSentimentsRouter)
 
 // Serve static files
 app.use(express.static('build'));

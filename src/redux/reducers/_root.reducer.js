@@ -29,6 +29,7 @@ const rootReducer = combineReducers({
   drawer, // will open and close drawer
   top_movers, // contains the top and bottom 3 movers
   tickers, // contains price information about the ticker
+  timeseries_sentiments, // contains the sentiments scores for stock(s) over a given period of time
 
 });
 
