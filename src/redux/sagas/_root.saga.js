@@ -8,6 +8,7 @@ import fetchApiArticlesSaga from './babbl_api_articles.saga';
 import topMoversSaga from './top_movers.saga';
 import userWatchlistSaga from './user_watchlist.saga';
 import tickerSnippetsSaga from './ticker_snippets.saga';
+import timeseriesSentimentsSaga from './timeseries_sentiments.saga'
 import tickersSaga from './ticker.saga';
 
 // rootSaga is the primary saga.
@@ -28,6 +29,7 @@ export default function* rootSaga() {
     topMoversSaga(),
     userWatchlistSaga(),
     tickerSnippetsSaga(),
+    timeseriesSentimentsSaga(),
     tickersSaga(),
   ]);
 }
