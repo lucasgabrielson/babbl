@@ -31,26 +31,6 @@ class IndexView extends React.Component {
     }
   }
 
-  componentDidMount() {
-    const htmlEl = document.querySelector('html')
-    htmlEl.dataset['wfPage'] = '609885bf0408da6a2fc9e632'
-    htmlEl.dataset['wfSite'] = '609885bf0408da8300c9e62e'
-
-    scripts.concat(null).reduce((active, next) => Promise.resolve(active).then((active) => {
-      const loading = active.loading.then((script) => {
-        new Function(`
-          with (this) {
-            eval(arguments[0])
-          }
-        `).call(window, script)
-
-        return next
-      })
-
-      return active.isAsync ? next : loading
-    }))
-  }
-
   render() {
     const proxies = IndexView.Controller !== IndexView ? transformProxies(this.props.children) : {
 
@@ -69,7 +49,7 @@ class IndexView extends React.Component {
               <div className="w-container">
                 <a href="index.html" aria-current="page" className="af-class-logo-block w-nav-brand w--current"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                  <a href="#/" className="af-class-nav-link af-class-light">Dashboard</a>
+                  <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
                   <a href="#/bookmarks" className="af-class-nav-link af-class-light">Bookmarks</a>
                   <a href="#/" className="af-class-nav-link af-class-light">LogOut</a>
