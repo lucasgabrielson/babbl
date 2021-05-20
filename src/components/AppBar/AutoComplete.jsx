@@ -27,10 +27,6 @@ export default function TickerSelect() {
         latch = true;
         tickers = tickers.meta.all_tickers;
     }
-    // const countries = [
-    // { code: 'AD', label: 'Andorra', phone: '376' },
-
-    // let tickers = []
 
     const handleChange = (value) => {
         history.push(`/company/${value}`, {params: value})
