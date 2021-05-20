@@ -25,10 +25,9 @@ import Dashboard from '../Dashboard/Dashboard';
 import Bookmarks from '../Bookmarks/Bookmarks';
 import IndexView from '../LandingPageBabbl/views/IndexView';
 import About3View from '../LandingPageBabbl/views/About3View';
-import Features2View from '../LandingPageBabbl/views/Features2View';
 import Pricing3View from '../LandingPageBabbl/views/Pricing3View';
-import Blog3View from '../LandingPageBabbl/views/Blog3View';
 import Contact4View from '../LandingPageBabbl/views/Contact4View';
+import NotFoundView from '../LandingPageBabbl/views/NotFoundView';
 
 import './App.css';
 
@@ -75,14 +74,6 @@ function App() {
             path="/about"
           >
             <About3View />
-          </Route>
-
-          <Route
-            // access to community page should is free and doesn't require a login or account
-            exact
-            path="/features"
-          >
-            <Features2View/>
           </Route>
 
           <Route
@@ -200,7 +191,7 @@ function App() {
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
-            <h1>404</h1>
+            <NotFoundView />
           </Route>
         </Switch>
         {/* <Footer /> */}
