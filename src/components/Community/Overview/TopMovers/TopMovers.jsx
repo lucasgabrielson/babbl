@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -19,9 +20,17 @@ const useStyles = makeStyles((theme) => ({
     transform: 'scale(0.8)',
   },
   title: {
+    display: 'flex',
+    justifyContent: 'center',
+    color: 'black',
     fontSize: 14,
     marginBottom: '20px',
+    borderBottom: '5px solid gray',
+    borderRadius: '5px'
     
+  },
+  headers: {
+    fontSize: 12,
   },
   pos: {
     marginBottom: 12,
@@ -47,7 +56,10 @@ const useStyles = makeStyles((theme) => ({
 export default function SimpleCard() {
 
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  
+  const top_movers = useSelector((store) => store.top_movers);
+
+  console.log('top_movers', top_movers.top);
 
 
   return (
@@ -56,55 +68,31 @@ export default function SimpleCard() {
           <Typography className={classes.title} color="textSecondary" gutterBottom>
             Top 3 Movers
           </Typography>
-
+          <div className={classes.ticker}>
+            <Typography className={classes.headers} color="textSecondary" gutterBottom>
+              Ticker
+            </Typography>
+            <Typography className={classes.headers} color="textSecondary" gutterBottom>
+              Babbl Score
+            </Typography>
+          </div>
+        {top_movers.top.map(company => ( 
         <div className={classes.ticker}>
         
           <Typography className={classes.company} >
-            TESLA
+            {company.ticker}
           </Typography>
 
           <Typography className={classes.pos} >
-            +0.45
+            {(company.movement).toFixed(2)}
           </Typography>
 
-          <Typography className={classes.neg} >
-            -0.30
-          </Typography>
+          {/* <Typography className={classes.neg} >
+            -- babbl score
+          </Typography> */}
 
         </div>
-
-        <div className={classes.ticker}>
-        
-          <Typography className={classes.company} >
-            TESLA
-          </Typography>
-
-          <Typography className={classes.pos} >
-            +0.45
-          </Typography>
-
-          <Typography className={classes.neg} >
-            -0.30
-          </Typography>
-
-        </div>
-
-        <div className={classes.ticker}>
-        
-        <Typography className={classes.company} >
-          TESLA
-        </Typography>
-
-        <Typography className={classes.pos} >
-          +0.45
-        </Typography>
-
-        <Typography className={classes.neg} >
-          -0.30
-        </Typography>
-
-      </div>
-        
+          ))}  
       </CardContent>
       <CardActions>
         {/* <Button size="small">Learn More</Button> */}
