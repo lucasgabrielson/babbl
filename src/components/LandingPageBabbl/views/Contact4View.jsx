@@ -49,7 +49,7 @@ class Contact4View extends React.Component {
               <div className="w-container">
                 <a href="index.html" className="af-class-logo-block w-nav-brand"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                  <a href="#/" className="af-class-nav-link af-class-light">Dashboard</a>
+                  <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
                   <a href="#/bookmarks" className="af-class-nav-link af-class-light">Bookmarks</a>
                   <a href="#/" className="af-class-nav-link af-class-light">LogOut</a>
