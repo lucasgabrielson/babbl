@@ -23,6 +23,7 @@ import Drawer from '../Drawer/Drawer';
 import Company from '../Company/Company';
 import Dashboard from '../Dashboard/Dashboard';
 import Bookmarks from '../Bookmarks/Bookmarks';
+import IndexView from '../LandingPageBabbl/views/IndexView';
 
 import './App.css';
 
@@ -30,9 +31,9 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({type: 'FETCH_POPULATED_TICKERS'});
     dispatch({ type: 'FETCH_USER' });
-    dispatch({type: 'FETCH_USER_WATCHLIST', payload: 1});
+    dispatch({type: 'FETCH_POPULATED_TICKERS'});
+
   }, [dispatch]);
   return (
     <div className="page-container">
@@ -52,6 +53,14 @@ function App() {
             path="/community"
           >
             <Community />
+          </Route>
+
+          <Route
+            // access to community page should is free and doesn't require a login or account
+            exact
+            path="/landingpage"
+          >
+            <IndexView />
           </Route>
 
           <Route

@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
   lineChartContainer: {
     width: '50vw',
-    minWidth: '350px',
+    minWidth: '250px',
     maxWidth: '900px',
   }
   
