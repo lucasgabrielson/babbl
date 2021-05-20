@@ -108,7 +108,7 @@ const Overview = () => {
     <div className={classes.overview}>
       
         <div className={classes.movers}>
-          <h3>Top Movers</h3>
+          <h3>Daily Movers</h3>
           <TopMovers />
           <BottomMovers />
         </div>
