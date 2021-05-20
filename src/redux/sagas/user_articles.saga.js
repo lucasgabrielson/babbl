@@ -14,7 +14,7 @@ function* fetchUserArticles(action) {
 function* addUserArticle(action) {
   try {
       console.log( 'addUserArticle' );
-      const response = yield axios.post(`/api/user_articles/?id=${action.payload.userID}&ticker=${action.payload.ticker}&slug=${action.payload.slug}`);
+      const response = yield axios.post(`/api/user_articles/?id=${action.payload.userID}&date=${action.payload.date}&title=${action.payload.title}&source=${action.payload.source}&mentions=${action.payload.mentions}&link${action.payload.link}`);
       yield put({ type: 'FETCH_USER_ARTICLES' } )
   } catch (error) {
       console.log('Error getting user articles from database', error);
@@ -24,7 +24,7 @@ function* addUserArticle(action) {
 function* deleteUserArticle(action) {
   try {
       console.log( 'deleteUserArticle' );
-      const response = yield axios.delete(`/api/user_articles/?id=${action.payload.userID}&slug=${action.payload.slug}`);
+      const response = yield axios.delete(`/api/user_articles/?id=${action.payload.userID}&link=${action.payload.link}`);
       yield put({ type: 'FETCH_USER_ARTICLES' } )
   } catch (error) {
       console.log('Error getting user articles from database', error);
