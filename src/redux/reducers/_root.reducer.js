@@ -8,7 +8,8 @@ import babbl_api_articles from './babbl_api_articles.reducer';
 import ticker_snippets from './tickler_snippets.reducer';
 import userWatchlist from './user_watchlist.reducer';
 import drawer from './drawer.reducer';
-import top_movers from './top_movers.reducer'
+import top_movers from './top_movers.reducer';
+import tickers from './tickers.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   userWatchlist, // contains the tickers in a users watchlist
   drawer, // will open and close drawer
   top_movers, // contains the top and bottom 3 movers
+  tickers, // contains price information about the ticker
 
 });
 
