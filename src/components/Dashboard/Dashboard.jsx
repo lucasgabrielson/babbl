@@ -7,6 +7,7 @@ import BubbleChart from '../Dashboard/BubbleChart/BubbleChart';
 import Tabs from './ChartTabs/ChartTabs';
 import SnippetsCarousel from '../Dashboard/SnippetsCarousel/SnippetsCarousel';
 import ArticleTabs from '../Dashboard/ArticleTabs/ArticleTabs';
+import DashboardAppBar from '../LandingPageBabbl/views/DashboardAppBar';
 
 const useStyles = makeStyles({
   root: {
@@ -74,6 +75,8 @@ const Dashboard = () => {
   const classes = useStyles();
 
   return (
+    <div>
+      <DashboardAppBar />
     <div className={classes.root}>
       <div className={classes.tickerContainer}>
         <TickerCard />
@@ -95,6 +98,7 @@ const Dashboard = () => {
       <div>
         <ArticleTabs />
       </div>
+    </div>
     </div>
   )
 }
