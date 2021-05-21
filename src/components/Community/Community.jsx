@@ -16,13 +16,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Community = () => {
-  const user = useSelector( store => store.user)
+  const user = useSelector( store => store.user);
+  const populated_tickers = useSelector( store => populated_tickers)
   const dispatch = useDispatch();
   let latch = false;
-  if( user !== undefined && !latch ) {
+  if( user !== undefined &&  populated_tickers !== undefined && !latch ) {
     latch = true
     dispatch({type: 'FETCH_USER_WATCHLIST', payload: user.id});
     dispatch({type: 'FETCH_USER_ARTICLES', payload: user.id});
+    dispatch({type: 'FETCH_ALL_TICKERS', payload: populated_tickers.meta.all_tickers})
   }
 
   const classes = useStyles();

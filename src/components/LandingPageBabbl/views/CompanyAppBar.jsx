@@ -8,6 +8,10 @@ const scripts = [
 
 let Controller
 
+const mapStateToProps = store => ({
+  id: store.user.id
+});
+
 class CompanyAppBar extends React.Component {
   static get Controller() {
     if (Controller) return Controller
@@ -29,12 +33,10 @@ class CompanyAppBar extends React.Component {
     }
   }
 
-
-
   render() {
     const proxies = CompanyAppBar.Controller !== CompanyAppBar ? transformProxies(this.props.children) : {
-
     }
+
 
     return (
       <span>
@@ -51,7 +53,7 @@ class CompanyAppBar extends React.Component {
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
                   <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
-                  <a href="#/bookmarks" className="af-class-nav-link af-class-light">Bookmarks</a>
+                  <a href={"#/bookmarks/" + mapStateToProps.id} className="af-class-nav-link af-class-light">Bookmarks</a>
                   <a href="#/" className="af-class-nav-link af-class-light">LogOut</a>
                   <a href="#" className="af-class-navlink af-class-light af-class-nav-menu w-inline-block" />
                 </nav>
