@@ -12,77 +12,82 @@ import TrendingNews from '../News/TrendingNews/TrendingNews';
 import CommunityNews from '../News/CommunityNews/CommunityNew';
 
 function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-  
-    return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`full-width-tabpanel-${index}`}
-        aria-labelledby={`full-width-tab-${index}`}
-        {...other}
-      >
-        {value === index && (
-          <Box p={3}>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
-      </div>
-    );
-  }
-  
-  TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `full-width-tab-${index}`,
+    'aria-controls': `full-width-tabpanel-${index}`,
   };
-  
-  function a11yProps(index) {
-    return {
-      id: `full-width-tab-${index}`,
-      'aria-controls': `full-width-tabpanel-${index}`,
-    };
+}
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    boxShadow: 'none',
+    backgroundColor: 'white',
+    width: '100%',
+    // border: '2px solid black'
+  },
+  tabs: {
+    backgroundColor: 'white'
   }
+}));
+
+export default function News() {
   
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      backgroundColor: theme.palette.background.paper,
-      width: '100vw',
-      // margin: 20,
-    },
-  }));
+  const classes = useStyles();
+  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
-function News (){
-    const classes = useStyles();
-    const theme = useTheme();
-    const [value, setValue] = React.useState(0);
-  
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
-  
-    const handleChangeIndex = (index) => {
-      setValue(index);
-    };
+  const handleChangeIndex = (index) => {
+    setValue(index);
+  };
 
-
-    return(
-    <>
+  return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+
+      <Box position="static" color="default">
         <Tabs
           value={value}
+          boxShadow={0}
           onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
-          variant="fullWidth"
+          // variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Trending News" {...a11yProps(0)} />
-          <Tab label="Community News" {...a11yProps(1)} />
+          <Tab label="TRENDING NEWS" {...a11yProps(0)} />
+          <Tab label="COMMUNITY NEWS" {...a11yProps(1)} />
+          
         </Tabs>
-      </AppBar>
+      </Box>
       <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
@@ -94,10 +99,8 @@ function News (){
         <TabPanel value={value} index={1} dir={theme.direction}>
           <CommunityNews />
         </TabPanel>
+        
       </SwipeableViews>
     </div>
-    </>
-    )
+  );
 }
-
-export default News;
