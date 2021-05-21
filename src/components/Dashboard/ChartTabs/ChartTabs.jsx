@@ -86,8 +86,8 @@ export default function FullWidthTabs() {
           // variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Bubble" {...a11yProps(0)} />
-          <Tab label="Line" {...a11yProps(1)} />
+          <Tab label="Sentiment Chart" {...a11yProps(0)} />
+          <Tab label="Article Chart" {...a11yProps(1)} />
           
         </Tabs>
       </Box>
@@ -97,10 +97,10 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <BubbleChart />
+          <LineChart />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <LineChart />
+          <BubbleChart />
         </TabPanel>
         
       </SwipeableViews>
