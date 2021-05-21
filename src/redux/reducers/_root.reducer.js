@@ -10,6 +10,7 @@ import userWatchlist from './user_watchlist.reducer';
 import drawer from './drawer.reducer';
 import top_movers from './top_movers.reducer';
 import tickers from './tickers.reducer';
+import timeseries_sentiments from './timeseries_sentiments.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.

@@ -1,7 +1,26 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react';
 import Chart from "react-google-charts";
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
 
 function LineChart (){
+  const dispatch = useDispatch();
+
+  axios.get('/', (req, res) => {
+
+    console.log( 'in GET /api/timeseries_sentiments', req.query);
+        axios.get(`https://api.babbl.dev/v1/timeseries_sentiment?key=${process.env.BABBL_TOKEN}&tickers=${req.query.tickers}&days=${req.query.days}`)
+            .then( response => {
+                res.send(response.data)
+            }).catch( err => {
+                console.log( 'error connecting with babbl api /timeseries_sentiments GET');
+                res.sendStatus(500);
+            })
+});
+
+  useEffect(()=> {
+    dispatch({ type: 'FETCH_TIMESERIES_SENTIMENTS'})
+  }, {});
 
     return(
         <>
@@ -23,10 +42,10 @@ function LineChart (){
   ]}
   options={{
     hAxis: {
-      title: 'Time',
+      title: 'Days',
     },
     vAxis: {
-      title: 'Popularity',
+      title: 'Change',
     },
     series: {
       1: { curveType: 'function' },

@@ -11,7 +11,6 @@ import Box from '@material-ui/core/Box';
 
 import Sentiments from  '../Charts/Sentiments/Sentiments';
 import LineChart from '../Charts/LineChart/LineChart';
-import TopTen from '../TopTen/TopTen';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
