@@ -59,7 +59,6 @@ export default function SimpleCard() {
  
   const top_movers = useSelector((store) => store.top_movers);
 
-
   return (
     <Card className={classes.root}>
     <CardContent>
@@ -84,8 +83,6 @@ export default function SimpleCard() {
         <Typography className={classes.pos} >
           {(company.movement).toFixed(2)}
         </Typography>
-
-       
 
       </div>
         ))}  
