@@ -75,8 +75,6 @@ class DashboardAppBar extends React.Component {
  }
 }
 
-export default DashboardAppBar;
-
 const mapStateToProps = (state) => {
   return {
     user: state.user
