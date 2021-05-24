@@ -85,9 +85,12 @@ const BubbleChart = () => {
   
   return (
     <div>
+      <div className={classes.root}>
+        <TickerCard/>
+      </div>
       
       <Chart
-  width={'800px'}
+  width={'50vw'}
   height={'500px'}
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
