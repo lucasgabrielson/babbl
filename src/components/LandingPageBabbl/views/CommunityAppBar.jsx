@@ -74,8 +74,6 @@ class CommunityAppBar extends React.Component {
  }
 }
 
-export default CommunityAppBar;
-
 const mapStateToProps = (state) => {
   return {
     user: state.user
