@@ -5,7 +5,7 @@ import { put, takeLatest } from 'redux-saga/effects';
  * action.payload should be an object 
  *  {
  *      ticker: 'APPL'
- *      days: '5d, 1m, 6m, ytd, 1y'
+ *      days: '5d, 1m, 6m, ytd, 1y' // send one of the values for 5days, 1 month, year to date, or 1 year, etc
  *  }
  *  */ 
 
