@@ -87,7 +87,7 @@ const BubbleChart = () => {
     <div>
       
       <Chart
-  width={'800px'}
+  width={'60vw'}
   height={'500px'}
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
