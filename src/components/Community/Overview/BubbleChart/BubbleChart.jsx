@@ -92,9 +92,9 @@ const BubbleChart = () => {
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['ID', 'X', 'Y', 'Bullish Sediment'],
+    ['ID', 'Outlook', 'Sediment', 'Bullish Sediment', ],
   
-    [one_tick, one_x, one_y, one_sediment],
+    [one_tick, one_x, one_y, one_sediment, ],
     [two_tick, two_x, two_y, two_sediment],
     [three_tick, three_x, three_y, three_sediment],
     [four_tick, four_x, four_y, four_sediment],
@@ -107,9 +107,12 @@ const BubbleChart = () => {
     
   ]}
   options={{
+    theme: {chartArea: {width: '80%', height: '80%'},
+    legend: {position: 'in'},
+    },
     explorer: {},
-    sizeAxis: {minValue: 0,  maxSize: 20},
-    colorAxis: {minValue: -10, maxValue: 80,  colors: ['white', 'green']},
+    sizeAxis: {minValue: 0,  maxSize: 25},
+    colorAxis: {minValue: -10, maxValue: 80,  colors: ['white', '#4334eb']},
     hAxis: { title: 'Past-Future outlook', viewWindow: {min: -100, max: 100 }},
     vAxis: { title: 'Bullish sediment', viewWindow: {min: -100, max: 100 }, },
     bubble: {
