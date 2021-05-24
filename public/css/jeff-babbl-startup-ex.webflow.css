@@ -110,6 +110,9 @@
   border-radius: 0px;
   background-color: transparent;
   font-family: Montserrat, sans-serif;
+  display: flex;
+  white-space: nowrap;
+  
 
 }
 
