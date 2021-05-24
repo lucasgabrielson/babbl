@@ -59,6 +59,34 @@ export default function SimpleCard() {
  
   const top_movers = useSelector((store) => store.top_movers);
 
+  const [bottom, setBottom] = React.useState([
+   
+    {
+      ticker: 'AAPL',
+      movement: 5.8,
+    },
+    {
+      ticker: 'AMD',
+      movement: 10,
+    },
+    {
+      ticker: 'TSLA',
+      movement: 8,
+    },
+
+  ]);
+
+  React.useEffect(() => {
+    const data = localStorage.getItem("bottom_movers");
+    if (data) {
+      setBottom(JSON.parse(data));
+    }
+  }, []);
+
+  React.useEffect(() => {
+    localStorage.setItem("bottom_movers", JSON.stringify(top_movers.bottom));
+  });
+
 
   return (
     <Card className={classes.root}>
@@ -74,7 +102,7 @@ export default function SimpleCard() {
             Babbl Score
           </Typography>
         </div>
-      {top_movers.bottom.map(company => ( 
+      {bottom.map(company => ( 
       <div className={classes.ticker}>
       
         <Typography className={classes.company} >
