@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {useSelector, useDispatch} from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 
 import TopMovers from '../Overview/TopMovers/TopMovers';
@@ -103,6 +104,22 @@ const useStyles = makeStyles((theme) => ({
 const Overview = () => {
 
   const classes = useStyles();
+  let tickers = useSelector( store => store.populated_tickers);
+  let latch = false;
+  const dispatch = useDispatch();
+  
+  if( tickers.meta !== undefined && !latch ) {
+    latch = true;
+    dispatch({type: 'FETCH_TICKER_SNIPPETS_COMMUNITY', payload: {tickers: tickers.meta.all_tickers.join(), days: 3, max: 5, type: true} })
+
+  }
+
+  // React.useEffect(() => {
+  //   dispatch({type: 'FETCH_TICKER_SNIPPETS_COMMUNITY', payload: {tickers: tickers.meta.all_tickers.join(), days: 3, max: 5, type: true} })
+    
+  // }, []);
+
+  const ticker_snippets = useSelector((store) => store.ticker_snippets);
 
   return (
     <div className={classes.overview}>
@@ -130,11 +147,12 @@ const Overview = () => {
         <div className={classes.CarouselContainer}>
           <div className={classes.carousel}>
             <h3 className={classes.carouselHeaders}>Check out the top trending tweets</h3>
-              <SnippetsCarousel />
+              {/* <SnippetsCarousel /> */}
               
           </div>
         </div>
         <News />
+        {JSON.stringify(ticker_snippets)}
     </div>
     
   )
