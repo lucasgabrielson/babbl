@@ -81,4 +81,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(CompanyAppBar);
+export default connect(mapStateToProps)(DashboardAppBar);
