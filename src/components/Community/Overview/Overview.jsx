@@ -117,15 +117,14 @@ const Overview = () => {
         <h3>Chart</h3>
         <div className={classes.chartMovers}>
           <div className={classes.middle}>
-            {/* <h3>Sentiment Chart</h3> */}
+            
             <div className={classes.bubbleChartContainer}>
-              {/* <BubbleChart /> */}
-              <LineChart />
+              <BubbleChart />
+              {/* <LineChart /> */}
             </div>
           </div>
           <div className={classes.TopTenContainer}>
-            {/* <h3>Top Ten Movers</h3> */}
-            {/* <TopTen /> */}
+            <TopTen />
           </div>
         </div>
         </div>
