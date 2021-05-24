@@ -14,9 +14,10 @@ import News from '../News/News';
 const useStyles = makeStyles((theme) => ({
  
   overview: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
+   
+    // display: 'flex',
+    // flexWrap: 'wrap',
+    // justifyContent: 'center',
     // marginTop: '80px'
     // border: '2px solid black',
     
@@ -54,10 +55,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     borderRadius: '5px',
     boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    width: '100%',
+    minWidth: 'fit-content'
   },
   movers: {
     display:'flex',
     flexGrow: 1,
+    marginLeft: '20px',
     flexDirection: 'column',
     alignItems: 'center',
   },
@@ -67,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '0px 20px 0px 20px',
     border: '1px solid white',
     borderRadius: '4px',
+    
     // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
   },
   TopTenContainer: {
@@ -74,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     flexDirection: 'column',
     alignItems: 'center',
+    minWidth:'250px',
   },
   middle: {
     display:'flex',
@@ -85,6 +91,7 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    
     
   },
   snippets: {
@@ -108,14 +115,19 @@ const Overview = () => {
   return (
     <div className={classes.overview}>
       
+        {/* <div className={classes.movers}>
+          <h3>Daily Movers</h3>
+          <TopMovers />
+          <BottomMovers />
+        </div> */}
+        <div className={classes.chartAndTen}>
+        <h3>Chart</h3>
+        <div className={classes.chartMovers}>
         <div className={classes.movers}>
           <h3>Daily Movers</h3>
           <TopMovers />
           <BottomMovers />
         </div>
-        <div className={classes.chartAndTen}>
-        <h3>Chart</h3>
-        <div className={classes.chartMovers}>
           <div className={classes.middle}>
             
             <div className={classes.bubbleChartContainer}>
