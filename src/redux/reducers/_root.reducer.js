@@ -11,6 +11,7 @@ import drawer from './drawer.reducer';
 import top_movers from './top_movers.reducer';
 import tickers from './tickers.reducer';
 import timeseries_sentiments from './timeseries_sentiments.reducer';
+import timeseries_prices from './timeseries_prices.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   top_movers, // contains the top and bottom 3 movers
   tickers, // contains price information about the ticker
   timeseries_sentiments, // contains the sentiments scores for stock(s) over a given period of time
+  timeseries_prices, // contains the historical prices for a stock over a given period of time
 
 });
 

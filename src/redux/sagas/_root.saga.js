@@ -10,6 +10,7 @@ import userWatchlistSaga from './user_watchlist.saga';
 import tickerSnippetsSaga from './ticker_snippets.saga';
 import timeseriesSentimentsSaga from './timeseries_sentiments.saga'
 import tickersSaga from './ticker.saga';
+import timerSeriesPricesSaga from './timeseries_prices.saga'
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -31,5 +32,6 @@ export default function* rootSaga() {
     tickerSnippetsSaga(),
     timeseriesSentimentsSaga(),
     tickersSaga(),
+    timerSeriesPricesSaga(),
   ]);
 }
