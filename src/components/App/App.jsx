@@ -38,7 +38,8 @@ function App() {
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
     dispatch({type: 'FETCH_POPULATED_TICKERS'});
-    dispatch({type: 'FETCH_TOP_MOVERS'})
+    dispatch({type: 'FETCH_TOP_MOVERS'});
+  
   }, [dispatch]);
 
   let tickers = useSelector( store => store.populated_tickers)
@@ -47,7 +48,7 @@ function App() {
 
   if( !latch && tickers.meta !== undefined  ) {
     dispatch({type: 'FETCH_API_ARTICLES', payload: {tickers: tickers.meta.all_tickers.join()} })
-    dispatch({type: 'FETCH_TICKER_SNIPPETS', payload: {tickers: tickers.meta.all_tickers.join(), days: 3, max: 10} })
+    dispatch({type: 'FETCH_TICKER_SNIPPETS', payload: {tickers: tickers.meta.all_tickers.join(), days: 15, max: 10} })
     latch = !latch;
   }
   return (
