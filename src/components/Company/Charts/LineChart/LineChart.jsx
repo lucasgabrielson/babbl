@@ -1,44 +1,39 @@
 import React, {useEffect, useState} from 'react';
 import Chart from "react-google-charts";
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {useParams} from 'react-router-dom';
+
 
 function LineChart (){
   const dispatch = useDispatch();
+  const params = useParams();
+  const time = useSelector((store)=> {return store.timeseries_sentiments})
 
-  axios.get('/', (req, res) => {
-
-    console.log( 'in GET /api/timeseries_sentiments', req.query);
-        axios.get(`https://api.babbl.dev/v1/timeseries_sentiment?key=${process.env.BABBL_TOKEN}&tickers=${req.query.tickers}&days=${req.query.days}`)
-            .then( response => {
-                res.send(response.data)
-            }).catch( err => {
-                console.log( 'error connecting with babbl api /timeseries_sentiments GET');
-                res.sendStatus(500);
-            })
-});
 
   useEffect(()=> {
-    dispatch({ type: 'FETCH_TIMESERIES_SENTIMENTS'})
-  }, {});
+    dispatch({ type: 'FETCH_TIMESERIES_SENTIMENTS', payload: {tickers: params.id, days: 7} })
+  }, []);
+  console.log('params:', params);
 
     return(
         <>
+        {JSON.stringify(time)}
         <Chart
   width={'1200px'}
   height={'600px'}
   chartType="LineChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['x', 'dogs', 'cats'],
-    [0, 0, 0],
-    [1, 10, 5],
-    [2, 23, 15],
-    [3, 17, 9],
-    [4, 18, 10],
-    [5, 9, 5],
-    [6, 11, 3],
-    [7, 27, 19],
+    ['x', 'Change'],
+    [0, 0],
+    [1, 10],
+    [2, 23],
+    [3, 17],
+    [4, 18],
+    [5, 9],
+    [6, 11],
+    [7, 27],
   ]}
   options={{
     hAxis: {
