@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 import { createScope, map, transformProxies } from './helpers'
 
 const scripts = [
@@ -51,7 +52,7 @@ class GenericAppBar extends React.Component {
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
                   <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
-                  <a href="#/bookmarks" className="af-class-nav-link af-class-light">Bookmarks</a>
+                  <a href={`#/bookmarks/${this.props.user.id}`} className="af-class-nav-link af-class-light">Bookmarks</a>
                   <a href="#/" className="af-class-nav-link af-class-light">LogOut</a>
                   <a href="#" className="af-class-navlink af-class-light af-class-nav-menu w-inline-block" />
                 </nav>
@@ -74,4 +75,10 @@ class GenericAppBar extends React.Component {
  }
 }
 
-export default GenericAppBar;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(GenericAppBar);
