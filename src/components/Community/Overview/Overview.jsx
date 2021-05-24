@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TopMovers from '../Overview/TopMovers/TopMovers';
 import BottomMovers from '../Overview/BottomMovers/BottomMovers';
 import BubbleChart from  '../Overview/BubbleChart/BubbleChart';
+import LineChart from '../Overview/LineChart/LineChart';
 import TopTen from '../Overview/TopTen/TopTen';
 import SnippetsCarousel from '../Overview/SnippetsCarousel/SnippetsCarousel';
 import News from '../News/News';
@@ -118,12 +119,13 @@ const Overview = () => {
           <div className={classes.middle}>
             {/* <h3>Sentiment Chart</h3> */}
             <div className={classes.bubbleChartContainer}>
-              <BubbleChart />
+              {/* <BubbleChart /> */}
+              <LineChart />
             </div>
           </div>
           <div className={classes.TopTenContainer}>
             {/* <h3>Top Ten Movers</h3> */}
-            <TopTen />
+            {/* <TopTen /> */}
           </div>
         </div>
         </div>
