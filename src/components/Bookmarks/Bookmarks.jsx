@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useParams} from 'react-router-dom';
 import { DataGrid } from '@material-ui/data-grid';
 import AutoComplete from '../AppBar/AutoComplete';
 const columns = [
@@ -8,14 +9,12 @@ const columns = [
     { field: 'source', headerName: 'Source', width: 300 },
     { field: 'mentions', headerName: 'Mentions', width: 300 },
     { field: 'score', headerName: 'Babbl Score', width: 150 },
- 
-  ];
-  
+];
 
 function Bookmarks(){
     const dispatch = useDispatch();
     const bookmarks = useSelector(store => store.userArticles)
-
+    const params = useParams();
     return(
         <>
         <AutoComplete />
@@ -24,6 +23,7 @@ function Bookmarks(){
             <DataGrid rows={bookmarks} columns={columns} pageSize={5} checkboxSelection />
         </div>
         }
+        {JSON.stringify(params)}
         </>
     )
 }

@@ -86,8 +86,7 @@ export default function SimpleCard() {
   React.useEffect(() => {
     localStorage.setItem("bottom_movers", JSON.stringify(top_movers.bottom));
   });
-
-
+  
   return (
     <Card className={classes.root}>
     <CardContent>
@@ -112,8 +111,6 @@ export default function SimpleCard() {
         <Typography className={classes.pos} >
           {(company.movement).toFixed(2)}
         </Typography>
-
-       
 
       </div>
         ))}  
