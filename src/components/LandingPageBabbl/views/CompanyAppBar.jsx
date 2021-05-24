@@ -8,6 +8,8 @@ const scripts = [
   { loading: fetch("js/webflow.js").then(body => body.text()), isAsync: false },
 ]
 
+let Controller
+
 class CompanyAppBar extends Component {
   static get Controller() {
     if (Controller) return Controller
@@ -46,8 +48,8 @@ class CompanyAppBar extends Component {
             <div data-collapse="medium" data-animation="default" data-duration={400} data-no-scroll={1} id="about" role="banner" className="af-class-navbar w-nav">
               <div className="w-container">
                 <a href="index.html" className="af-class-logo-block w-nav-brand"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
-                <nav></nav>
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
+                  <span className="af-class-nav-link af-class-light"><AutoComplete /></span>
                   <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
                   <a href={`#/bookmarks/${this.props.user.id}`} className="af-class-nav-link af-class-light">Bookmarks</a>
