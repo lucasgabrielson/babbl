@@ -101,12 +101,19 @@ const useStyles = makeStyles((theme) => ({
   
 export default function SingleLineGridList() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  let tickers = useSelector( store => store.populated_tickers)
+
+  // React.useEffect(() => {
+  //   dispatch({type: 'FETCH_TICKER_SNIPPETS' })
+    
+  // }, []);
 
   const ticker_snippets = useSelector((store) => store.ticker_snippets);
-  let finalArray = [];
+ 
 
   // let AAPL_snippets = ticker_snippets.AAPL.snippets;
-  let AMC_snippets = ticker_snippets.AMC.snippets;
+  // let AMC_snippets = ticker_snippets.AMC.snippets;
   // let AMD_snippets = ticker_snippets.AMD.snippets;
   // let ARKK_snippets = ticker_snippets.ARKK.snippets;
   // let EV_snippets = ticker_snippets.EV.snippets;
@@ -118,31 +125,60 @@ export default function SingleLineGridList() {
   // let SHOP_snippets = ticker_snippets.SHOP.snippets;
   // let TSLA_snippets = ticker_snippets.TSLA.snippets;
 
+  const [snippets, setSnippets] = React.useState([
+   
+    {
+      title: 'This article',
+      text: 'This is my snippet',
+      tick: 'AMC',
+      timestamp: '2021-05-19'
+    },
+    {
+      title: 'This article',
+      text: 'This is my snippet',
+      tick: 'AMC',
+      timestamp: '2021-05-19'
+    },
+    {
+      title: 'This article',
+      text: 'This is my snippet',
+      tick: 'AMC',
+      timestamp: '2021-05-19'
+    },
+
+  ]);
+
+  React.useEffect(() => {
+    // dispatch({type: 'FETCH_POPULATED_TICKERS'});
+    // dispatch({type: 'FETCH_TICKER_SNIPPETS', payload: {tickers: tickers.meta.all_tickers.join(), days: 15, max: 10} })
+    const data = localStorage.getItem("ticker_snippets");
+    if (data) {
+      setSnippets(JSON.parse(data));
+    }
+  }, []);
+
+  React.useEffect(() => {
+   
+    localStorage.setItem("ticker_snippets", JSON.stringify(ticker_snippets.AMC.snippets));
+  });
+
+ 
+
   
-
-  const snippetsArray = () => {
-
-    // let AAPL_snippets = ticker_snippets.AAPL.snippets;
-
-    console.log('AMC Snippets', AMC_snippets);
-  }
-  console.log('FinalArray', finalArray);
-
-  snippetsArray();
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={3}>
-        {AMC_snippets.map((tile) => (
-          <GridListTile className={classes.GridListTile} key={tile.img}
+        {snippets.map((snippet) => (
+          <GridListTile className={classes.GridListTile} key={snippet.tick}
           style={{height: 300, padding: '20px 20px 20px 20px', width: '300px',}}
           >
-            <p>{tile.title} </p> 
+            <p>{snippet.title} </p> 
             <hr />
-            <p>{tile.text}</p>
+            <p>{snippet.text}</p>
             
             <GridListTileBar
-              title={tile.tick}
-              subtitle={tile.timestamp}
+              title={snippet.tick}
+              subtitle={snippet.timestamp}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
