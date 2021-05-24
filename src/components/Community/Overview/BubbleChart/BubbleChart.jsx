@@ -1,9 +1,29 @@
 import React from 'react'
 import Chart from "react-google-charts";
+import TickerCard from '../TickerCard/TickerCard';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+   
+  },
+  
+});
 
 const BubbleChart = () => {
+
+  const classes = useStyles();
+
   return (
     <div>
+      <div className={classes.root}>
+        <TickerCard/>
+      </div>
+      
       <Chart
   width={'50vw'}
   height={'500px'}
@@ -23,9 +43,9 @@ const BubbleChart = () => {
     ['USA', 78.09, 2.05, 'North America', 307007000],
   ]}
   options={{
-    title:
-      'Correlation between life expectancy, fertility rate ' +
-      'and population of some world countries (2010)',
+    // title:
+    //   'Correlation between life expectancy, fertility rate ' +
+    //   'and population of some world countries (2010)',
     hAxis: { title: 'Life Expectancy' },
     vAxis: { title: 'Fertility Rate' },
     bubble: {

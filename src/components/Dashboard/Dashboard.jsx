@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
   tickerContainer: {
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     marginBottom: '20px',
   },
   chartContainer: {
