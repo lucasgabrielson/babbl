@@ -131,7 +131,7 @@ const Overview = () => {
         <div className={classes.CarouselContainer}>
           <div className={classes.carousel}>
             <h3 className={classes.carouselHeaders}>Check out the top trending tweets</h3>
-              {/* <SnippetsCarousel /> */}
+              <SnippetsCarousel />
               
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './SnippetsCarousel.css';
 import { makeStyles } from '@material-ui/core/styles';
@@ -59,116 +59,114 @@ const useStyles = makeStyles((theme) => ({
 
 
 
- 
-  let tileData = [
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    
-  ];
+
   
 export default function SingleLineGridList() {
   const classes = useStyles();
   const dispatch = useDispatch();
   let tickers = useSelector( store => store.populated_tickers)
+  const [finalArray, setFinalArray] = useState([]);
 
-  // React.useEffect(() => {
-  //   dispatch({type: 'FETCH_TICKER_SNIPPETS' })
-    
-  // }, []);
+  
 
   const ticker_snippets = useSelector((store) => store.ticker_snippets);
  
 
-  // let AAPL_snippets = ticker_snippets.AAPL.snippets;
-  // let AMC_snippets = ticker_snippets.AMC.snippets;
-  // let AMD_snippets = ticker_snippets.AMD.snippets;
-  // let ARKK_snippets = ticker_snippets.ARKK.snippets;
-  // let EV_snippets = ticker_snippets.EV.snippets;
-  // let MSFT_snippets = ticker_snippets.MSFT.snippets;
-  // let NVDA_snippets = ticker_snippets.NVDA.snippets;
-  // let OS_snippets = ticker_snippets.OS.snippets;
-  // let PLTR_snippets = ticker_snippets.PLTR.snippets;
-  // let PTON_snippets = ticker_snippets.PTON.snippets;
-  // let SHOP_snippets = ticker_snippets.SHOP.snippets;
-  // let TSLA_snippets = ticker_snippets.TSLA.snippets;
+  let AAPL_snippets = ticker_snippets.AAPL.snippets;
+  let AMC_snippets = ticker_snippets.AMC.snippets;
+  let AMD_snippets = ticker_snippets.AMD.snippets;
+  let ARKK_snippets = ticker_snippets.ARKK.snippets;
+  let EV_snippets = ticker_snippets.EV.snippets;
+  let MSFT_snippets = ticker_snippets.MSFT.snippets;
+  let NVDA_snippets = ticker_snippets.NVDA.snippets;
+  let OS_snippets = ticker_snippets.OS.snippets;
+  let PLTR_snippets = ticker_snippets.PLTR.snippets;
+  let PTON_snippets = ticker_snippets.PTON.snippets;
+  let SHOP_snippets = ticker_snippets.SHOP.snippets;
+  let TSLA_snippets = ticker_snippets.TSLA.snippets;
 
-  const [snippets, setSnippets] = React.useState([
-   
-    {
-      title: 'This article',
-      text: 'This is my snippet',
-      tick: 'AMC',
-      timestamp: '2021-05-19'
-    },
-    {
-      title: 'This article',
-      text: 'This is my snippet',
-      tick: 'AMC',
-      timestamp: '2021-05-19'
-    },
-    {
-      title: 'This article',
-      text: 'This is my snippet',
-      tick: 'AMC',
-      timestamp: '2021-05-19'
-    },
+  const filterSnippetsArray = () => {
+    
 
-  ]);
-
-  React.useEffect(() => {
-    // dispatch({type: 'FETCH_POPULATED_TICKERS'});
-    // dispatch({type: 'FETCH_TICKER_SNIPPETS', payload: {tickers: tickers.meta.all_tickers.join(), days: 15, max: 10} })
-    const data = localStorage.getItem("ticker_snippets");
-    if (data) {
-      setSnippets(JSON.parse(data));
+    if(AAPL_snippets.length != 0){
+    AAPL_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+    if(AMC_snippets.length != 0){
+    AMC_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(AMD_snippets.length != 0){
+    AMD_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(ARKK_snippets.length != 0){
+    ARKK_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(EV_snippets.length != 0){
+    EV_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(MSFT_snippets.length != 0){
+    MSFT_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(NVDA_snippets.length != 0){
+    NVDA_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(OS_snippets.length != 0){
+    OS_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(PLTR_snippets.length != 0){
+    PLTR_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(PTON_snippets.length != 0){
+    PTON_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(SHOP_snippets.length != 0){
+    SHOP_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+  if(TSLA_snippets.length != 0){
+    TSLA_snippets.forEach(snippet => {
+      setFinalArray(finalArray => [...finalArray, snippet])
+    });
+  }
+      
+      
     }
-  }, []);
+    
+  
+
 
   React.useEffect(() => {
-   
-    localStorage.setItem("ticker_snippets", JSON.stringify(ticker_snippets.AMC.snippets));
-  });
-
- 
-
+    setFinalArray([]);
+    filterSnippetsArray();
+    console.log("this is finalArray", finalArray);
+  }, []);
   
+
+  console.log("this is finalArray", finalArray);
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={3}>
-        {snippets.map((snippet) => (
+        {finalArray.map((snippet) => (
           <GridListTile className={classes.GridListTile} key={snippet.tick}
           style={{height: 300, padding: '20px 20px 20px 20px', width: '300px',}}
           >
