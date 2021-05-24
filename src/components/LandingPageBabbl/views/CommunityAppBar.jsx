@@ -80,4 +80,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(CommmunityAppBar);
+export default connect(mapStateToProps)(CommunityAppBar);
