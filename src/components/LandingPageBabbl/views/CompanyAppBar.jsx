@@ -64,7 +64,7 @@ class CompanyAppBar extends Component {
             </div>
             <div className="af-class-subpage-header af-class-about-3">
               <div className="af-class-container w-container">
-                <h2 data-ix="fade-in-on-load" className="af-class-subpage-title">COMPANY NAME</h2>
+                <h2 className="af-class-subpage-title">{this.props.ticker.ticker_name}</h2>
                 <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Overview of COMPANY NAME's current information.</div>
               </div>
               </div>
@@ -77,7 +77,8 @@ class CompanyAppBar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    ticker: state.tickers
   }
 }
 
