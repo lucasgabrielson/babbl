@@ -6,10 +6,10 @@ import AutoComplete from '../AppBar/AutoComplete';
 import BookmarksAppBar from '../LandingPageBabbl/views/BookmarksAppBar';
 const columns = [
     { field: 'date', headerName: 'Date', width: 150 },
-    { field: 'title', headerName: 'Title',  width: 300},
-    { field: 'source', headerName: 'Source', width: 300 },
-    { field: 'mentions', headerName: 'Mentions', width: 300 },
-    { field: 'score', headerName: 'Babbl Score', width: 150 },
+  { field: 'ticker', headerName: 'Ticker', width: 300 },
+  { field: 'title', headerName: 'Title',  width: 300},
+  { field: 'mentions', headerName: 'Mentions', width: 300 },
+  { field: 'score', headerName: 'Babbl Score', width: 150 },
 ];
 
 function Bookmarks(){
