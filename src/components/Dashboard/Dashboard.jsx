@@ -11,7 +11,7 @@ import DashboardAppBar from '../LandingPageBabbl/views/DashboardAppBar';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '1500px',
+    // maxWidth: '1500px',
     // display: 'flex',
     margin: '20px',
   },
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
   chartContainer: {
     display: 'flex',
-     flexWrap: 'wrap',
+    //  flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
   watchlistContainer: {
