@@ -121,7 +121,7 @@ const Overview = () => {
           <BottomMovers />
         </div> */}
         <div className={classes.chartAndTen}>
-        <h3>Chart</h3>
+        {/* <h3>Chart</h3> */}
         <div className={classes.chartMovers}>
         <div className={classes.movers}>
           <h3>Daily Movers</h3>
