@@ -39,7 +39,17 @@ require('dotenv').config();
  */
 
 router.get('/', (req, res) => {
-    console.log( 'in GET /api/ticker_snippets', req.query);
+    if( req.query.type ) {
+        axios.get(`https://api.babbl.dev/v1/ticker_snippets?key=${process.env.BABBL_TOKEN}&tickers=${req.query.tickers}&max=${req.query.max}&days=${req.query.days}`)
+            .then( response => {
+                const array = (Object.entries(response.data)).flat()
+                res.send(array)
+            }).catch( err => {
+                console.log( 'error connecting with babbl api /ticker_snippets GET /:id');
+                res.sendStatus(500);
+            })
+    } else {
+        console.log( 'in GET /api/ticker_snippets', req.query);
         axios.get(`https://api.babbl.dev/v1/ticker_snippets?key=${process.env.BABBL_TOKEN}&tickers=${req.query.tickers}&max=${req.query.max}&days=${req.query.days}`)
             .then( response => {
                 res.send(response.data)
@@ -47,6 +57,7 @@ router.get('/', (req, res) => {
                 console.log( 'error connecting with babbl api /ticker_snippets GET');
                 res.sendStatus(500);
             })
+    }
 });
 
 module.exports = router;

@@ -11,15 +11,21 @@ require('dotenv').config();
  *  "data": [
  *      {
  *       "mentions": 124,
- *      "ticker": "PLTR"
+ *       "ticker": "PLTR"
+ *       "x_graph": 52.61171777557173,
+ *       "y_graph": 10.512755026641075
  *      },
  *     {
- *      "mentions": 1557,
- *      "ticker": "AAPL"
+ *       "mentions": 1557,
+ *       "ticker": "AAPL"
+ *       "x_graph": 52.61171777557173,
+ *       "y_graph": 10.512755026641075
  *      },
  *      {
- *      "mentions": 40,
- *      "ticker": "SNDL"
+ *       "mentions": 40,
+ *       "ticker": "SNDL"
+ *       "x_graph": 52.61171777557173,
+ *       "y_graph": 10.512755026641075
  *      },
  *      ...
  *  ],
