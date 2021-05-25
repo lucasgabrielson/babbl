@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
 const columns = [
   { field: 'date', headerName: 'Date', width: 150 },
@@ -11,27 +14,31 @@ const columns = [
   { field: 'score', headerName: 'Babbl Score', width: 150 },
   {
     field: "url",
-    headerName: "View Article",
+    headerName: "View",
     disableClickEventBubbling: true,
     renderCell: (params) => {
     const onClick = () => {
         console.log('url', params.row);
     };
-    return <Button variant="contained" size="small" onClick={onClick}>View</Button>;
+    return <IconButton variant="contained" size="small" onClick={onClick}>
+              <ChromeReaderModeIcon />
+            </IconButton>
     },
-    width: 175
+    width: 100
 },
     {
       field: "bookmark",
-      headerName: "Bookmark Article",
+      headerName: "Bookmark",
       disableClickEventBubbling: true,
       renderCell: (params) => {
       const onClick = () => {
           console.log('bookmark', params.row);
       };
-      return <Button variant="contained" size="small" onClick={onClick}>bookmark</Button>;
+      return  <IconButton variant="contained" size="small" onClick={onClick}>
+                <BookmarkBorderIcon />
+              </IconButton>
       },
-      width: 175
+      width: 100
   },
  
   ];
