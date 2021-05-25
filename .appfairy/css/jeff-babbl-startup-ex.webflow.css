@@ -3664,6 +3664,28 @@ figcaption {
   background-size: cover;
 }
 
+.team-photos {
+  diplay: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 40px;
+  float: left;
+  border-radius: 5px;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.team-image2 {
+  width: 170px;
+  height: 140px;
+  margin-right: 40px;
+  float: left;
+  border-radius: 5px;
+  background-image: url('../images/jeff.jpeg');
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
 .team-title {
   font-size: 20px;
   font-weight: 600;
