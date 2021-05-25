@@ -33,6 +33,7 @@ export default function TickerSelect() {
     }
 
     return (
+        <div>
         <Autocomplete
             id="ticker-select"
             style={{ width: 200, height: 12 }}
@@ -50,7 +51,7 @@ export default function TickerSelect() {
             )}
             renderInput={(params) => (
                 <TextField
-                style={{ height: 15 }}
+                style={{ height: 15, marginBottom: 20, color: 'white' }}
                 {...params}
                 label="Choose a ticker"
                 // variant="outlined"
@@ -61,5 +62,6 @@ export default function TickerSelect() {
                 />
             )}
         />
+        </div>
     );
 }
