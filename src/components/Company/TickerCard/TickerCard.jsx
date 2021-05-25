@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useHistory, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 

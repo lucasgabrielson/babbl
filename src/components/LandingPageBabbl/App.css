@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.team-photos {
+  diplay: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 40px;
+  float: left;
+  border-radius: 5px;
+  background-position: 50% 50%;
+  background-size: cover;
+}
