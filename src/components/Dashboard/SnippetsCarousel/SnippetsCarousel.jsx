@@ -59,45 +59,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
- 
-  let tileData = [
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    {
-      snippet: '"By some estimates, the Covid-19 diagnostics business coule fall by 35% in the next year, which helps explain the stonks steep discount. But Jefferies analyst Raj Denhoy thinks thos concerns are overblown."',
-      source: 'CNN',
-      author: 'author',
-    },
-    
-  ];
+
  
 export default function SingleLineGridList() {
   const classes = useStyles();
@@ -105,8 +67,8 @@ export default function SingleLineGridList() {
   const ticker_snippets = useSelector((store) => store.ticker_snippets);
   let finalArray = [];
 
-  // let AAPL_snippets = ticker_snippets.AAPL.snippets;
-  let AMC_snippets = ticker_snippets.AMC.snippets;
+  let AAPL_snippets = ticker_snippets.AAPL.snippets;
+  // let AMC_snippets = ticker_snippets.AMC.snippets;
   // let AMD_snippets = ticker_snippets.AMD.snippets;
   // let ARKK_snippets = ticker_snippets.ARKK.snippets;
   // let EV_snippets = ticker_snippets.EV.snippets;
@@ -122,9 +84,9 @@ export default function SingleLineGridList() {
 
   const snippetsArray = () => {
 
-    // let AAPL_snippets = ticker_snippets.AAPL.snippets;
+  
 
-    console.log('AMC Snippets', AMC_snippets);
+    
   }
   console.log('FinalArray', finalArray);
 
@@ -132,7 +94,7 @@ export default function SingleLineGridList() {
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={3}>
-        {AMC_snippets.map((tile) => (
+        {AAPL_snippets.map((tile) => (
           <GridListTile className={classes.GridListTile} key={tile.img}
           style={{height: 300, padding: '20px 20px 20px 20px', width: '300px',}}
           >
