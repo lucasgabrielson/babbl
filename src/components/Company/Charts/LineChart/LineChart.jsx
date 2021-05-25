@@ -11,7 +11,6 @@ function LineChart (){
   const times = useSelector((store)=> {return store.timeseries_sentiments})
   const prices = useSelector((store) => {return store.timeseries_prices})
 
-
   useEffect(()=> {
     dispatch({ type: 'FETCH_TIMESERIES_SENTIMENTS', payload: {tickers: params.id, days: 7} })
     dispatch({ type: 'FETCH_TIMESERIES_PRICES'})
@@ -20,16 +19,17 @@ function LineChart (){
 
     return(
         <>
-        {JSON.stringify(times)}
+        {JSON.stringify(params.id)}
 
-        {times.map(time => {
+        {/* {times[0].params.id.map(time => {
           return (
-            <div key={time.id}>
-              <p>{time.id}</p>
+            <div>
+              <p>{time.date}</p>
+              <p>{time.value}</p>
 
             </div>
           )
-        })}
+        })} */}
 
         <Chart
   width={'1200px'}
