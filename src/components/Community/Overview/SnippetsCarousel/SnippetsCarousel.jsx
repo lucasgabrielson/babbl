@@ -64,7 +64,8 @@ const useStyles = makeStyles((theme) => ({
 export default function SingleLineGridList() {
   const classes = useStyles();
   const dispatch = useDispatch();
-  let tickers = useSelector( store => store.populated_tickers)
+  
+  const user = useSelector( store => store.user)
   const [finalArray, setFinalArray] = useState([]);
 
   
@@ -72,18 +73,18 @@ export default function SingleLineGridList() {
   const ticker_snippets = useSelector((store) => store.ticker_snippets);
  
 
-  let AAPL_snippets = ticker_snippets.AAPL.snippets;
-  let AMC_snippets = ticker_snippets.AMC.snippets;
-  let AMD_snippets = ticker_snippets.AMD.snippets;
-  let ARKK_snippets = ticker_snippets.ARKK.snippets;
-  let EV_snippets = ticker_snippets.EV.snippets;
-  let MSFT_snippets = ticker_snippets.MSFT.snippets;
-  let NVDA_snippets = ticker_snippets.NVDA.snippets;
-  let OS_snippets = ticker_snippets.OS.snippets;
-  let PLTR_snippets = ticker_snippets.PLTR.snippets;
-  let PTON_snippets = ticker_snippets.PTON.snippets;
-  let SHOP_snippets = ticker_snippets.SHOP.snippets;
-  let TSLA_snippets = ticker_snippets.TSLA.snippets;
+  const AAPL_snippets = ticker_snippets.AMC.snippets;
+  const AMC_snippets = ticker_snippets.AMC.snippets;
+  const AMD_snippets = ticker_snippets.AMD.snippets;
+  const ARKK_snippets = ticker_snippets.ARKK.snippets;
+  const EV_snippets = ticker_snippets.EV.snippets;
+  const MSFT_snippets = ticker_snippets.MSFT.snippets;
+  const NVDA_snippets = ticker_snippets.NVDA.snippets;
+  const OS_snippets = ticker_snippets.OS.snippets;
+  const PLTR_snippets = ticker_snippets.PLTR.snippets;
+  const PTON_snippets = ticker_snippets.PTON.snippets;
+  const SHOP_snippets = ticker_snippets.SHOP.snippets;
+  const TSLA_snippets = ticker_snippets.TSLA.snippets;
 
   const filterSnippetsArray = () => {
     
@@ -156,7 +157,8 @@ export default function SingleLineGridList() {
 
 
   React.useEffect(() => {
-    setFinalArray([]);
+    
+    // setAAPL_snippets(ticker_snippets.AMC.snippets)
     filterSnippetsArray();
     console.log("this is finalArray", finalArray);
   }, []);

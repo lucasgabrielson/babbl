@@ -112,20 +112,7 @@ const useStyles = makeStyles((theme) => ({
 const Overview = () => {
 
   const classes = useStyles();
-  let tickers = useSelector( store => store.populated_tickers);
-  let latch = false;
-  const dispatch = useDispatch();
   
-  if( tickers.meta !== undefined && !latch ) {
-    latch = true;
-    dispatch({type: 'FETCH_TICKER_SNIPPETS_COMMUNITY', payload: {tickers: tickers.meta.all_tickers.join(), days: 3, max: 5, type: true} })
-
-  }
-
-  // React.useEffect(() => {
-  //   dispatch({type: 'FETCH_TICKER_SNIPPETS_COMMUNITY', payload: {tickers: tickers.meta.all_tickers.join(), days: 3, max: 5, type: true} })
-    
-  // }, []);
 
   const ticker_snippets = useSelector((store) => store.ticker_snippets);
 
@@ -138,7 +125,7 @@ const Overview = () => {
           <BottomMovers />
         </div> */}
         <div className={classes.chartAndTen}>
-        <h3>Chart</h3>
+        {/* <h3>Chart</h3> */}
         <div className={classes.chartMovers}>
         <div className={classes.movers}>
           <h3>Daily Movers</h3>
@@ -165,7 +152,7 @@ const Overview = () => {
           </div>
         </div>
         <News />
-        {JSON.stringify(ticker_snippets)}
+        {/* {JSON.stringify(ticker_snippets)} */}
     </div>
     
   )
