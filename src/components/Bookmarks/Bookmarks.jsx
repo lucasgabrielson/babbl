@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import { DataGrid } from '@material-ui/data-grid';
 import AutoComplete from '../AppBar/AutoComplete';
+import BookmarksAppBar from '../LandingPageBabbl/views/BookmarksAppBar';
 const columns = [
     { field: 'date', headerName: 'Date', width: 150 },
     { field: 'title', headerName: 'Title',  width: 300},
@@ -16,15 +17,15 @@ function Bookmarks(){
     const bookmarks = useSelector(store => store.userArticles)
     const params = useParams();
     return(
-        <>
-        <AutoComplete />
-        {bookmarks !== undefined &&
-        <div style={{ height: 400, width: '100%' }}>
-            <DataGrid rows={bookmarks} columns={columns} pageSize={5} checkboxSelection />
+        <div>
+            <BookmarksAppBar />
+            {bookmarks !== undefined &&
+            <div style={{ height: 400, width: '100%' }}>
+                <DataGrid rows={bookmarks} columns={columns} pageSize={5} />
+            </div>
+            }
+            {JSON.stringify(params)}
         </div>
-        }
-        {JSON.stringify(params)}
-        </>
     )
 }
 

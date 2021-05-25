@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import {useSelector, useDispatch} from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 
 import TopMovers from '../Overview/TopMovers/TopMovers';
 import BottomMovers from '../Overview/BottomMovers/BottomMovers';
 import BubbleChart from  '../Overview/BubbleChart/BubbleChart';
+import LineChart from '../Overview/LineChart/LineChart';
 import TopTen from '../Overview/TopTen/TopTen';
 import SnippetsCarousel from '../Overview/SnippetsCarousel/SnippetsCarousel';
 import News from '../News/News';
@@ -13,9 +15,10 @@ import News from '../News/News';
 const useStyles = makeStyles((theme) => ({
  
   overview: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
+   
+    // display: 'flex',
+    // flexWrap: 'wrap',
+    // justifyContent: 'center',
     // marginTop: '80px'
     // border: '2px solid black',
     
@@ -53,10 +56,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     borderRadius: '5px',
     boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    width: '100%',
+    minWidth: 'fit-content'
   },
   movers: {
     display:'flex',
     flexGrow: 1,
+    marginLeft: '20px',
     flexDirection: 'column',
     alignItems: 'center',
   },
@@ -66,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '0px 20px 0px 20px',
     border: '1px solid white',
     borderRadius: '4px',
+    
     // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
   },
   TopTenContainer: {
@@ -73,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     flexDirection: 'column',
     alignItems: 'center',
+    minWidth:'250px',
   },
   middle: {
     display:'flex',
@@ -84,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
     display:'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    
     
   },
   snippets: {
@@ -103,26 +112,47 @@ const useStyles = makeStyles((theme) => ({
 const Overview = () => {
 
   const classes = useStyles();
+  let tickers = useSelector( store => store.populated_tickers);
+  let latch = false;
+  const dispatch = useDispatch();
+  
+  if( tickers.meta !== undefined && !latch ) {
+    latch = true;
+    dispatch({type: 'FETCH_TICKER_SNIPPETS_COMMUNITY', payload: {tickers: tickers.meta.all_tickers.join(), days: 3, max: 5, type: true} })
+
+  }
+
+  // React.useEffect(() => {
+  //   dispatch({type: 'FETCH_TICKER_SNIPPETS_COMMUNITY', payload: {tickers: tickers.meta.all_tickers.join(), days: 3, max: 5, type: true} })
+    
+  // }, []);
+
+  const ticker_snippets = useSelector((store) => store.ticker_snippets);
 
   return (
     <div className={classes.overview}>
       
+        {/* <div className={classes.movers}>
+          <h3>Daily Movers</h3>
+          <TopMovers />
+          <BottomMovers />
+        </div> */}
+        <div className={classes.chartAndTen}>
+        <h3>Chart</h3>
+        <div className={classes.chartMovers}>
         <div className={classes.movers}>
           <h3>Daily Movers</h3>
           <TopMovers />
           <BottomMovers />
         </div>
-        <div className={classes.chartAndTen}>
-        <h3>Chart</h3>
-        <div className={classes.chartMovers}>
           <div className={classes.middle}>
-            {/* <h3>Sentiment Chart</h3> */}
+            
             <div className={classes.bubbleChartContainer}>
               <BubbleChart />
+              {/* <LineChart /> */}
             </div>
           </div>
           <div className={classes.TopTenContainer}>
-            {/* <h3>Top Ten Movers</h3> */}
             <TopTen />
           </div>
         </div>
@@ -135,6 +165,7 @@ const Overview = () => {
           </div>
         </div>
         <News />
+        {JSON.stringify(ticker_snippets)}
     </div>
     
   )

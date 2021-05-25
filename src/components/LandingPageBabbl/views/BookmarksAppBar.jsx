@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import { connect, useDispatch } from 'react-redux';
+import React from 'react';
+import { connect } from 'react-redux';
 import { createScope, map, transformProxies } from './helpers';
 import AutoComplete from '../../AppBar/AutoComplete';
 
@@ -10,7 +10,7 @@ const scripts = [
 
 let Controller
 
-class CompanyAppBar extends Component {
+class CommunityAppBar extends React.Component {
   static get Controller() {
     if (Controller) return Controller
 
@@ -22,7 +22,7 @@ class CompanyAppBar extends Component {
     }
     catch (e) {
       if (e.code == 'MODULE_NOT_FOUND') {
-        Controller = CompanyAppBar
+        Controller = CommunityAppBar
 
         return Controller
       }
@@ -33,7 +33,8 @@ class CompanyAppBar extends Component {
 
 
   render() {
-    const proxies = CompanyAppBar.Controller !== CompanyAppBar ? transformProxies(this.props.children) : {
+    const proxies = CommunityAppBar.Controller !== CommunityAppBar ? transformProxies(this.props.children) : {
+
     }
 
     return (
@@ -47,9 +48,10 @@ class CompanyAppBar extends Component {
           <div>
             <div data-collapse="medium" data-animation="default" data-duration={400} data-no-scroll={1} id="about" role="banner" className="af-class-navbar w-nav">
               <div className="w-container">
-                <a href="index.html" className="af-class-logo-block w-nav-brand"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                  <span className="af-class-nav-link af-class-light"><AutoComplete /></span>
+                  <a href="#/home" className="af-class-logo-block w-nav-brand"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
+
+                  <span className="af-class-nav-link af-class-light"><AutoComplete /></span>                
                   <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
                   <a href={`#/bookmarks/${this.props.user.id}`} className="af-class-nav-link af-class-light">Bookmarks</a>
@@ -64,21 +66,20 @@ class CompanyAppBar extends Component {
             </div>
             <div className="af-class-subpage-header af-class-about-3">
               <div className="af-class-container w-container">
-                <h2 className="af-class-subpage-title">{this.props.ticker.ticker_name}</h2>
-                <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Overview of COMPANY NAME's current information.</div>
+                <h2 data-ix="fade-in-on-load" className="af-class-subpage-title">Bookmarks</h2>
+                <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Huzzah</div>
               </div>
               </div>
             </div>
         </span>
     </span>
   );
-}
+ }
 }
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
-    ticker: state.tickers
+    user: state.user
   }
 }
 
@@ -89,4 +90,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps)(CompanyAppBar);
+export default connect(mapStateToProps)(CommunityAppBar);

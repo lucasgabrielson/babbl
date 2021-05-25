@@ -3,11 +3,11 @@ import { DataGrid } from '@material-ui/data-grid';
 import Button from '@material-ui/core/Button';
 
 const columns = [
-    { field: 'date', headerName: 'Date', width: 150 },
-    {field: 'title', headerName: 'Title',  width: 300},
-    { field: 'source', headerName: 'Source', width: 300 },
-    { field: 'mentions', headerName: 'Mentions', width: 300 },
-    { field: 'score', headerName: 'Babbl Score', width: 150 },
+  { field: 'date', headerName: 'Date', width: 150 },
+  { field: 'title', headerName: 'Title',  width: 300},
+  { field: 'source', headerName: 'Source', width: 150 },
+  { field: 'mentions', headerName: 'Mentions', width: 300 },
+  { field: 'score', headerName: 'Babbl Score', width: 150 },
     {
       field: "bookmark",
       headerName: "Bookmark Article",
@@ -18,7 +18,7 @@ const columns = [
       };
       return <Button variant="contained" size="small" onClick={onClick}>bookmark</Button>;
       },
-      width: 260
+      width: 175
   },
  
   ];
