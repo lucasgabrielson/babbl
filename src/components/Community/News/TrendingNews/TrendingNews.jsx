@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
 import Button from '@material-ui/core/Button';
 
-import {useDispatch, useSelector} from 'react-redux';
-
 import IconButton from '@material-ui/core/IconButton';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
@@ -36,11 +34,12 @@ const columns = [
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const dispatch = useDispatch();
+        const userID = useSelector((store) => {return store.user});
         
         const bookmark = (row) => {
           console.log('bookmark', params.row);
           row = {
-            userID: params.userID,
+            userID: userID.id,
             date: params.row.date,
             title: params.row.title,
             source: params.row.source,
@@ -50,16 +49,16 @@ const columns = [
           dispatch({ type: 'ADD_USER_ARTICLES', payload: row});
       };
 
-      return  <IconButton variant="contained" size="small" onClick={()=>bookmark(params.row)>
+      return  <IconButton variant="contained" size="small" onClick={()=>bookmark(params.row)}>
                 <BookmarkBorderIcon />
               </IconButton>
 
       },
       width: 100
   },
- 
+
   ];
-  
+
 
 function TrendingNews(){
 
