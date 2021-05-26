@@ -71,9 +71,9 @@ class About3View extends React.Component {
                 <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Our mission is to help retail investors conquer due diligence by automating finance media.</div>
               </div>
             </div>
-            <div className="af-class-section af-class-_2-column-pricing">
+            <div >
               <div className="af-class-container w-container">
-                <div className="af-class-team-member-list-wrapper w-dyn-list">
+                <div >
                   <div role="list" className="af-class-team-member-list w-dyn-items w-row">
                     <div role="listitem">
                       <div className="af-class-team-wrapper w-clearfix">
