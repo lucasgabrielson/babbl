@@ -136,7 +136,6 @@ const Overview = () => {
             
             <div className={classes.bubbleChartContainer}>
               <BubbleChart />
-              {/* <LineChart /> */}
             </div>
           </div>
           <div className={classes.TopTenContainer}>
@@ -147,12 +146,12 @@ const Overview = () => {
         <div className={classes.CarouselContainer}>
           <div className={classes.carousel}>
             <h3 className={classes.carouselHeaders}>Check out the top trending tweets</h3>
-              {/* <SnippetsCarousel /> */}
+              <SnippetsCarousel />
               
           </div>
         </div>
         <News />
-        {/* {JSON.stringify(ticker_snippets)} */}
+       
     </div>
     
   )
