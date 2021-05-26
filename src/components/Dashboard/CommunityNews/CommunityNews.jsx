@@ -40,7 +40,7 @@ const columns = [
             userID: userID.id,
             date: params.row.date,
             title: params.row.title,
-            source: params.row.source,
+            ticker: params.row.ticker,
             mentions: params.row.mentions,
             link: params.row.link
           }
