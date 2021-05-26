@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import React from 'react'
+import { connect } from 'react-redux';
 import { createScope, map, transformProxies } from './helpers'
 
 const scripts = [
@@ -52,7 +53,8 @@ class IndexView extends React.Component {
                   <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
                   <a href="#/bookmarks" className="af-class-nav-link af-class-light">Bookmarks</a>
-                  <a href="#/" className="af-class-nav-link af-class-light">LogOut</a>
+                  { this.props.user.id > 0 ? <a href="#/home" className="af-class-nav-link af-class-light">LogOut</a> :
+                  <a href="#/login" className="af-class-nav-link af-class-light">Login</a> }
                   <a href="#" className="af-class-navlink af-class-light af-class-nav-menu w-inline-block" />
                 </nav>
                 <div className="af-class-transparant-menu-button w-nav-button">
@@ -232,6 +234,12 @@ class IndexView extends React.Component {
   }
 }
 
-export default IndexView
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  }
+}
+
+export default connect(mapStateToProps)(IndexView);
 
 /* eslint-enable */
