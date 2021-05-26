@@ -61,13 +61,13 @@ const useStyles = makeStyles((theme) => ({
 
 
  
-export default function SingleLineGridList() {
+export default function SingleLineGridList({selectedTicker}, {setSelectedTicker}) {
   const classes = useStyles();
 
   const ticker_snippets = useSelector((store) => store.ticker_snippets);
-  let finalArray = [];
+  
 
-  let AAPL_snippets = ticker_snippets.AAPL.snippets;
+  let snippets = ticker_snippets[selectedTicker].snippets;
   // let AMC_snippets = ticker_snippets.AMC.snippets;
   // let AMD_snippets = ticker_snippets.AMD.snippets;
   // let ARKK_snippets = ticker_snippets.ARKK.snippets;
@@ -82,19 +82,13 @@ export default function SingleLineGridList() {
 
   
 
-  const snippetsArray = () => {
-
   
 
-    
-  }
-  console.log('FinalArray', finalArray);
-
-  snippetsArray();
+  
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={3}>
-        {AAPL_snippets.map((tile) => (
+        {snippets.map((tile) => (
           <GridListTile className={classes.GridListTile} key={tile.img}
           style={{height: 300, padding: '20px 20px 20px 20px', width: '300px',}}
           >

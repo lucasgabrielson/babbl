@@ -71,15 +71,17 @@ const useStyles = makeStyles({
 
 
 const Dashboard = () => {
+  
+  const [selectedTicker, setSelectedTicker] = useState('AAPL');
 
   useEffect(() => {
-    setSelectedTicker('AAPL');
+    setSelectedTicker('AMC');
   
   }, []);
 
   const classes = useStyles();
 
-  const [selectedTicker, setSelectedTicker] = useState('AAPL');
+  
   console.log("ticker on dashboard", selectedTicker);
   return (
     <div>
