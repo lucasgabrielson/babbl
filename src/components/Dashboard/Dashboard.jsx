@@ -71,15 +71,17 @@ const useStyles = makeStyles({
 
 
 const Dashboard = () => {
+  
+  const [selectedTicker, setSelectedTicker] = useState('AAPL');
 
   useEffect(() => {
-    setSelectedTicker('AAPL');
+    setSelectedTicker('AMC');
   
   }, []);
 
   const classes = useStyles();
 
-  const [selectedTicker, setSelectedTicker] = useState('AAPL');
+  
   console.log("ticker on dashboard", selectedTicker);
   return (
     <div>
@@ -97,7 +99,7 @@ const Dashboard = () => {
       </div>
       <div className={classes.CarouselContainer}>
         <div className={classes.carousel}>
-        <h3 className={classes.carouselHeaders}>Check out the top trending tweets</h3>
+        <h3 className={classes.carouselHeaders}>Check out the top trending article snippets</h3>
           <SnippetsCarousel selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </div>
       </div>

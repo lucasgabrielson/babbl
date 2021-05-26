@@ -145,7 +145,7 @@ const Overview = () => {
         </div>
         <div className={classes.CarouselContainer}>
           <div className={classes.carousel}>
-            <h3 className={classes.carouselHeaders}>Check out the top trending tweets</h3>
+            <h3 className={classes.carouselHeaders}>Check out the top trending article snippets</h3>
               <SnippetsCarousel />
               
           </div>
