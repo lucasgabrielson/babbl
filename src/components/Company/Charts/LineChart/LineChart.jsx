@@ -14,7 +14,7 @@ function LineChart (){
 
   useEffect(()=> {
     dispatch({ type: 'FETCH_TIMESERIES_SENTIMENTS', payload: {tickers: params.id, days: 7} })
-    dispatch({ type: 'FETCH_TIMESERIES_PRICES', payload: {ticker: params.id, days: '5d'} })
+    dispatch({ type: 'FETCH_TIMESERIES_PRICES', payload: {ticker: params.id, days: '7d'} })
   }, []);
   console.log('params:', params);
 
@@ -66,7 +66,7 @@ function LineChart (){
               title:
                 'Daily Closing Price and Babbl Score',
             },
-            width: 900,
+            width: 1000,
             height: 500,
             series: {
               // Gives each series an axis name that matches the Y-axis below.
