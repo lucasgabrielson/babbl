@@ -33,11 +33,12 @@ const columns = [
       disableClickEventBubbling: true,
       renderCell: (params) => {
         const dispatch = useDispatch();
+        const userID = useSelector((store) => {return store.user});
         
         const bookmark = (row) => {
           console.log('bookmark', params.row);
           row = {
-            userID: params.userID,
+            userID: userID.id,
             date: params.row.date,
             title: params.row.title,
             source: params.row.source,
@@ -54,9 +55,9 @@ const columns = [
       },
       width: 100
   },
- 
+
   ];
-  
+
 
 function TrendingNews(){
 
