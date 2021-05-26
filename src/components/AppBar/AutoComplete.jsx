@@ -9,6 +9,7 @@ import {useDispatch, useSelector} from 'react-redux';
 const useStyles = makeStyles({
   option: {
     fontSize: 15,
+    color: 'white',
     '& > span': {
       marginRight: 10,
       fontSize: 18,
