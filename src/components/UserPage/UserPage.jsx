@@ -10,9 +10,9 @@ function UserPage() {
     <div>
     <UserPageAppBar />
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
+      <h2>Hey, {user.username}! This is going to be a lot of fun!</h2>
       <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
+      {/* <LogOutButton className="btn" /> */}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 
 import TickerCard from '../Dashboard/TickerCard/TickerCard';
@@ -11,7 +11,7 @@ import DashboardAppBar from '../LandingPageBabbl/views/DashboardAppBar';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: '1500px',
+    // maxWidth: '1500px',
     // display: 'flex',
     margin: '20px',
   },
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
   chartContainer: {
     display: 'flex',
-     flexWrap: 'wrap',
+    //  flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
   watchlistContainer: {
@@ -72,27 +72,33 @@ const useStyles = makeStyles({
 
 const Dashboard = () => {
 
+  useEffect(() => {
+    setSelectedTicker('AAPL');
+  
+  }, []);
+
   const classes = useStyles();
 
-  
+  const [selectedTicker, setSelectedTicker] = useState('AAPL');
+  console.log("ticker on dashboard", selectedTicker);
   return (
     <div>
       <DashboardAppBar />
     <div className={classes.root}>
       <div className={classes.tickerContainer}>
-        <TickerCard />
+        <TickerCard selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
       </div>
       <div className={classes.chartContainer}>
-        <Tabs />
+        <Tabs selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         <div className={classes.watchlistContainer}>
           <h4 className={classes.title}>Watchlist</h4>
-          <WatchList />
+          <WatchList selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </div>
       </div>
       <div className={classes.CarouselContainer}>
         <div className={classes.carousel}>
         <h3 className={classes.carouselHeaders}>Check out the top trending tweets</h3>
-          {/* <SnippetsCarousel /> */}
+          <SnippetsCarousel selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </div>
       </div>
 

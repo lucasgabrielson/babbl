@@ -25,7 +25,7 @@ const Community = () => {
     <CommunityAppBar />
       <div className={classes.communityContainer}>
       <Overview />
-      {/* <News /> */}
+      
       </div>
     </div>
   )

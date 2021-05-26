@@ -54,12 +54,11 @@ class Footer extends React.Component {
                   </div>
                   <div className="af-class-footer-menu-column w-col w-col-6">
                     <a href="#/about" className="af-class-footer-inline-link">About</a>
-                    <a href="#/pricing" className="af-class-footer-inline-link">Pricing</a>
                     <a href="#/contact" className="af-class-footer-inline-link">Contact</a>
                   </div>
                   <div className="af-class-footer-social-col-right w-col w-col-3">
                     <a href="http://www.facebook.com" target="_blank" className="af-class-footer-social-icon w-inline-block"><img src="images/Icon-facebook_2.png" alt className="af-class-footer-small-social-icon" /></a>
-                    <a href="http://www.twitter.com" target="_blank" className="af-class-footer-social-icon w-inline-block"><img src="images/Icon-twitter.png" alt className="af-class-footer-small-social-icon" /></a>
+                    <a href="http://www.twitter.com/babbldev" target="_blank" className="af-class-footer-social-icon w-inline-block"><img src="images/Icon-twitter.png" alt className="af-class-footer-small-social-icon" /></a>
                     <a href="http://www.google.com" target="_blank" className="af-class-footer-social-icon w-inline-block"><img src="images/Icon-google.png" alt className="af-class-footer-small-social-icon" /></a>
                   </div>
                 </div>
