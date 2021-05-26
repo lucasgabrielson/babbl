@@ -99,14 +99,14 @@ const Overview = () => {
         <div className={classes.tickerCard}>
         <TickerCard />
         </div>
-        <div className={classes.chartAndTen}>
-        <div className={classes.chartMovers}>
+        
+        
           <div className={classes.middle}>
             <div className={classes.bubbleChartContainer}>
               <Charts />
             </div>
-          </div>
-        </div>
+          
+        
         </div>
         <div className={classes.CarouselContainer}>
           <div className={classes.carousel}>
