@@ -89,16 +89,16 @@ const Dashboard = () => {
         <TickerCard selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
       </div>
       <div className={classes.chartContainer}>
-        <Tabs SelectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
+        <Tabs selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         <div className={classes.watchlistContainer}>
           <h4 className={classes.title}>Watchlist</h4>
-          <WatchList SelectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
+          <WatchList selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </div>
       </div>
       <div className={classes.CarouselContainer}>
         <div className={classes.carousel}>
         <h3 className={classes.carouselHeaders}>Check out the top trending tweets</h3>
-          <SnippetsCarousel SelectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
+          <SnippetsCarousel selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </div>
       </div>
 

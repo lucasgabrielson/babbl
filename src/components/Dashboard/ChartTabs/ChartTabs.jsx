@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function FullWidthTabs() {
+export default function FullWidthTabs({selectedTicker}, {setSelectedTicker}) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -97,10 +97,10 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <LineChart />
+          <LineChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <BubbleChart />
+          <BubbleChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </TabPanel>
         
       </SwipeableViews>
