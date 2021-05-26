@@ -12,7 +12,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* timeseriesPrices(action) {
     try {
         console.log( 'timeseriesPrices', action.payload );
-        const response = yield axios.get(`/api/timeseries_prices/?days=${action.payload.days}&tickers=${action.payload.ticker}`);
+        const response = yield axios.get(`/api/timeseries_prices/?days=${action.payload.days}&ticker=${action.payload.ticker}`);
         yield put({ type: 'SET_TIMESERIES_PRICES', payload: response.data} )
     } catch (error) {
         console.log('Error getting timeseries sentiments from api', error);

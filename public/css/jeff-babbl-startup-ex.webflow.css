@@ -1,3 +1,15 @@
+
+.af-class-picture-row {
+  display: flex;
+  align-items: center;
+}
+
+.af-class-picture-column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+
 .af-view {
   height: 100%;
   background-color: #424549;

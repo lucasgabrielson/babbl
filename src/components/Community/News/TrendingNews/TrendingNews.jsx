@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
+
 const columns = [
   { field: 'date', headerName: 'Date', width: 150 },
   { field: 'ticker', headerName: 'Ticker', width: 150 },
@@ -31,19 +32,32 @@ const columns = [
       headerName: "Bookmark",
       disableClickEventBubbling: true,
       renderCell: (params) => {
-      const onClick = () => {
+        const dispatch = useDispatch();
+        const userID = useSelector((store) => {return store.user});
+        
+        const bookmark = (row) => {
           console.log('bookmark', params.row);
+          row = {
+            userID: userID.id,
+            date: params.row.date,
+            title: params.row.title,
+            ticker: params.row.ticker,
+            mentions: params.row.mentions,
+            link: params.row.link
+          }
+          dispatch({ type: 'ADD_USER_ARTICLES', payload: row});
       };
-      return  <IconButton variant="contained" size="small" onClick={onClick}>
+
+      return  <IconButton variant="contained" size="small" onClick={()=>bookmark(params.row)}>
                 <BookmarkBorderIcon />
               </IconButton>
+
       },
       width: 100
   },
- 
+
   ];
-  
-  
+
 
 function TrendingNews(){
 

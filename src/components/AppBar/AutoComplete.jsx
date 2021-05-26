@@ -33,9 +33,11 @@ export default function TickerSelect() {
     }
 
     return (
+        <div>
         <Autocomplete
             id="ticker-select"
-            style={{ width: 300 }}
+            openOnFocus = {true}
+            style={{ width: 200, height: 25, position: 'relative', right: -10, bottom: 19}}
             options={tickers}
             classes={{
                 option: classes.option,
@@ -50,9 +52,10 @@ export default function TickerSelect() {
             )}
             renderInput={(params) => (
                 <TextField
+                style={{ height: 15, marginBottom: 20 }}
                 {...params}
-                label="Choose a ticker"
-                variant="outlined"
+                // label="Choose a ticker"
+                // variant="outlined"
                 inputProps={{
                     ...params.inputProps,
                     autoComplete: 'new-password', // disable autocomplete and autofill
@@ -60,5 +63,6 @@ export default function TickerSelect() {
                 />
             )}
         />
+        </div>
     );
 }
