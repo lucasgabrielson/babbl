@@ -75,26 +75,24 @@ class About3View extends React.Component {
               <div className="af-class-container w-container">
                 <div className="af-class-team-member-list-wrapper w-dyn-list">
                   <div role="list" className="af-class-team-member-list w-dyn-items w-row">
-                    <div role="listitem" className="af-class-team-member-item w-dyn-item w-col w-col-6">
+                    <div role="listitem">
                       <div className="af-class-team-wrapper w-clearfix">
-                        <div className="af-class-team-image" />
-                        <div className="af-class-team-image1" />
-                        <div className="af-class-team-image2" />
-                        <div className="af-class-team-title" />
                         <div className="af-class-team-title af-class-title" />
                         <p className="af-class-team-description" />
                       </div>
-                      <div className="team-photos">
-                          <img src={Sam} alt="Sam photo" height={200} width={200}/>
-                          <img src={Ram} alt="Ram photo" height={200} width={200}/>
-                          <img src={Jeff} alt="Jeff photo" height={200} width={200}/>
+                      <div class="af-class-picture-row">
+                        <div class="af-class-picture-column">
+                          <img src={Sam} alt="Sam" />
+                        </div>
+                        <div class="af-class-picture-column">
+                          <img src={Ram} alt="Ramsey" />
+                        </div>
+                        <div class="af-class-picture-column">
+                          <img src={Jeff} alt="Jeff" />
+                        </div>
                       </div>
-                      
                     </div>
                   </div>
-                  {/* <div className="af-class-empty-state w-dyn-empty">
-                    <div>No items found.</div>
-                  </div> */}
                 </div>
                 <div className="af-class-top-line-block">
                   <p className="af-class-paragraph">Babbl is a technology company that builds sentiment analysis tools for retail investors. Stock &amp; crypto traders young, old, novice and adept can use our software to improve their research process and gauge the mood of the markets more effectively. Though we are just getting started, our long-term goal is to be the one-stop-shop for all of your investment media analysis.</p>
@@ -116,26 +114,6 @@ class About3View extends React.Component {
                 </div>
               </div>
             </div>
-            {/* <div className="af-class-simple-footer">
-              <div className="af-class-container w-container">
-                <div className="af-class-footer-row w-row">
-                  <div className="af-class-footer-logo-column-left w-col w-col-3"><img src="images/Untitled-design-15.png" loading="lazy" alt className="af-class-image-4" />
-                    <div className="af-class-footer-logo">babbl, LLC</div>
-                    <div className="af-class-footer-logo af-class-subtitle">Conquering Due Diligence</div>
-                  </div>
-                  <div className="af-class-footer-menu-column w-col w-col-6">
-                    <a href="about" className="af-class-footer-inline-link">About</a>
-                    <a href="pricing" className="af-class-footer-inline-link">Pricing</a>
-                    <a href="contact" className="af-class-footer-inline-link">Contact</a>
-                  </div>
-                  <div className="af-class-footer-social-col-right w-col w-col-3">
-                    <a href="http://www.facebook.com" target="_blank" className="af-class-footer-social-icon w-inline-block"><img src="images/Icon-facebook_2.png" alt className="af-class-footer-small-social-icon" /></a>
-                    <a href="http://www.twitter.com" target="_blank" className="af-class-footer-social-icon w-inline-block"><img src="images/Icon-twitter.png" alt className="af-class-footer-small-social-icon" /></a>
-                    <a href="http://www.google.com" target="_blank" className="af-class-footer-social-icon w-inline-block"><img src="images/Icon-google.png" alt className="af-class-footer-small-social-icon" /></a>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             <div className="af-class-simple-bottom-footer" />
             {/* [if lte IE 9]><![endif] */}
           </div>
