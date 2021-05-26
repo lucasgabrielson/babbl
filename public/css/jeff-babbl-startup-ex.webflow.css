@@ -9,6 +9,10 @@
   padding: 5px;
 }
 
+.af-class-about-picture {
+  border-radius: 50%;
+  margin: 20px;
+}
 
 .af-view {
   height: 100%;
