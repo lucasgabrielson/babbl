@@ -1,6 +1,10 @@
 import React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import Button from '@material-ui/core/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import IconButton from '@material-ui/core/IconButton';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+
 
 const columns = [
     { field: 'date', headerName: 'Date', width: 150 },
@@ -13,12 +17,26 @@ const columns = [
       headerName: "Bookmark Article",
       disableClickEventBubbling: true,
       renderCell: (params) => {
-      const onClick = () => {
+        const dispatch = useDispatch();
+        const userID = useSelector((store) => {return store.user});
+
+      const bookmark = (row) => {
           console.log('bookmark', params.row);
+          row = {
+            userID: userID.id,
+            date: params.row.date,
+            title: params.row.title,
+            source: params.row.source,
+            mentions: params.row.mentions,
+            link: params.row.link
+          }
+          dispatch({type: 'ADD_USER_ARTICLES', payload: row});
       };
-      return <Button variant="contained" size="small" onClick={onClick}>bookmark</Button>;
+      return  <IconButton variant="contained" size="small" onClick={()=>bookmark(params.row)}>
+                <BookmarkBorderIcon />
+              </IconButton>
       },
-      width: 260
+      width: 100
   },
  
   ];
