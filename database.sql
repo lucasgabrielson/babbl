@@ -22,7 +22,8 @@ CREATE TABLE articles (
 	FOREIGN KEY (user_id) REFERENCES "user"(id),
 	"date" DATE,
 	"title" VARCHAR(255),
-	"source" VARCHAR(50),
+	"ticker" VARCHAR(50),
 	"mentions" VARCHAR(255),
+	"score" VARCHAR(50),
 	"link" VARCHAR(255)
 );

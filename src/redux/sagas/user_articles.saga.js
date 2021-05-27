@@ -14,7 +14,7 @@ function* fetchUserArticles(action) {
 function* addUserArticle(action) {
   try {
       console.log( 'addUserArticle' );
-      const response = yield axios.post(`/api/user_articles/?id=${action.payload.userID}&date=${action.payload.date}&title=${action.payload.title}&source=${action.payload.source}&mentions=${action.payload.mentions}&link${action.payload.link}`);
+      const response = yield axios.post(`/api/user_articles/?id=${action.payload.userID}&date=${action.payload.date}&title=${action.payload.title}&ticker=${action.payload.ticker}&mentions=${action.payload.mentions}&score=${action.payload.score}&link${action.payload.link}`);
       yield put({ type: 'FETCH_USER_ARTICLES', payload: action.payload.userID } )
   } catch (error) {
       console.log('Error adding user articles from database', error);

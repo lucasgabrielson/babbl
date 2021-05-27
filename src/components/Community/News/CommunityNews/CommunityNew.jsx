@@ -17,29 +17,18 @@ const columns = [
     headerName: "View",
     disableClickEventBubbling: true,
     renderCell: (params) => {
-      const dispatch = useDispatch();
-      const userID = useSelector((store) => {return store.user});
-
-    const bookmark = (row) => {
-        console.log('bookmark', params.row);
-        row = {
-          userID: userID.id,
-          date: params.row.date,
-          title: params.row.title,
-          ticker: params.row.ticker,
-          mentions: params.row.mentions,
-          link: params.row.link
-        }
-        dispatch({type: 'ADD_USER_ARTICLES', payload: row});
+    const onClick = () => {
+        console.log('url', params.row);
     };
-    return  <IconButton variant="contained" size="small" onClick={()=>bookmark(params.row)}>
-              <BookmarkBorderIcon />
+    return <IconButton variant="contained" size="small" onClick={onClick}>
+              <ChromeReaderModeIcon />
             </IconButton>
     },
     width: 100
 },
+    
 
-];
+  ];
 
 function CommunityNews(){
 
