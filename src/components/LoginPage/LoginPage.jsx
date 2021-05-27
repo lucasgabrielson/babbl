@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
+  LogInAppBar: {
+    marginBottom: '300px',
+  }
 }));
 
 
@@ -22,7 +25,9 @@ function LoginPage() {
 
   return (
     <div>
+      <div className="logInAppBar">
       <LogInAppBar />
+      </div>
       <LoginForm />
 
       <center>

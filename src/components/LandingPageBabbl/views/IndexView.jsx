@@ -80,8 +80,8 @@ class IndexView extends React.Component {
                     <div className="af-class-intro-block-overlay" />
                   </a>
                   <div className="af-class-intro-block-text-wrapper">
-                    <div className="af-class-intro-block-title">Watchlist</div>
-                    <p>Follow companies and catch the sentiment trends early.</p>
+                    <div className="af-class-intro-block-title">Community</div>
+                    <p>See what is happening in the Babbl world for stocks and news.</p>
                   </div>
                 </div>
                 <div data-ix="fade-in-zoom-3" className="af-class-home-intro-wrapper af-class-mid">
@@ -91,15 +91,15 @@ class IndexView extends React.Component {
                     <div className="af-class-intro-block-title">Dashboard</div>
                     <p>Track company sentiment at the click of a button while keeping up with the latest news and company developments.</p>
                   </div>
-                  <a href="pricing-3.html" className="af-class-button w-hidden-small w-hidden-tiny w-button">Become a member</a>
+                  <a href="#/registration" className="af-class-button w-hidden-small w-hidden-tiny w-button">Become a member</a>
                 </div>
                 <div data-ix="fade-in-zoom-2" className="af-class-home-intro-wrapper af-class-right">
                   <a href="pricing-3.html" className="af-class-home-intro-link-block af-class-_3 w-inline-block">
                     <div className="af-class-intro-block-overlay" />
                   </a>
                   <div className="af-class-intro-block-text-wrapper af-class-last">
-                    <div className="af-class-intro-block-title">Market Research</div>
-                    <p>Practice due diligence with company fundamentals and insider activity.</p>
+                    <div className="af-class-intro-block-title">Company Pages</div>
+                    <p>Get all the info for your most important stocks in one place.</p>
                   </div>
                 </div>
                 <a href="#homepages" className="af-class-button w-hidden-main w-hidden-medium w-button">Become a member</a>
