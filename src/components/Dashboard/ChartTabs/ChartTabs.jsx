@@ -96,9 +96,9 @@ export default function FullWidthTabs({selectedTicker}, {setSelectedTicker}) {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        {/* <TabPanel value={value} index={0} dir={theme.direction}>
           <LineChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
-        </TabPanel>
+        </TabPanel> */}
         <TabPanel value={value} index={1} dir={theme.direction}>
           <BubbleChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </TabPanel>

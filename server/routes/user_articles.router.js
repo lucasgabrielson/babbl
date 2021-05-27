@@ -42,8 +42,8 @@ router.get('/:id', (req, res) => {
  */
 router.post('/', (req, res) => {
     console.log( 'in api/user_articles POST' );
-    let sqlText = `INSERT INTO articles (user_id, date, title, source, mentions, link) VALUES ($1, $2, $3, $4, $5, $6)`;
-        pool.query(sqlText, [req.query.id, req.query.date, req.query.title, req.query.source, req.query.mentions, req.query.link])
+    let sqlText = `INSERT INTO articles (user_id, date, title, ticker, mentions, score, link) VALUES ($1, $2, $3, $4, $5, $6, $7)`;
+        pool.query(sqlText, [req.query.id, req.query.date, req.query.title, req.query.ticker, req.query.mentions, req.query.score, req.query.link])
             .then( results => {
                 res.sendStatus(201);
             }).catch( err => {
