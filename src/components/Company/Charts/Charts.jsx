@@ -96,10 +96,10 @@ function TabPanel(props) {
           onChangeIndex={handleChangeIndex}
         >
           <TabPanel value={value} index={0} dir={theme.direction}>
-            <LineChart />
+            <BubbleChart />
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
-            <BubbleChart />
+            {/* <LineChart /> */}
           </TabPanel>
           
         </SwipeableViews>

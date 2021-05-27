@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
+
 const columns = [
   { field: 'date', headerName: 'Date', width: 150 },
   { field: 'ticker', headerName: 'Ticker', width: 150 },

@@ -86,8 +86,8 @@ export default function FullWidthTabs({selectedTicker}, {setSelectedTicker}) {
           // variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Sentiment Chart" {...a11yProps(0)} />
-          <Tab label="Article Chart" {...a11yProps(1)} />
+          <Tab label="Sentiment Chart" {...a11yProps(1)} />
+          <Tab label="Article Chart" {...a11yProps(2)} />
           
         </Tabs>
       </Box>
@@ -96,11 +96,12 @@ export default function FullWidthTabs({selectedTicker}, {setSelectedTicker}) {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        {/* <TabPanel value={value} index={0} dir={theme.direction}>
-          <LineChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
-        </TabPanel> */}
-        <TabPanel value={value} index={1} dir={theme.direction}>
+        <TabPanel value={value} index={0} dir={theme.direction}>
           <BubbleChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
+        </TabPanel>
+
+        <TabPanel value={value} index={1} dir={theme.direction}>
+          {/* <LineChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/> */}
         </TabPanel>
         
       </SwipeableViews>

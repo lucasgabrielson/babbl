@@ -60,7 +60,11 @@ const useStyles = makeStyles({
     // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
     
   },
+  snippetsTitle: {
+    textAlign: 'left',
+  },
   carouselHeaders: {
+    
     padding: '20px',
     margin: '10px',
     color: 'gray',
@@ -97,9 +101,12 @@ const Dashboard = () => {
           <WatchList selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </div>
       </div>
+      <div className={classes.snippetsTitle}>
+        <h3 className={classes.carouselHeaders}>Check out the top trending article snippets</h3>
+      </div>
       <div className={classes.CarouselContainer}>
         <div className={classes.carousel}>
-        <h3 className={classes.carouselHeaders}>Check out the top trending article snippets</h3>
+        
           <SnippetsCarousel selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </div>
       </div>
