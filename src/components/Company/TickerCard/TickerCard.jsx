@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     
     width: '600px',
     height: '150px',
-    border: '2px solid gray',
+    border: '2px solid rgb(67, 52, 235, .8)',
     borderRadius: '5px',
     // padding: '20px',
   },
@@ -50,12 +50,6 @@ console.log(params);
   return (
     
     <div className={classes.root}>
-      {/* <div className={classes.column}>
-        <h5>Ticker</h5>
-        <h5>price</h5>
-        <h5>change</h5>
-        <h5>points</h5>
-      </div> */}
       
       <div className={classes.row}>
         <div className={classes.column}>

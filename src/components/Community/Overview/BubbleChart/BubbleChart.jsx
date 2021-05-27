@@ -107,14 +107,13 @@ const BubbleChart = () => {
     
   ]}
   options={{
-    theme: {chartArea: {width: '80%', height: '60%'}},
+    theme: {chartArea: {width: '80%', height: '80%'}},
     explorer: {},
     sizeAxis: {minSize: 15, maxSize: 50},
-    title: 'positive',
     titlePosition: 'right',
     colorAxis: {  minValue: -10, maxValue: 80,  colors: ['white', '#4334eb']},
-    hAxis: { title: 'Negative', viewWindow: {min: -100, max: 100 }},
-    vAxis: { title: 'Past', viewWindow: {min: -100, max: 100 }, },
+    hAxis: { title: 'Past -------- Future', viewWindow: {min: -100, max: 100 }},
+    vAxis: { title: 'Negative -------- Positive', viewWindow: {min: -100, max: 100 }, },
     bubble: {
       textStyle: {
         fontSize: 9,

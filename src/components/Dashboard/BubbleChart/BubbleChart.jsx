@@ -115,8 +115,8 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
     explorer: {},
     sizeAxis: {minSize: 10, maxSize: 25},
     colorAxis: {minValue: -10, maxValue: 80,  colors: ['white', '#4334eb']},
-    hAxis: { title: 'Past-Future outlook', viewWindow: {min: -100, max: 100 }},
-    vAxis: { title: 'Bullish sediment', viewWindow: {min: -100, max: 100 }, },
+    hAxis: { title: 'Past -------- Future', viewWindow: {min: -100, max: 100 }},
+    vAxis: { title: 'Negative -------- Positive', viewWindow: {min: -100, max: 100 }, },
     bubble: {
       textStyle: {
         fontSize: 9,
