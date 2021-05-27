@@ -42,6 +42,7 @@ const columns = [
             title: params.row.title,
             ticker: params.row.ticker,
             mentions: params.row.mentions,
+            score: params.row.score,
             link: params.row.link
           }
           dispatch({type: 'ADD_USER_ARTICLES', payload: row});
