@@ -85,7 +85,7 @@ const BubbleChart = () => {
   
   return (
     <div>
-      
+      <h3 className={classes.root}>Article sediments</h3>
       <Chart
   width={'60vw'}
   height={'500px'}

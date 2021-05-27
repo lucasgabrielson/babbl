@@ -125,7 +125,7 @@ const Overview = () => {
           <BottomMovers />
         </div> */}
         <div className={classes.chartAndTen}>
-        {/* <h3>Chart</h3> */}
+        
         <div className={classes.chartMovers}>
         <div className={classes.movers}>
           <h3>Daily Movers</h3>
@@ -135,10 +135,12 @@ const Overview = () => {
           <div className={classes.middle}>
             
             <div className={classes.bubbleChartContainer}>
+           
               <BubbleChart />
             </div>
           </div>
           <div className={classes.TopTenContainer}>
+          <h3>Top Mentions</h3>
             <TopTen />
           </div>
         </div>
