@@ -85,7 +85,7 @@ const BubbleChart = () => {
   
   return (
     <div>
-      <h3 className={classes.root}>Article sediments</h3>
+      <h3 className={classes.root}>Article Sentiments</h3>
       <Chart
   width={'60vw'}
   height={'500px'}
@@ -107,12 +107,14 @@ const BubbleChart = () => {
     
   ]}
   options={{
-    theme: {chartArea: {width: '80%', height: '80%'}},
+    theme: {chartArea: {width: '80%', height: '60%'}},
     explorer: {},
     sizeAxis: {minSize: 15, maxSize: 50},
-    colorAxis: {minValue: -10, maxValue: 80,  colors: ['white', '#4334eb']},
-    hAxis: { title: 'Past-Future outlook', viewWindow: {min: -100, max: 100 }},
-    vAxis: { title: 'Bullish sediment', viewWindow: {min: -100, max: 100 }, },
+    title: 'positive',
+    titlePosition: 'right',
+    colorAxis: {  minValue: -10, maxValue: 80,  colors: ['white', '#4334eb']},
+    hAxis: { title: 'Negative', viewWindow: {min: -100, max: 100 }},
+    vAxis: { title: 'Past', viewWindow: {min: -100, max: 100 }, },
     bubble: {
       textStyle: {
         fontSize: 9,

@@ -6,17 +6,31 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    width: '400px',
-    height: '75px',
+    
+    width: '600px',
+    height: '150px',
     border: '2px solid gray',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    // padding: '20px',
+  },
+  row: {
+    display: 'flex',
+    alignItems: 'space-between',
+    justifyContent: 'space-around',
+  },
+  column: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    
+    // color: 'gray',
+    // padding: 0,
+    // margin: 0,
   },
   
   title: {
-    fontSize: 14,
+    fontSize: 15,
+    color: 'gray',
   },
   pos: {
     marginBottom: 12,
@@ -34,11 +48,33 @@ export default function TickerCard() {
   }, []); 
 console.log(params);
   return (
+    
     <div className={classes.root}>
-      <h3>{params.id}</h3>
-      <h5>${ticker.current_price}</h5>
-      <h5>{ticker.percent_change}%</h5>
-      <h5>{ticker.points_change}</h5>
+      {/* <div className={classes.column}>
+        <h5>Ticker</h5>
+        <h5>price</h5>
+        <h5>change</h5>
+        <h5>points</h5>
+      </div> */}
+      
+      <div className={classes.row}>
+        <div className={classes.column}>
+          <h4 className={classes.title}>Ticker</h4>
+          <h1>{params.id}</h1>
+        </div>
+        <div className={classes.column}>
+          <h4 className={classes.title}>Price</h4>
+          <h3>${ticker.current_price}</h3>
+        </div>
+        <div className={classes.column}>
+          <h4 className={classes.title}>Change</h4>
+          <h3>{ticker.percent_change}%</h3>
+        </div>
+        <div className={classes.column}>
+          <h4 className={classes.title}>Points</h4>
+          <h3>{ticker.points_change}</h3>
+        </div>
+      </div>
     </div>
   );
 }

@@ -50,16 +50,16 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
   let four_sediment = four_x + four_y;
   // let four_mentions = Number(populated_tickers.data[3].mentions.toFixed(2) / 100);
 
-  let five_x = Number(babbl_api_articles[selectedTicker][4].x_graph.toFixed(2));
-  let five_y = Number(babbl_api_articles[selectedTicker][4].y_graph.toFixed(2));
-  let five_tick = selectedTicker;
-  let five_sediment = five_x + five_y;
-  // let five_mentions = Number(populated_tickers.data[4].mentions.toFixed(2) / 100);
+  // let five_x = Number(babbl_api_articles[selectedTicker][4].x_graph.toFixed(2));
+  // let five_y = Number(babbl_api_articles[selectedTicker][4].y_graph.toFixed(2));
+  // let five_tick = selectedTicker;
+  // let five_sediment = five_x + five_y;
+  // // let five_mentions = Number(populated_tickers.data[4].mentions.toFixed(2) / 100);
 
-  let six_x = Number(babbl_api_articles[selectedTicker][5].x_graph.toFixed(2));
-  let six_y = Number(babbl_api_articles[selectedTicker][5].y_graph.toFixed(2));
-  let six_tick = selectedTicker;
-  let six_sediment = six_x + six_y;
+  // let six_x = Number(babbl_api_articles[selectedTicker][5].x_graph.toFixed(2));
+  // let six_y = Number(babbl_api_articles[selectedTicker][5].y_graph.toFixed(2));
+  // let six_tick = selectedTicker;
+  // let six_sediment = six_x + six_y;
   // let six_mentions = Number(populated_tickers.data[5].mentions.toFixed(2) / 100);
 
   // let seven_x = Number(babbl_api_articles.AAPL[6].x_graph.toFixed(2));
@@ -104,8 +104,8 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
     [two_tick, two_x, two_y, two_sediment, ],
     [three_tick, three_x, three_y, three_sediment, ],
     [four_tick, four_x, four_y, four_sediment, ],
-    [five_tick, five_x, five_y, five_sediment, ],
-    [six_tick, six_x, six_y, six_sediment, ],
+    // [five_tick, five_x, five_y, five_sediment, ],
+    // [six_tick, six_x, six_y, six_sediment, ],
     
     
   ]}
