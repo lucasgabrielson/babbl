@@ -98,7 +98,7 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['ID', 'Outlook', 'Sediment', 'Bullish Sediment', ],
+    ['ID', 'Outlook', 'Sentiment', 'Bullish Sentiment' ],
   
     [one_tick, one_x, one_y, one_sediment, ],
     [two_tick, two_x, two_y, two_sediment, ],

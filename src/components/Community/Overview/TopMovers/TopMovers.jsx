@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '200px',
     width: '200px',
     marginBottom: '20px',
-    boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    
+    boxShadow: '2px 2px 2px 2px rgba(0, 0, 0, 0.2)',
   },
   bullet: {
     display: 'inline-block',
