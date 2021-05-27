@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
     margin: '20px 0px 20px 0px',
     borderRadius: '5px',
     // border: '2px solid black',
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   chartMovers: {
     display: 'flex',
     borderRadius: '5px',
-    boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
     width: '100%',
     minWidth: 'fit-content'
   },
