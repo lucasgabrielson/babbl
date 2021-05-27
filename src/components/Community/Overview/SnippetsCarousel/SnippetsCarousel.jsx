@@ -15,8 +15,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-   
-    // justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
     
@@ -87,7 +85,7 @@ export default function SingleLineGridList() {
   const TSLA_snippets = ticker_snippets.TSLA.snippets;
 
   const filterSnippetsArray = () => {
-    
+    setFinalArray([]);
 
     if(AAPL_snippets.length != 0){
     AAPL_snippets.forEach(snippet => {

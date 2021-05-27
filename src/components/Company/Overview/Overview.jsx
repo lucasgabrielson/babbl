@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '90vw',
+    width: '100%',
     height: '350px',
     margin: '20px 0px 20px 0px',
     padding: '10px',
@@ -99,20 +99,19 @@ const Overview = () => {
         <div className={classes.tickerCard}>
         <TickerCard />
         </div>
-        <div className={classes.chartAndTen}>
-        <div className={classes.chartMovers}>
+        
+        
           <div className={classes.middle}>
             <div className={classes.bubbleChartContainer}>
               <Charts />
             </div>
-          </div>
-        </div>
+          
+        
         </div>
         <div className={classes.CarouselContainer}>
           <div className={classes.carousel}>
-            <h1 className={classes.carouselHeaders}>Check out the top trending tweets</h1>
+            <h3 className={classes.carouselHeaders}>Check out the top trending article snippets</h3>
               <CompanySnippets />
-              <h1 className={classes.carouselHeaders}>Bookmark the article where the snippet originated</h1>
           </div>
         </div>
         <Articles />

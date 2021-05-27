@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
+import { useDispatch, useSelector } from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
-// import { useDemoData } from '@material-ui/x-grid-data-generator';
 import { FormControlLabel, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { red } from '@material-ui/core/colors';
+
 
 const MatEdit = ({ index }) => {
 
@@ -21,13 +22,50 @@ const MatEdit = ({ index }) => {
          />
 };
 
-export default function FlexLayoutGrid() {
+export default function FlexLayoutGrid(props) {
+
+  const populated_tickers = useSelector((store) => store.populated_tickers);
+  let one_x = Number(populated_tickers.data[9].x_graph.toFixed(2));
+  let one_y = Number(populated_tickers.data[9].y_graph.toFixed(2));
+  let one_mentions = populated_tickers.data[9].mentions;
+  let one_score = Number(one_x + one_y).toFixed(2);
+
+  let two_x = Number(populated_tickers.data[0].x_graph.toFixed(2));
+  let two_y = Number(populated_tickers.data[0].y_graph.toFixed(2));
+  let two_mentions = populated_tickers.data[0].mentions;
+  let two_score = Number(two_x + two_y).toFixed(2);
+
+  let three_x = Number(populated_tickers.data[2].x_graph.toFixed(2));
+  let three_y = Number(populated_tickers.data[2].y_graph.toFixed(2));
+  let three_mentions = populated_tickers.data[2].mentions;
+  let three_score = Number(three_x + three_y).toFixed(2);
+
+  let four_x = Number(populated_tickers.data[1].x_graph.toFixed(2));
+  let four_y = Number(populated_tickers.data[1].y_graph.toFixed(2));
+  let four_mentions = populated_tickers.data[1].mentions;
+  let four_score = Number(four_x + four_y).toFixed(2);
+
+  const rows = [
+    { id: 1, Ticker: 'AMC', Mentions: one_mentions, Babbl_Score: one_score },
+    { id: 2, Ticker: 'AAPL', Mentions: two_mentions, Babbl_Score: two_score },
+    { id: 3, Ticker: 'AMD', Mentions: three_mentions, Babbl_Score: three_score },
+    { id: 4, Ticker: 'TSLA', Mentions: four_mentions, Babbl_Score: four_score },
+   
+  ];
  
 
   const columns = [
-    { field: 'Ticker', headerName: 'Ticker'},
-    { field: 'Bull', headerName: 'Bull'},
-    { field: 'Bear', headerName: 'Bear'},
+    { field: 'Ticker', headerName: 'Ticker',
+      renderCell: (params) => {
+        const onClick = () => {
+          props.setSelectedTicker(params.row.Ticker);
+          console.log('clicked ticker', params.row.Ticker)
+      };
+      return <div style={{ cursor: "pointer" }} variant="contained" size="small" onClick={onClick}>{params.row.Ticker}</div>;
+    }
+    },
+    { field: 'Mentions', headerName: 'Mentions'},
+    { field: 'Babbl_Score', headerName: 'Babbl Score'},
     {
       field: "actions",
       headerName: "Actions",
@@ -52,18 +90,18 @@ export default function FlexLayoutGrid() {
 
 
   
-  const rows = [
-    { id: 1, Ticker: 'TESLA', Bull: '+0.45', Bear: '-0.55'},
-    { id: 2, Ticker: 'APPL', Bull: '+0.45', Bear: '-0.55' },
-    { id: 3, Ticker: 'DIS', Bull: '+0.45', Bear: '-0.55' },
-    { id: 4, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-    { id: 5, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-    { id: 6, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-    { id: 7, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-    { id: 8, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-    { id: 9, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-    { id: 10, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  ];
+  // const rows = [
+  //   { id: 1, Ticker: 'TESLA', Bull: '+0.45', Bear: '-0.55'},
+  //   { id: 2, Ticker: 'APPL', Bull: '+0.45', Bear: '-0.55' },
+  //   { id: 3, Ticker: 'DIS', Bull: '+0.45', Bear: '-0.55' },
+  //   { id: 4, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
+  //   { id: 5, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
+  //   { id: 6, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
+  //   { id: 7, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
+  //   { id: 8, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
+  //   { id: 9, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
+  //   { id: 10, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
+  // ];
 
   return (
   

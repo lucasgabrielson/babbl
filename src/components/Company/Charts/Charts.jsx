@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import BubbleChart from '../Charts/BubbleChart/BubbleChart';
 
 
 import Sentiments from  '../Charts/Sentiments/Sentiments';
@@ -45,15 +46,20 @@ function TabPanel(props) {
     };
   }
   
+
   const useStyles = makeStyles((theme) => ({
     root: {
-      backgroundColor: theme.palette.background.paper,
-      width: '78vw',
+      boxShadow: 'none',
+      backgroundColor: 'white',
+      width: '95vw',
+      // border: '2px solid black'
     },
+    tabs: {
+      backgroundColor: 'white'
+    }
   }));
-
-
-function Charts (){
+  
+  export default function Charts() {
     const classes = useStyles();
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
@@ -65,39 +71,38 @@ function Charts (){
     const handleChangeIndex = (index) => {
       setValue(index);
     };
-
-    return(
-        <>
-        <div className={classes.root}>
-          <AppBar position="static" color="default">
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              indicatorColor="primary"
-              textColor="primary"
-              variant="fullWidth"
-              aria-label="full width tabs example"
-            >
+  
+    return (
+      <div className={classes.root}>
+  
+        <Box position="static" color="default">
+          <Tabs
+            value={value}
+            boxShadow={0}
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            // variant="fullWidth"
+            aria-label="full width tabs example"
+          >
               <Tab label="Chart" {...a11yProps(0)} />
               <Tab label="Sentiments" {...a11yProps(1)} />
-            </Tabs>
-          </AppBar>
-          <SwipeableViews
-            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-            index={value}
-            onChangeIndex={handleChangeIndex}
-          >
-            <TabPanel value={value} index={0} dir={theme.direction}>
-              <LineChart />
-            </TabPanel>
-            <TabPanel value={value} index={1} dir={theme.direction}>
-              <Sentiments />
-            </TabPanel>
-          </SwipeableViews>
-        </div>
-        </>
-
-    )
-}
-
-export default Charts;
+            
+          </Tabs>
+        </Box>
+        <SwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={value}
+          onChangeIndex={handleChangeIndex}
+        >
+          <TabPanel value={value} index={0} dir={theme.direction}>
+            <LineChart />
+          </TabPanel>
+          <TabPanel value={value} index={1} dir={theme.direction}>
+            <BubbleChart />
+          </TabPanel>
+          
+        </SwipeableViews>
+      </div>
+    );
+  }

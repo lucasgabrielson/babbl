@@ -36,7 +36,8 @@ export default function TickerSelect() {
         <div>
         <Autocomplete
             id="ticker-select"
-            style={{ width: 200, height: 12 }}
+            openOnFocus = {true}
+            style={{ width: 200, height: 25, position: 'relative', right: -10, bottom: 19}}
             options={tickers}
             classes={{
                 option: classes.option,
@@ -53,7 +54,7 @@ export default function TickerSelect() {
                 <TextField
                 style={{ height: 15, marginBottom: 20 }}
                 {...params}
-                label="Choose a ticker"
+                // label="Choose a ticker"
                 // variant="outlined"
                 inputProps={{
                     ...params.inputProps,
