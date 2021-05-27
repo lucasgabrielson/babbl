@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 
 import React from 'react'
 import { createScope, map, transformProxies } from './helpers'
@@ -82,7 +82,7 @@ class About3View extends React.Component {
                       </div>
                       <div class="af-class-picture-row">
                         <div class="af-class-picture-column">
-                          <img src={Sam} alt="Sam" />
+                          <img class="af-class-about-picture" src={Sam} alt="Sam" />
                         </div>
                         <div class="af-class-picture-column">
                           <img src={Ram} alt="Ramsey" />
@@ -96,7 +96,7 @@ class About3View extends React.Component {
                 </div>
                 <div className="af-class-top-line-block">
                   <p className="af-class-paragraph">Babbl is a technology company that builds sentiment analysis tools for retail investors. Stock &amp; crypto traders young, old, novice and adept can use our software to improve their research process and gauge the mood of the markets more effectively. Though we are just getting started, our long-term goal is to be the one-stop-shop for all of your investment media analysis.</p>
-                  
+                  <p className="af-class-paragraph">We are living in exciting times. The accessibility of stock and cryptocurrency investments has never been greater for the average person; for the first time ever, seemingly anyone with the right set of tools and the right mindset has the ability to take control of their financial future by investing in the markets. The volume of information available to investors has increased exponentially in recent years -- technical indicators, company documents, insider transaction histories, and all the order book data anyone could ever need, now available at the fingertips of anyone with a smartphone or desktop computer. This new information paradigm has been accompanied by an ever-increasing abundance of online investment conversation. Thousands of news articles, ten-thousands of posts on Twitter and Reddit, millions of messages in investing chatrooms on Discord etc. published 24/7, each and every day.</p>
                 </div>
               </div>
             </div>
@@ -115,7 +115,6 @@ class About3View extends React.Component {
               </div>
             </div>
             <div className="af-class-simple-bottom-footer" />
-            {/* [if lte IE 9]><![endif] */}
           </div>
         </span>
       </span>
