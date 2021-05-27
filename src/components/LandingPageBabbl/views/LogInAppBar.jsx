@@ -10,7 +10,7 @@ const scripts = [
 
 let Controller
 
-class GenericAppBar extends React.Component {
+class LogInAppBar extends React.Component {
   static get Controller() {
     if (Controller) return Controller
 
@@ -22,7 +22,7 @@ class GenericAppBar extends React.Component {
     }
     catch (e) {
       if (e.code == 'MODULE_NOT_FOUND') {
-        Controller = GenericAppBar
+        Controller = LogInAppBar
 
         return Controller
       }
@@ -32,9 +32,8 @@ class GenericAppBar extends React.Component {
   }
 
 
-
   render() {
-    const proxies = GenericAppBar.Controller !== GenericAppBar ? transformProxies(this.props.children) : {
+    const proxies = LogInAppBar.Controller !== LogInAppBar ? transformProxies(this.props.children) : {
 
     }
 
@@ -49,13 +48,14 @@ class GenericAppBar extends React.Component {
           <div>
             <div data-collapse="medium" data-animation="default" data-duration={400} data-no-scroll={1} id="about" role="banner" className="af-class-navbar w-nav">
               <div className="w-container">
-                <a href="index.html" className="af-class-logo-block w-nav-brand"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
                 <nav role="navigation" className="af-class-nav-menu w-nav-menu">
-                  <span className="af-class-nav-link af-class-light"><AutoComplete /></span>
+                  <a href="#/home" className="af-class-logo-block w-nav-brand"><img src="images/finalbabbllogo-07.png" alt className="af-class-logo" /></a>
+
+                  <span className="af-class-nav-link af-class-light"><AutoComplete /></span>                
                   <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
                   <a href={`#/bookmarks/${this.props.user.id}`} className="af-class-nav-link af-class-light">Bookmarks</a>
-                  <a href="#/" className="af-class-nav-link af-class-light">LogOut</a>
+                  <a href="#/home" className="af-class-nav-link af-class-light" onClick={() => this.props.dispatch({ type: 'LOGOUT' })}>LogOut</a>
                   <a href="#" className="af-class-navlink af-class-light af-class-nav-menu w-inline-block" />
                 </nav>
                 <div className="af-class-transparant-menu-button w-nav-button">
@@ -66,7 +66,7 @@ class GenericAppBar extends React.Component {
             </div>
             <div className="af-class-subpage-header af-class-about-3">
               <div className="af-class-container w-container">
-                <h2 data-ix="fade-in-on-load" className="af-class-subpage-title"></h2>
+                <h2 data-ix="fade-in-on-load" className="af-class-subpage-title">sdfasdfljk</h2>
                 <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle"></div>
               </div>
               </div>
@@ -83,4 +83,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(GenericAppBar);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // dispatching plain actions
+    logout: () => dispatch({ type: 'LOGOUT' }),
+  }
+}
+
+export default connect(mapStateToProps)(LogInAppBar);
