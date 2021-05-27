@@ -194,7 +194,7 @@ function App() {
             // - if logged in, redirects to "/user"
             // - else shows LandingPage at "/home"
             exact
-            path="/home"
+            path="/registration"
             authRedirect="/user"
           >
             <LandingPage />
