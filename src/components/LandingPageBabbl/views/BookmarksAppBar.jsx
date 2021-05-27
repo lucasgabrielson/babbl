@@ -67,7 +67,7 @@ class CommunityAppBar extends React.Component {
             <div className="af-class-subpage-header af-class-about-3">
               <div className="af-class-container w-container">
                 <h2 data-ix="fade-in-on-load" className="af-class-subpage-title">Bookmarks</h2>
-                <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Huzzah</div>
+                <div data-ix="fade-in-on-load-2" className="af-class-page-subtitle">Checkout your bookmarked articles!</div>
               </div>
               </div>
             </div>
