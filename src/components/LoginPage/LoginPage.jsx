@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import LogInAppBar from '../LandingPageBabbl/views/CommunityAppBar';
+import GenericAppBar from '../LandingPageBabbl/views/GenericAppBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +26,7 @@ function LoginPage() {
   return (
     <div>
       <div className="logInAppBar">
-      <LogInAppBar />
+      <GenericAppBar />
       </div>
       <LoginForm />
 

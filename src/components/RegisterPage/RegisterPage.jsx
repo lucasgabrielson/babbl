@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import GenericAppBar from '../LandingPageBabbl/views/GenericAppBar';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +21,7 @@ function RegisterPage() {
 
   return (
     <div>
+      <GenericAppBar />
       <RegisterForm />
 
       <center>
