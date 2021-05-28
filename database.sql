@@ -20,7 +20,7 @@ CREATE TABLE articles (
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES "user"(id),
-	"date" DATE,
+	"date" VARCHAR(50),
 	"title" VARCHAR(255),
 	"ticker" VARCHAR(50),
 	"mentions" VARCHAR(255),
