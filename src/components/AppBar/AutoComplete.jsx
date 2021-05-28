@@ -37,7 +37,7 @@ export default function TickerSelect() {
         <Autocomplete
             id="ticker-select"
             openOnFocus = {true}
-            style={{ width: 200, height: 12, position: 'relative', right: -10, bottom: 19}}
+            style={{ width: 200, height: 12, position: 'relative', right: -10, bottom: 19, backgroundColor: 'white' }}
             options={tickers}
             classes={{
                 option: classes.option,
