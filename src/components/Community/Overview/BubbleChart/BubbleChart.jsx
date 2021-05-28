@@ -85,14 +85,14 @@ const BubbleChart = () => {
   
   return (
     <div>
-      <h3 className={classes.root}>Article Sentiments</h3>
+      <h3 className={classes.root}> Stock Sentiment</h3>
       <Chart
   width={'60vw'}
   height={'500px'}
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['ID', 'Future-Past', 'Positive Sentiment', 'Color', 'Size'],
+    ['ID', 'Future-Past', 'Sentiment', 'Color', 'Size'],
   
     [one_tick, one_x, one_y, one_sediment, one_mentions],
     [two_tick, two_x, two_y, two_sediment, two_mentions],

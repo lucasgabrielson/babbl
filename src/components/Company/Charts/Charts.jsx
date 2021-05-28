@@ -85,8 +85,8 @@ function TabPanel(props) {
             // variant="fullWidth"
             aria-label="full width tabs example"
           >
-              <Tab label="Chart" {...a11yProps(0)} />
-              <Tab label="Sentiments" {...a11yProps(1)} />
+              <Tab label="Sentiments Chart" {...a11yProps(0)} />
+              <Tab label="Price Chart" {...a11yProps(1)} />
             
           </Tabs>
         </Box>

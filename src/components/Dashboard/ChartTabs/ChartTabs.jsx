@@ -87,7 +87,7 @@ export default function FullWidthTabs({selectedTicker}, {setSelectedTicker}) {
           aria-label="full width tabs example"
         >
           <Tab label="Sentiment Chart" {...a11yProps(1)} />
-          <Tab label="Article Chart" {...a11yProps(2)} />
+          <Tab label="Price Chart" {...a11yProps(2)} />
           
         </Tabs>
       </Box>

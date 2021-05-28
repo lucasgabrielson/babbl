@@ -51,7 +51,7 @@ const columns = [
                 <BookmarkBorderIcon />
               </IconButton>
       },
-      width: 100
+      width: 120
   },
  
   ];

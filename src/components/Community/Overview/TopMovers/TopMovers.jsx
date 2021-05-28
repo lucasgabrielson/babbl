@@ -96,14 +96,14 @@ export default function SimpleCard() {
     <Card className={classes.root}>
       <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Top 3 Movers
+            Top 3 Babbl Movers
           </Typography>
           <div className={classes.ticker}>
             <Typography className={classes.headers} color="textSecondary" gutterBottom>
               Ticker
             </Typography>
             <Typography className={classes.headers} color="textSecondary" gutterBottom>
-              Mentions
+              Score Change
             </Typography>
           </div>
         {top.map(company => ( 

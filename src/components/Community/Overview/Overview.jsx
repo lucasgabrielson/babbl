@@ -124,7 +124,7 @@ const Overview = () => {
         
         <div className={classes.chartMovers}>
         <div className={classes.movers}>
-          <h3>Daily Mentions</h3>
+          <h3>Daily Movement</h3>
           <TopMovers />
           <BottomMovers />
         </div>
@@ -136,7 +136,7 @@ const Overview = () => {
             </div>
           </div>
           <div className={classes.TopTenContainer}>
-          <h3>Top Mentions</h3>
+          <h3>Weekly Mentions</h3>
             <TopTen />
           </div>
         </div>

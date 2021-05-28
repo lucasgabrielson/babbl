@@ -54,12 +54,12 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
   // let five_y = Number(babbl_api_articles[selectedTicker][4].y_graph.toFixed(2));
   // let five_tick = selectedTicker;
   // let five_sediment = five_x ;
-  // // let five_mentions = Number(populated_tickers.data[4].mentions.toFixed(2) / 100);
+  // let five_mentions = Number(populated_tickers.data[4].mentions.toFixed(2) / 100);
 
   // let six_x = Number(babbl_api_articles[selectedTicker][5].x_graph.toFixed(2));
   // let six_y = Number(babbl_api_articles[selectedTicker][5].y_graph.toFixed(2));
   // let six_tick = selectedTicker;
-  // let six_sediment = six_x + six_y;
+  // let six_sediment = six_x ;
   // let six_mentions = Number(populated_tickers.data[5].mentions.toFixed(2) / 100);
 
   // let seven_x = Number(babbl_api_articles.AAPL[6].x_graph.toFixed(2));
@@ -98,7 +98,7 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['ID', 'Future-Past', 'Positive Sentiment', 'Color' ],
+    ['ID', 'Future-Past', 'Sentiment', 'Color' ],
   
     [one_tick, one_x, one_y, one_sediment, ],
     [two_tick, two_x, two_y, two_sediment, ],
