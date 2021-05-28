@@ -64,7 +64,7 @@ export default function FlexLayoutGrid(props) {
       return <div style={{ cursor: "pointer" }} variant="contained" size="small" onClick={onClick}>{params.row.Ticker}</div>;
     }
     },
-    { field: 'Mentions', headerName: 'Mentions'},
+    { field: 'Mentions', headerName: 'Mentions', width: 120},
     { field: 'Babbl_Score', headerName: 'Babbl Score'},
     {
       field: "actions",
@@ -90,18 +90,7 @@ export default function FlexLayoutGrid(props) {
 
 
   
-  // const rows = [
-  //   { id: 1, Ticker: 'TESLA', Bull: '+0.45', Bear: '-0.55'},
-  //   { id: 2, Ticker: 'APPL', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 3, Ticker: 'DIS', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 4, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 5, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 6, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 7, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 8, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 9, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 10, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  // ];
+  
 
   return (
   
