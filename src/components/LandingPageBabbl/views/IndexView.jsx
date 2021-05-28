@@ -91,7 +91,7 @@ class IndexView extends React.Component {
                     <div className="af-class-intro-block-title">Dashboard</div>
                     <p>Track company sentiment at the click of a button while keeping up with the latest news and company developments.</p>
                   </div>
-                  <a href="#/registration" className="af-class-button w-hidden-small w-hidden-tiny w-button">Become a member</a>
+                  <a href="#/community" className="af-class-button w-hidden-small w-hidden-tiny w-button">Try for Free!</a>
                 </div>
                 <div data-ix="fade-in-zoom-2" className="af-class-home-intro-wrapper af-class-right">
                   <a href="pricing-3.html" className="af-class-home-intro-link-block af-class-_3 w-inline-block">
