@@ -10,6 +10,7 @@ const MatEdit = ({ index }) => {
 
   const handleEditClick = () => {
       console.log('delete clicked');
+      
   }
 
 
@@ -28,12 +29,12 @@ export default function FlexLayoutGrid(props) {
   let one_x = Number(populated_tickers.data[9].x_graph.toFixed(2));
   let one_y = Number(populated_tickers.data[9].y_graph.toFixed(2));
   let one_mentions = populated_tickers.data[9].mentions;
-  let one_score = Number(one_x + one_y).toFixed(2);
+  let one_score = Number(one_x - one_y).toFixed(2);
 
   let two_x = Number(populated_tickers.data[0].x_graph.toFixed(2));
   let two_y = Number(populated_tickers.data[0].y_graph.toFixed(2));
   let two_mentions = populated_tickers.data[0].mentions;
-  let two_score = Number(two_x + two_y).toFixed(2);
+  let two_score = Number(two_x - two_y).toFixed(2);
 
   let three_x = Number(populated_tickers.data[2].x_graph.toFixed(2));
   let three_y = Number(populated_tickers.data[2].y_graph.toFixed(2));
@@ -45,13 +46,15 @@ export default function FlexLayoutGrid(props) {
   let four_mentions = populated_tickers.data[1].mentions;
   let four_score = Number(four_x + four_y).toFixed(2);
 
-  const rows = [
-    { id: 1, Ticker: 'AMC', Mentions: one_mentions, Babbl_Score: one_score },
-    { id: 2, Ticker: 'AAPL', Mentions: two_mentions, Babbl_Score: two_score },
-    { id: 3, Ticker: 'AMD', Mentions: three_mentions, Babbl_Score: three_score },
-    { id: 4, Ticker: 'TSLA', Mentions: four_mentions, Babbl_Score: four_score },
+  const [rows, setRows] = useState([
+    { id: 1, Ticker: 'AMC', Mentions: one_mentions,  },
+    { id: 2, Ticker: 'AAPL', Mentions: two_mentions, },
+    { id: 3, Ticker: 'AMD', Mentions: three_mentions, },
+    { id: 4, Ticker: 'TSLA', Mentions: four_mentions, },
+  ])
+  
    
-  ];
+  
  
 
   const columns = [
@@ -65,7 +68,7 @@ export default function FlexLayoutGrid(props) {
     }
     },
     { field: 'Mentions', headerName: 'Mentions', width: 120},
-    { field: 'Babbl_Score', headerName: 'Babbl Score'},
+    // { field: 'Price', headerName: 'Price'},
     {
       field: "actions",
       headerName: "Actions",
@@ -94,7 +97,7 @@ export default function FlexLayoutGrid(props) {
 
   return (
   
-    <div style={{ height: '503px', width: '400px', }}>
+    <div style={{ height: '500px', width: '300px', }}>
       <div style={{ display: 'flex', flexDirection: 'column',  height: '100%'}}>
         <div style={{ flexGrow: 1 }}>
           <DataGrid rows={rows} columns={columns} pageSize={10} hideFooter={true}  />

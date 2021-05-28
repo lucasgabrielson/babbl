@@ -114,7 +114,7 @@ export default function SimpleCard() {
           </Typography>
 
           <Typography className={classes.pos} >
-            {(company.movement).toFixed(2)}
+            {(company.movement).toFixed(2)}%
           </Typography>
 
          

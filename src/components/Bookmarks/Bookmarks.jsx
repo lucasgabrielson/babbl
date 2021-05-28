@@ -23,7 +23,7 @@ function Bookmarks(){
                 <DataGrid rows={bookmarks} columns={columns} pageSize={5} />
             </div>
             }
-            {JSON.stringify(params)}
+            
         </div>
     )
 }
