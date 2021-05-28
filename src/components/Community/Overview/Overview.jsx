@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     width: '100%',
     height: '350px',
-    margin: '20px 0px 20px 0px',
+    margin: '0px 0px 20px 0px',
     padding: '10px',
     borderRadius: '5px',
     // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
