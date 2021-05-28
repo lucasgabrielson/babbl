@@ -83,7 +83,7 @@ const columns = [
                 vertical: 'center',
                 horizontal: 'right',
               }}
-              open={open} autoHideDuration={6000} onClose={handleClose}>
+              open={open} autoHideDuration={1500} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Added to Bookmarks
         </Alert>
