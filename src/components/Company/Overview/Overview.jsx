@@ -11,10 +11,10 @@ import TickerCard from '../TickerCard/TickerCard';
 const useStyles = makeStyles((theme) => ({
  
   overview: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    marginTop: '80px'
+    // display: 'flex',
+    // flexWrap: 'wrap',
+    // justifyContent: 'center',
+    // marginTop: '80px'
     
     
   }, 
@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '0px 20px 0px 20px',
     border: '1px solid white',
     borderRadius: '4px',
+   
   },
   middle: {
     display:'flex',
@@ -85,7 +86,13 @@ const useStyles = makeStyles((theme) => ({
   tickerCard:{
     padding: '10px',
     display: 'flex',
-    flexDirection: 'column',
+    justifyContent: 'center',
+    // flexDirection: 'column',
+  },
+  snippetsTitle: {
+    display: 'flex',
+    
+    justifyContent: 'flex-start',
   },
 }));
 
@@ -97,7 +104,7 @@ const Overview = () => {
   return (
     <div className={classes.overview}>
         <div className={classes.tickerCard}>
-        <TickerCard />
+          <TickerCard />
         </div>
         
         
@@ -108,9 +115,12 @@ const Overview = () => {
           
         
         </div>
+        <div className={classes.snippetsTitle}>
+          <h3 className={classes.carouselHeaders}>Check out the top trending article snippets</h3>
+        </div>
         <div className={classes.CarouselContainer}>
           <div className={classes.carousel}>
-            <h3 className={classes.carouselHeaders}>Check out the top trending article snippets</h3>
+            
               <CompanySnippets />
           </div>
         </div>
