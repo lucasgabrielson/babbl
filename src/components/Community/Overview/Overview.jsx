@@ -119,16 +119,12 @@ const Overview = () => {
   return (
     <div className={classes.overview}>
       
-        {/* <div className={classes.movers}>
-          <h3>Daily Movers</h3>
-          <TopMovers />
-          <BottomMovers />
-        </div> */}
+       
         <div className={classes.chartAndTen}>
         
         <div className={classes.chartMovers}>
         <div className={classes.movers}>
-          <h3>Daily Movers</h3>
+          <h3>Daily Mentions</h3>
           <TopMovers />
           <BottomMovers />
         </div>

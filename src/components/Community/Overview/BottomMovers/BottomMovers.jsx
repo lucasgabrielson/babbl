@@ -98,7 +98,7 @@ export default function SimpleCard() {
             Ticker
           </Typography>
           <Typography className={classes.headers} color="textSecondary" gutterBottom>
-            Babbl Score
+            Mentions
           </Typography>
         </div>
       {bottom.map(company => ( 
