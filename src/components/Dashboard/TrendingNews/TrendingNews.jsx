@@ -6,6 +6,8 @@ import IconButton from '@material-ui/core/IconButton';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
 
+
+
 const columns = [
   { field: 'date', headerName: 'Date', width: 150 },
   { field: 'ticker', headerName: 'Ticker', width: 150 },
@@ -20,7 +22,7 @@ const columns = [
     const onClick = () => {
         console.log('url', params.row);
     };
-    return <IconButton variant="contained" size="small" onClick={onClick}>
+    return <IconButton variant="contained" size="small" onClick={()=> window.open("https://www.benzinga.com/news/21/05/21189292/apple-said-to-be-gearing-up-for-new-mac-lineup-launch-this-summer-sporting-faster-m1-chips?utm_source=dlvr.it&utm_medium=facebook#:~:text=Apple%20Inc%20(NASDAQ%3A%20AAPL),according%20to%20a%20Bloomberg%20report.", "_blank")}>
               <ChromeReaderModeIcon />
             </IconButton>
     },
