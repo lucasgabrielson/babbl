@@ -7,13 +7,23 @@ import {useDispatch, useSelector} from 'react-redux';
 
 
 const useStyles = makeStyles({
-  option: {
-    fontSize: 15,
-    '& > span': {
-      marginRight: 10,
-      fontSize: 18,
+    option: {
+        fontSize: 15,
+        '& > span': {
+            marginRight: 10,
+            fontSize: 18,
+        // Hover with light-grey
+        '&[data-focus="true"]': {
+            backgroundColor: 'white',
+            borderColor: 'transparent',
+        },
+        // Selected has dark-grey
+        '&[aria-selected="true"]': {
+            backgroundColor: 'white',
+            borderColor: 'transparent',
+        },
+        },
     },
-  },
 });
 
 export default function TickerSelect() {
@@ -37,7 +47,7 @@ export default function TickerSelect() {
         <Autocomplete
             id="ticker-select"
             openOnFocus = {true}
-            style={{ width: 200, height: 25, position: 'relative', right: -10, bottom: 19}}
+            style={{ width: 200, height: 25, position: 'relative', right: -10, bottom: 7, backgroundColor: 'white'}}
             options={tickers}
             classes={{
                 option: classes.option,

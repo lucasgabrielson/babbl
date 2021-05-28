@@ -30,11 +30,8 @@ function LineChart ({selectedTicker}){
 
   let array = [];
 
-  if( times[0] !== undefined && prices[0] !== undefined ) {
+  if( Array.isArray(times[0][selectedTicker]) && Array.isArray(prices[0]["close"]) ) {
     for( let i = 0; i < times[0][selectedTicker].length; i++ ) {
-      console.log(times[0][selectedTicker][i].date.slice(0,4), 
-        times[0][selectedTicker][i].date.slice(5,7), 
-        times[0][selectedTicker][i].date.slice(8,10));
       array.push(
         [
           new Date(
@@ -51,6 +48,8 @@ function LineChart ({selectedTicker}){
 
     return(
         <div className={classes.lineChartContainer}>
+        {JSON.stringify(times)}
+        {JSON.stringify(prices)}
           <Chart
             width={'100%'}
             height={'500'}

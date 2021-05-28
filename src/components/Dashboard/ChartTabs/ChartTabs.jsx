@@ -101,7 +101,7 @@ export default function FullWidthTabs({selectedTicker}, {setSelectedTicker}) {
         </TabPanel>
 
         <TabPanel value={value} index={1} dir={theme.direction}>
-          {/* <LineChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/> */}
+          <LineChart selectedTicker={selectedTicker} setSelectedTicker={setSelectedTicker}/>
         </TabPanel>
         
       </SwipeableViews>

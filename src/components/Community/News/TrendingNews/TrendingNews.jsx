@@ -41,7 +41,7 @@ function TrendingNews(){
   const AAPL_articles = babbl_api_articles.AAPL;
   const AMC_articles = babbl_api_articles.AMC;
   const AMD_articles = babbl_api_articles.AMD;
-  const ARKK_articles = babbl_api_articles.ARKK;
+  // const ARKK_articles = babbl_api_articles.ARKK;
   const EV_articles = babbl_api_articles.EV;
   const MSFT_articles = babbl_api_articles.MSFT;
   const NVDA_articles = babbl_api_articles.NVDA;
@@ -66,9 +66,9 @@ function TrendingNews(){
     { id: 9, date: `${AMD_articles[2].timestamp}`, ticker: `AMD`, url: `${AMD_articles[2].url}`, title: `"${AMD_articles[2].title}"`, mentions: `${AMD_articles[2].entities}`, score: `${Number(AMD_articles[2].optimism - AMD_articles[2].pessimism).toFixed(2)}` },
 
     //3 most recent articles from ARKK
-    { id: 10, date: `${ARKK_articles[0].timestamp}`, ticker: `ARKK`, url: `${ARKK_articles[0].url}`, title: `"${ARKK_articles[0].title}"`, mentions: `${ARKK_articles[0].entities}`, score: `${Number(ARKK_articles[0].optimism - ARKK_articles[0].pessimism).toFixed(2)}` },
-    { id: 11, date: `${ARKK_articles[1].timestamp}`, ticker: `ARKK`, url: `${ARKK_articles[1].url}`, title: `"${ARKK_articles[1].title}"`, mentions: `${ARKK_articles[1].entities}`, score: `${Number(ARKK_articles[1].optimism - ARKK_articles[1].pessimism).toFixed(2)}` },
-    { id: 12, date: `${ARKK_articles[2].timestamp}`, ticker: `ARKK`, url: `${ARKK_articles[2].url}`, title: `"${ARKK_articles[2].title}"`, mentions: `${ARKK_articles[2].entities}`, score: `${Number(ARKK_articles[2].optimism - ARKK_articles[2].pessimism).toFixed(2)}` },
+    // { id: 10, date: `${ARKK_articles[0].timestamp}`, ticker: `ARKK`, url: `${ARKK_articles[0].url}`, title: `"${ARKK_articles[0].title}"`, mentions: `${ARKK_articles[0].entities}`, score: `${Number(ARKK_articles[0].optimism - ARKK_articles[0].pessimism).toFixed(2)}` },
+    // { id: 11, date: `${ARKK_articles[1].timestamp}`, ticker: `ARKK`, url: `${ARKK_articles[1].url}`, title: `"${ARKK_articles[1].title}"`, mentions: `${ARKK_articles[1].entities}`, score: `${Number(ARKK_articles[1].optimism - ARKK_articles[1].pessimism).toFixed(2)}` },
+    // { id: 12, date: `${ARKK_articles[2].timestamp}`, ticker: `ARKK`, url: `${ARKK_articles[2].url}`, title: `"${ARKK_articles[2].title}"`, mentions: `${ARKK_articles[2].entities}`, score: `${Number(ARKK_articles[2].optimism - ARKK_articles[2].pessimism).toFixed(2)}` },
 
     //3 most recent articles from EV
     { id: 13, date: `${EV_articles[0].timestamp}`, ticker: `EV`, url: `${EV_articles[0].url}`, title: `"${EV_articles[0].title}"`, mentions: `${EV_articles[0].entities}`, score: `${Number(EV_articles[0].optimism - EV_articles[0].pessimism).toFixed(2)}` },
