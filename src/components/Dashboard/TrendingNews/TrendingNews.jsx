@@ -1,10 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DataGrid } from '@material-ui/data-grid';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+import { makeStyles } from '@material-ui/core/styles';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
+
+
+
 
 const columns = [
   { field: 'date', headerName: 'Date', width: 150 },
@@ -20,7 +38,7 @@ const columns = [
     const onClick = () => {
         console.log('url', params.row);
     };
-    return <IconButton variant="contained" size="small" onClick={onClick}>
+    return <IconButton variant="contained" size="small" onClick={()=> window.open("https://www.benzinga.com/news/21/05/21189292/apple-said-to-be-gearing-up-for-new-mac-lineup-launch-this-summer-sporting-faster-m1-chips?utm_source=dlvr.it&utm_medium=facebook#:~:text=Apple%20Inc%20(NASDAQ%3A%20AAPL),according%20to%20a%20Bloomberg%20report.", "_blank")}>
               <ChromeReaderModeIcon />
             </IconButton>
     },
@@ -31,11 +49,14 @@ const columns = [
       headerName: "Bookmark",
       disableClickEventBubbling: true,
       renderCell: (params) => {
+        const classes = useStyles();
+        const [open, setOpen] = React.useState(false);
         const dispatch = useDispatch();
         const userID = useSelector((store) => {return store.user});
 
       const bookmark = (row) => {
           console.log('bookmark', params.row);
+          setOpen(true);
           row = {
             userID: userID.id,
             date: params.row.date,
@@ -47,11 +68,31 @@ const columns = [
           }
           dispatch({type: 'ADD_USER_ARTICLES', payload: row});
       };
-      return  <IconButton variant="contained" size="small" onClick={()=>bookmark(params.row)}>
+
+      const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+      };
+      return <div className={classes.root}> 
+      <IconButton variant="contained" size="small" onClick={()=>bookmark(params.row)}>
                 <BookmarkBorderIcon />
               </IconButton>
+              <Snackbar 
+              anchorOrigin={{
+                vertical: 'center',
+                horizontal: 'right',
+              }}
+              open={open} autoHideDuration={1500} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success">
+          Added to Bookmarks
+        </Alert>
+      </Snackbar>
+              </div>
       },
-      width: 120
+      width: 150
   },
  
   ];
