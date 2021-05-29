@@ -40,10 +40,6 @@ function Bookmarks(){
                 <DataGrid rows={bookmarks} columns={columns} pageSize={5} />
             </div>
             }
-<<<<<<< HEAD
-            
-=======
->>>>>>> ff2c6cd10a08b352de81849090e37f2a93c936f2
         </div>
     )
 }

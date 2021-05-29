@@ -79,7 +79,7 @@ const Dashboard = () => {
   const [selectedTicker, setSelectedTicker] = useState('AAPL');
 
   useEffect(() => {
-    setSelectedTicker('AMC');
+    // setSelectedTicker('AAPL');
   
   }, []);
 
@@ -112,7 +112,7 @@ const Dashboard = () => {
       </div>
 
       <div>
-        <ArticleTabs />
+        {/* <ArticleTabs /> */}
       </div>
     </div>
     </div>

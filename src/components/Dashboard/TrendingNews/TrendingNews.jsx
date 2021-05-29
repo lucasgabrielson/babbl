@@ -123,9 +123,9 @@ function TrendingNews(){
     { id: 3, date: `${AAPL_articles[2].timestamp}`, ticker: `APPL`, url: `${AAPL_articles[2].url}`, title: `"${AAPL_articles[2].title}"`, mentions: `${AAPL_articles[2].entities}`, score: `${Number(AAPL_articles[2].optimism - AAPL_articles[2].pessimism).toFixed(2)}` },
 
     //3 most recent articles from AMC
-    { id: 4, date: `${AMC_articles[0].timestamp}`, ticker: `AMC`, url: `${AMC_articles[0].url}`, title: `"${AMC_articles[0].title}"`, mentions: `${AMC_articles[0].entities}`, score: `${Number(AMC_articles[0].optimism - AMC_articles[0].pessimism).toFixed(2)}` },
-    { id: 5, date: `${AMC_articles[1].timestamp}`, ticker: `AMC`, url: `${AMC_articles[1].url}`, title: `"${AMC_articles[1].title}"`, mentions: `${AMC_articles[1].entities}`, score: `${Number(AMC_articles[1].optimism - AMC_articles[1].pessimism).toFixed(2)}` },
-    { id: 6, date: `${AMC_articles[2].timestamp}`, ticker: `AMC`, url: `${AMC_articles[2].url}`, title: `"${AMC_articles[2].title}"`, mentions: `${AMC_articles[2].entities}`, score: `${Number(AMC_articles[2].optimism - AMC_articles[2].pessimism).toFixed(2)}` },
+    // { id: 4, date: `${AMC_articles[0].timestamp}`, ticker: `AMC`, url: `${AMC_articles[0].url}`, title: `"${AMC_articles[0].title}"`, mentions: `${AMC_articles[0].entities}`, score: `${Number(AMC_articles[0].optimism - AMC_articles[0].pessimism).toFixed(2)}` },
+    // { id: 5, date: `${AMC_articles[1].timestamp}`, ticker: `AMC`, url: `${AMC_articles[1].url}`, title: `"${AMC_articles[1].title}"`, mentions: `${AMC_articles[1].entities}`, score: `${Number(AMC_articles[1].optimism - AMC_articles[1].pessimism).toFixed(2)}` },
+    // { id: 6, date: `${AMC_articles[2].timestamp}`, ticker: `AMC`, url: `${AMC_articles[2].url}`, title: `"${AMC_articles[2].title}"`, mentions: `${AMC_articles[2].entities}`, score: `${Number(AMC_articles[2].optimism - AMC_articles[2].pessimism).toFixed(2)}` },
 
     //3 most recent articles from AMD
     { id: 7, date: `${AMD_articles[0].timestamp}`, ticker: `AMD`, url: `${AMD_articles[0].url}`, title: `"${AMD_articles[0].title}"`, mentions: `${AMD_articles[0].entities}`, score: `${Number(AMD_articles[0].optimism - AMD_articles[0].pessimism).toFixed(2)}` },

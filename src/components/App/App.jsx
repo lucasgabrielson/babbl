@@ -47,7 +47,7 @@ function App() {
   let latch = false;
 
   if( !latch && tickers.meta !== undefined  ) {
-    dispatch({type: 'FETCH_API_ARTICLES', payload: {tickers: tickers.meta.all_tickers.join()} })
+    dispatch({type: 'FETCH_API_ARTICLES', payload: {tickers: tickers.meta.all_tickers.join() }})
     dispatch({type: 'FETCH_TICKER_SNIPPETS', payload: {tickers: tickers.meta.all_tickers.join(), days: 20, max: 5} })
     latch = !latch;
   }

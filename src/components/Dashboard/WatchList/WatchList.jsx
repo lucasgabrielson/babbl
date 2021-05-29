@@ -42,8 +42,8 @@ export default function FlexLayoutGrid(props) {
   let five_ticker = populated_tickers.data[4].ticker;
   let five_mentions = populated_tickers.data[4].mentions;
 
-  let six_ticker = populated_tickers.data[8].ticker;
-  let six_mentions = populated_tickers.data[8].mentions;
+  // let six_ticker = populated_tickers.data[8].ticker;
+  // let six_mentions = populated_tickers.data[8].mentions;
 
   // let seven_ticker = populated_tickers.data[1].ticker;
   // let seven_mentions = populated_tickers.data[1].mentions;
@@ -57,7 +57,7 @@ export default function FlexLayoutGrid(props) {
     { id: 3, Ticker: three_ticker, Mentions: three_mentions, },
     { id: 4, Ticker: four_ticker, Mentions: four_mentions, },
     { id: 5, Ticker: five_ticker, Mentions: five_mentions, },
-    { id: 6, Ticker: six_ticker, Mentions: six_mentions, },
+    // { id: 6, Ticker: six_ticker, Mentions: six_mentions, },
     // { id: 7, Ticker: seven_ticker, Mentions: seven_mentions, },
     // { id: 8, Ticker: eight_ticker, Mentions: eight_mentions, },
     // { id: 9, Ticker: nine_ticker, Mentions: nine_mentions, },

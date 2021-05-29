@@ -150,7 +150,7 @@ const Overview = () => {
               
           </div>
         </div>
-        <News />
+        {/* <News /> */}
        
     </div>
     
