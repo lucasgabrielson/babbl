@@ -6,26 +6,34 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { red } from '@material-ui/core/colors';
 
 
-const MatEdit = ({ index }) => {
+// const MatEdit = ({ index }) => {
 
-  const handleEditClick = () => {
-      console.log('delete clicked');
+//   const handleEditClick = () => {
+//       console.log('delete clicked');
       
-  }
+//   }
 
 
-  return <FormControlLabel
-             control={
-                 <IconButton color="secondary" aria-label="add an alarm" onClick={handleEditClick} >
-                     <DeleteIcon style={{ color: red[200] }} />
-                 </IconButton>
-             }
-         />
-};
+//   return <FormControlLabel
+//              control={
+//                  <IconButton color="secondary" aria-label="add an alarm" onClick={handleEditClick} >
+//                      <DeleteIcon style={{ color: red[200] }} />
+//                  </IconButton>
+//              }
+//          />
+// };
 
 export default function FlexLayoutGrid(props) {
-
+  const dispatch = useDispatch();
   const populated_tickers = useSelector((store) => store.populated_tickers);
+  
+
+  // useEffect(() => {
+  //   dispatch({type: 'FETCH_USER_WATCHLIST', payload: user.id});
+  
+  // }, [dispatch]);
+
+  const userWatchlist = useSelector( store => store.userWatchlist)
 
   let one_ticker = populated_tickers.data[0].ticker;
   let one_mentions = populated_tickers.data[0].mentions;
@@ -68,16 +76,16 @@ export default function FlexLayoutGrid(props) {
  
 
   const columns = [
-    { field: 'Ticker', headerName: 'Ticker',
+    { field: 'ticker', headerName: 'Ticker',
       renderCell: (params) => {
         const onClick = () => {
-          props.setSelectedTicker(params.row.Ticker);
-          console.log('clicked ticker', params.row.Ticker)
+          props.setSelectedTicker(params.row.ticker);
+          console.log('clicked ticker', params.row.ticker)
       };
-      return <div style={{ cursor: "pointer" }} variant="contained" size="small" onClick={onClick}>{params.row.Ticker}</div>;
+      return <div style={{ cursor: "pointer" }} variant="contained" size="small" onClick={onClick}>{params.row.ticker}</div>;
     }
     },
-    { field: 'Mentions', headerName: 'Mentions', width: 120},
+    { field: 'mentions', headerName: 'Mentions', width: 120},
     // { field: 'Price', headerName: 'Price'},
     {
       field: "actions",
@@ -88,9 +96,15 @@ export default function FlexLayoutGrid(props) {
       disableSelectionOnClick: true,
       
       renderCell: (params) => {
+        const onClick = () => {
+          // props.setSelectedTicker(params.row.ticker);
+          console.log('delete ticker:', params.row.ticker, params.row.id)
+      };
           return (
               <div  style={{ cursor: "pointer" }} disableSelectionOnClick={true} disableClickEventBubbling={true} >
-                  <MatEdit index={params.row.id} />
+                  <IconButton color="secondary" aria-label="delete button" onClick={onClick} >
+                     <DeleteIcon style={{ color: red[200] }} />
+                 </IconButton>
                </div>
           );
        }
@@ -110,7 +124,7 @@ export default function FlexLayoutGrid(props) {
     <div style={{ height: '500px', width: '300px', }}>
       <div style={{ display: 'flex', flexDirection: 'column',  height: '100%'}}>
         <div style={{ flexGrow: 1 }}>
-          <DataGrid rows={rows} columns={columns} pageSize={10} hideFooter={true}  />
+          <DataGrid rows={userWatchlist} columns={columns} pageSize={10} hideFooter={true}  />
           
         </div>
       </div>

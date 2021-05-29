@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+import { useDispatch, useSelector } from 'react-redux';
 
 import TickerCard from '../Dashboard/TickerCard/TickerCard';
 import WatchList from '../Dashboard/WatchList/WatchList';
@@ -74,13 +75,14 @@ const useStyles = makeStyles({
 
 
 const Dashboard = () => {
-  
+  const dispatch = useDispatch();
+  let user = useSelector( store => store.user)
   const [selectedTicker, setSelectedTicker] = useState('AAPL');
 
   useEffect(() => {
-    // setSelectedTicker('AAPL');
+    dispatch({type: 'FETCH_USER_WATCHLIST', payload: user.id});
   
-  }, []);
+  }, [dispatch]);
 
   const classes = useStyles();
 
