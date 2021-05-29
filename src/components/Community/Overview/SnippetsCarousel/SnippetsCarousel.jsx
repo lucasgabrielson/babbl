@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     margin: '20px',
     borderRadius: '5px',
-    boxShadow: '2px 5px 5px 5px rgba(0, 0, 0, 0.2)',
+    boxShadow: '2px 2px 2px 2px rgba(0, 0, 0, 0.2)',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
   }

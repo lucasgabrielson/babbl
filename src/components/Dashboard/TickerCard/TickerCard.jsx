@@ -46,7 +46,7 @@ export default function TickerCard({selectedTicker}, {setSelectedTicker}) {
   useEffect (() => {
 
     dispatch({type: 'FETCH_TICKERS', payload: {ticker: selectedTicker}});
-  }, [ticker]); 
+  }, [selectedTicker]); 
 console.log('This should be ticker', selectedTicker);
 
   return (

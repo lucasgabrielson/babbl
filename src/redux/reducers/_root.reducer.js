@@ -12,6 +12,7 @@ import top_movers from './top_movers.reducer';
 import tickers from './tickers.reducer';
 import timeseries_sentiments from './timeseries_sentiments.reducer';
 import timeseries_prices from './timeseries_prices.reducer';
+import babbl_api_sorted_articles from './babbl_api_sorted_articles.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   userArticles, // contains the articles for the specific user
   populated_tickers, // contains the available tickers with their corresponding mentions
   babbl_api_articles, // contains the articles regarding the ticker(s) requested
+  babbl_api_sorted_articles,
   ticker_snippets, // contains the snippets regaridng the ticker(s) requested
   userWatchlist, // contains the tickers in a users watchlist
   drawer, // will open and close drawer

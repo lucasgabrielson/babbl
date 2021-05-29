@@ -36,25 +36,25 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
   let one_x = Number(babbl_api_articles[params.id][0].x_graph.toFixed(2));
   let one_y = Number(babbl_api_articles[params.id][0].y_graph.toFixed(2));
   let one_tick = params.id;
-  let one_sediment = one_x + one_y;
+  let one_sediment = one_x ;
   // let  = Number(populated_tickers.data[0].mentions.toFixed(2) / 100);
 
   let two_x = Number(babbl_api_articles[params.id][1].x_graph.toFixed(2));
   let two_y = Number(babbl_api_articles[params.id][1].y_graph.toFixed(2));
   let two_tick = params.id;
-  let two_sediment = two_x + two_y;
+  let two_sediment = two_x ;
   // let two_mentions = Number(populated_tickers.data[1].mentions.toFixed(2) / 100);
 
   let three_x = Number(babbl_api_articles[params.id][2].x_graph.toFixed(2));
   let three_y = Number(babbl_api_articles[params.id][2].y_graph.toFixed(2));
   let three_tick = params.id;
-  let three_sediment = three_x + three_y;
+  let three_sediment = three_x ;
   // let three_mentions = Number(populated_tickers.data[2].mentions.toFixed(2) / 100);
 
   let four_x = Number(babbl_api_articles[params.id][3].x_graph.toFixed(2));
   let four_y = Number(babbl_api_articles[params.id][3].y_graph.toFixed(2));
   let four_tick = params.id;
-  let four_sediment = four_x + four_y;
+  let four_sediment = four_x 
   // let four_mentions = Number(populated_tickers.data[3].mentions.toFixed(2) / 100);
 
   // let five_x = Number(babbl_api_articles[params.id][4].x_graph.toFixed(2));
@@ -105,7 +105,7 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['ID', 'Outlook', 'Sentiment', 'Bullish Sentiment', ],
+    ['ID', 'Future-Past', 'Sentiment', 'Color', ],
   
     [one_tick, one_x, one_y, one_sediment, ],
     [two_tick, two_x, two_y, two_sediment, ],
