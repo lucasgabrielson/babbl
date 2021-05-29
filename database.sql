@@ -13,8 +13,18 @@ CREATE TABLE watchlist (
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL,
 	FOREIGN KEY (user_id) REFERENCES "user"(id),
-	"ticker" VARCHAR(6) UNIQUE NOT NULL
+	"ticker" VARCHAR(6) UNIQUE NOT NULL,
+	"mentions" INT
 );
+
+//ADD into watchlist
+id user_id ticker mentions
+1		1				AAPL	1576
+2		1				TSLA	960
+3		1				AMD		581
+4		1				MSFT	450
+5		1				NVDA	284
+
 
 CREATE TABLE articles (
 	"id" SERIAL PRIMARY KEY,
@@ -27,3 +37,4 @@ CREATE TABLE articles (
 	"score" VARCHAR(50),
 	"link" VARCHAR(255)
 );
+
