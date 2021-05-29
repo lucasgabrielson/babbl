@@ -13,7 +13,9 @@ const router = express.Router();
  */
  router.get('/:id', (req, res) => {
     console.log( 'in api/user_watchlist GET' );
-    let sqlText = `SELECT * FROM watchlist WHERE user_id = $1`;
+    let sqlText = `SELECT * FROM watchlist 
+    WHERE user_id = $1
+    ORDER BY watchlist.mentions DESC;`;
         pool.query(sqlText, [req.params.id])
             .then( results => {
                 res.send(results.rows);

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+import { useDispatch, useSelector } from 'react-redux';
 
 import TickerCard from '../Dashboard/TickerCard/TickerCard';
 import WatchList from '../Dashboard/WatchList/WatchList';
@@ -41,11 +42,10 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
     margin: '0px 0px 20px 0px',
     borderRadius: '5px',
-    // border: '2px solid black',
-    // flexWrap: 'nowrap',
+    // border: '1px solid gray',
+    
   },
   carousel: {
     position: 'relative',
@@ -75,13 +75,14 @@ const useStyles = makeStyles({
 
 
 const Dashboard = () => {
-  
+  const dispatch = useDispatch();
+  let user = useSelector( store => store.user)
   const [selectedTicker, setSelectedTicker] = useState('AAPL');
 
   useEffect(() => {
-    setSelectedTicker('AMC');
+    dispatch({type: 'FETCH_USER_WATCHLIST', payload: user.id});
   
-  }, []);
+  }, [dispatch]);
 
   const classes = useStyles();
 

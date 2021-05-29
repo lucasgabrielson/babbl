@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   chartMovers: {
     display: 'flex',
     borderRadius: '5px',
-    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+  
     width: '100%',
     minWidth: 'fit-content'
   },
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid white',
     borderRadius: '4px',
     
-    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    
   },
   TopTenContainer: {
     display:'flex',
@@ -119,16 +119,12 @@ const Overview = () => {
   return (
     <div className={classes.overview}>
       
-        {/* <div className={classes.movers}>
-          <h3>Daily Movers</h3>
-          <TopMovers />
-          <BottomMovers />
-        </div> */}
+       
         <div className={classes.chartAndTen}>
         
         <div className={classes.chartMovers}>
         <div className={classes.movers}>
-          <h3>Daily Movers</h3>
+          <h3>Daily Movement</h3>
           <TopMovers />
           <BottomMovers />
         </div>
@@ -140,7 +136,7 @@ const Overview = () => {
             </div>
           </div>
           <div className={classes.TopTenContainer}>
-          <h3>Top Mentions</h3>
+          <h3>Weekly Mentions</h3>
             <TopTen />
           </div>
         </div>

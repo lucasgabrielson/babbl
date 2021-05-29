@@ -10,12 +10,11 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-   
   },
   
 });
 
-const BubbleChart = () => {
+const LineChart = () => {
 
   const classes = useStyles();
   const populated_tickers = useSelector((store) => store.populated_tickers);
@@ -92,7 +91,7 @@ const BubbleChart = () => {
       <Chart
   width={'50vw'}
   height={'500px'}
-  chartType="BubbleChart"
+  chartType="LineChart"
   loader={<div>Loading Chart</div>}
   data={[
     ['ID', 'X', 'Y', 'Bullish Sediment'],
@@ -131,4 +130,4 @@ const BubbleChart = () => {
   )
 }
 
-export default BubbleChart;
+export default LineChart;

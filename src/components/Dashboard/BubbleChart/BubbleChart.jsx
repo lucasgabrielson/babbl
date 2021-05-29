@@ -29,37 +29,37 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
   let one_x = Number(babbl_api_articles[selectedTicker][0].x_graph.toFixed(2));
   let one_y = Number(babbl_api_articles[selectedTicker][0].y_graph.toFixed(2));
   let one_tick = selectedTicker;
-  let one_sediment = one_x + one_y;
+  let one_sediment = one_x ;
   // let  = Number(populated_tickers.data[0].mentions.toFixed(2) / 100);
 
   let two_x = Number(babbl_api_articles[selectedTicker][1].x_graph.toFixed(2));
   let two_y = Number(babbl_api_articles[selectedTicker][1].y_graph.toFixed(2));
   let two_tick = selectedTicker;
-  let two_sediment = two_x + two_y;
+  let two_sediment = two_x ;
   // let two_mentions = Number(populated_tickers.data[1].mentions.toFixed(2) / 100);
 
   let three_x = Number(babbl_api_articles[selectedTicker][2].x_graph.toFixed(2));
   let three_y = Number(babbl_api_articles[selectedTicker][2].y_graph.toFixed(2));
   let three_tick = selectedTicker;
-  let three_sediment = three_x + three_y;
+  let three_sediment = three_x ;
   // let three_mentions = Number(populated_tickers.data[2].mentions.toFixed(2) / 100);
 
   let four_x = Number(babbl_api_articles[selectedTicker][3].x_graph.toFixed(2));
   let four_y = Number(babbl_api_articles[selectedTicker][3].y_graph.toFixed(2));
   let four_tick = selectedTicker;
-  let four_sediment = four_x + four_y;
+  let four_sediment = four_x ;
   // let four_mentions = Number(populated_tickers.data[3].mentions.toFixed(2) / 100);
 
   // let five_x = Number(babbl_api_articles[selectedTicker][4].x_graph.toFixed(2));
   // let five_y = Number(babbl_api_articles[selectedTicker][4].y_graph.toFixed(2));
   // let five_tick = selectedTicker;
-  // let five_sediment = five_x + five_y;
-  // // let five_mentions = Number(populated_tickers.data[4].mentions.toFixed(2) / 100);
+  // let five_sediment = five_x ;
+  // let five_mentions = Number(populated_tickers.data[4].mentions.toFixed(2) / 100);
 
   // let six_x = Number(babbl_api_articles[selectedTicker][5].x_graph.toFixed(2));
   // let six_y = Number(babbl_api_articles[selectedTicker][5].y_graph.toFixed(2));
   // let six_tick = selectedTicker;
-  // let six_sediment = six_x + six_y;
+  // let six_sediment = six_x ;
   // let six_mentions = Number(populated_tickers.data[5].mentions.toFixed(2) / 100);
 
   // let seven_x = Number(babbl_api_articles.AAPL[6].x_graph.toFixed(2));
@@ -98,7 +98,7 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
   chartType="BubbleChart"
   loader={<div>Loading Chart</div>}
   data={[
-    ['ID', 'Outlook', 'Sentiment', 'Bullish Sentiment' ],
+    ['ID', 'Future-Past', 'Sentiment', 'Color' ],
   
     [one_tick, one_x, one_y, one_sediment, ],
     [two_tick, two_x, two_y, two_sediment, ],
@@ -114,7 +114,7 @@ const BubbleChart = ({selectedTicker}, {setSelectedTicker}) => {
     theme: {chartArea: {width: '80%', height: '80%'}},
     explorer: {},
     sizeAxis: {minSize: 10, maxSize: 25},
-    colorAxis: {minValue: -10, maxValue: 80,  colors: ['white', '#4334eb']},
+    colorAxis: {minValue: -50, maxValue: 100,  colors: ['white', '#4334eb']},
     hAxis: { title: 'Past -------- Future', viewWindow: {min: -100, max: 100 }},
     vAxis: { title: 'Negative -------- Positive', viewWindow: {min: -100, max: 100 }, },
     bubble: {

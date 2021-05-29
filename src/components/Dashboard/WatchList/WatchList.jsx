@@ -6,78 +6,105 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { red } from '@material-ui/core/colors';
 
 
-const MatEdit = ({ index }) => {
+// const MatEdit = ({ index }) => {
 
-  const handleEditClick = () => {
-      console.log('delete clicked');
-  }
+//   const handleEditClick = () => {
+//       console.log('delete clicked');
+      
+//   }
 
 
-  return <FormControlLabel
-             control={
-                 <IconButton color="secondary" aria-label="add an alarm" onClick={handleEditClick} >
-                     <DeleteIcon style={{ color: red[200] }} />
-                 </IconButton>
-             }
-         />
-};
+//   return <FormControlLabel
+//              control={
+//                  <IconButton color="secondary" aria-label="add an alarm" onClick={handleEditClick} >
+//                      <DeleteIcon style={{ color: red[200] }} />
+//                  </IconButton>
+//              }
+//          />
+// };
 
 export default function FlexLayoutGrid(props) {
-
+  const dispatch = useDispatch();
   const populated_tickers = useSelector((store) => store.populated_tickers);
-  let one_x = Number(populated_tickers.data[9].x_graph.toFixed(2));
-  let one_y = Number(populated_tickers.data[9].y_graph.toFixed(2));
-  let one_mentions = populated_tickers.data[9].mentions;
-  let one_score = Number(one_x + one_y).toFixed(2);
+  
 
-  let two_x = Number(populated_tickers.data[0].x_graph.toFixed(2));
-  let two_y = Number(populated_tickers.data[0].y_graph.toFixed(2));
-  let two_mentions = populated_tickers.data[0].mentions;
-  let two_score = Number(two_x + two_y).toFixed(2);
+  // useEffect(() => {
+  //   dispatch({type: 'FETCH_USER_WATCHLIST', payload: user.id});
+  
+  // }, [dispatch]);
 
-  let three_x = Number(populated_tickers.data[2].x_graph.toFixed(2));
-  let three_y = Number(populated_tickers.data[2].y_graph.toFixed(2));
+  const userWatchlist = useSelector( store => store.userWatchlist)
+
+  let one_ticker = populated_tickers.data[0].ticker;
+  let one_mentions = populated_tickers.data[0].mentions;
+  
+  let two_ticker = populated_tickers.data[1].ticker;
+  let two_mentions = populated_tickers.data[1].mentions;
+  
+  let three_ticker = populated_tickers.data[2].ticker;
   let three_mentions = populated_tickers.data[2].mentions;
-  let three_score = Number(three_x + three_y).toFixed(2);
 
-  let four_x = Number(populated_tickers.data[1].x_graph.toFixed(2));
-  let four_y = Number(populated_tickers.data[1].y_graph.toFixed(2));
-  let four_mentions = populated_tickers.data[1].mentions;
-  let four_score = Number(four_x + four_y).toFixed(2);
+  let four_ticker = populated_tickers.data[3].ticker;
+  let four_mentions = populated_tickers.data[3].mentions;
 
-  const rows = [
-    { id: 1, Ticker: 'AMC', Mentions: one_mentions, Babbl_Score: one_score },
-    { id: 2, Ticker: 'AAPL', Mentions: two_mentions, Babbl_Score: two_score },
-    { id: 3, Ticker: 'AMD', Mentions: three_mentions, Babbl_Score: three_score },
-    { id: 4, Ticker: 'TSLA', Mentions: four_mentions, Babbl_Score: four_score },
+  let five_ticker = populated_tickers.data[4].ticker;
+  let five_mentions = populated_tickers.data[4].mentions;
+
+  // let six_ticker = populated_tickers.data[8].ticker;
+  // let six_mentions = populated_tickers.data[8].mentions;
+
+  // let seven_ticker = populated_tickers.data[1].ticker;
+  // let seven_mentions = populated_tickers.data[1].mentions;
+
+  
+ 
+
+  const [rows, setRows] = useState([
+    { id: 1, Ticker: one_ticker, Mentions: one_mentions,  },
+    { id: 2, Ticker: two_ticker, Mentions: two_mentions, },
+    { id: 3, Ticker: three_ticker, Mentions: three_mentions, },
+    { id: 4, Ticker: four_ticker, Mentions: four_mentions, },
+    { id: 5, Ticker: five_ticker, Mentions: five_mentions, },
+    // { id: 6, Ticker: six_ticker, Mentions: six_mentions, },
+    // { id: 7, Ticker: seven_ticker, Mentions: seven_mentions, },
+    // { id: 8, Ticker: eight_ticker, Mentions: eight_mentions, },
+    // { id: 9, Ticker: nine_ticker, Mentions: nine_mentions, },
+  ])
+  
    
-  ];
+  
  
 
   const columns = [
-    { field: 'Ticker', headerName: 'Ticker',
+    { field: 'ticker', headerName: 'Ticker',
       renderCell: (params) => {
         const onClick = () => {
-          props.setSelectedTicker(params.row.Ticker);
-          console.log('clicked ticker', params.row.Ticker)
+          props.setSelectedTicker(params.row.ticker);
+          console.log('clicked ticker', params.row.ticker)
       };
-      return <div style={{ cursor: "pointer" }} variant="contained" size="small" onClick={onClick}>{params.row.Ticker}</div>;
+      return <div style={{ cursor: "pointer" }} variant="contained" size="small" onClick={onClick}>{params.row.ticker}</div>;
     }
     },
-    { field: 'Mentions', headerName: 'Mentions'},
-    { field: 'Babbl_Score', headerName: 'Babbl Score'},
+    { field: 'mentions', headerName: 'Mentions', width: 120},
+    // { field: 'Price', headerName: 'Price'},
     {
       field: "actions",
-      headerName: "Actions",
+      headerName: "Delete",
       sortable: false,
       width: 'fit-content',
       disableClickEventBubbling: true,
       disableSelectionOnClick: true,
       
       renderCell: (params) => {
+        const onClick = () => {
+          // props.setSelectedTicker(params.row.ticker);
+          console.log('delete ticker:', params.row.ticker, params.row.id)
+      };
           return (
               <div  style={{ cursor: "pointer" }} disableSelectionOnClick={true} disableClickEventBubbling={true} >
-                  <MatEdit index={params.row.id} />
+                  <IconButton color="secondary" aria-label="delete button" onClick={onClick} >
+                     <DeleteIcon style={{ color: red[200] }} />
+                 </IconButton>
                </div>
           );
        }
@@ -90,25 +117,14 @@ export default function FlexLayoutGrid(props) {
 
 
   
-  // const rows = [
-  //   { id: 1, Ticker: 'TESLA', Bull: '+0.45', Bear: '-0.55'},
-  //   { id: 2, Ticker: 'APPL', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 3, Ticker: 'DIS', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 4, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 5, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 6, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 7, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 8, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 9, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  //   { id: 10, Ticker: 'LYFT', Bull: '+0.45', Bear: '-0.55' },
-  // ];
+  
 
   return (
   
-    <div style={{ height: '503px', width: '400px', }}>
+    <div style={{ height: '500px', width: '300px', }}>
       <div style={{ display: 'flex', flexDirection: 'column',  height: '100%'}}>
         <div style={{ flexGrow: 1 }}>
-          <DataGrid rows={rows} columns={columns} pageSize={10} hideFooter={true}  />
+          <DataGrid rows={userWatchlist} columns={columns} pageSize={10} hideFooter={true}  />
           
         </div>
       </div>
