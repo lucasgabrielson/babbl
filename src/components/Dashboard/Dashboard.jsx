@@ -41,8 +41,8 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
-    margin: '20px 0px 20px 0px',
+    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    margin: '0px 0px 20px 0px',
     borderRadius: '5px',
     // border: '2px solid black',
     // flexWrap: 'nowrap',
@@ -57,7 +57,7 @@ const useStyles = makeStyles({
     margin: '20px 0px 20px 0px',
     padding: '10px',
     borderRadius: '5px',
-    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    
     
   },
   snippetsTitle: {
