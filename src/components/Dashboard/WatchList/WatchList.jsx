@@ -32,8 +32,8 @@ export default function FlexLayoutGrid(props) {
   //   dispatch({type: 'FETCH_USER_WATCHLIST', payload: user.id});
   
   // }, [dispatch]);
-
-  const userWatchlist = useSelector( store => store.userWatchlist)
+  const user = useSelector(store => store.user);
+  const userWatchlist = useSelector( store => store.userWatchlist);
 
   let one_ticker = populated_tickers.data[0].ticker;
   let one_mentions = populated_tickers.data[0].mentions;
@@ -99,6 +99,11 @@ export default function FlexLayoutGrid(props) {
         const onClick = () => {
           // props.setSelectedTicker(params.row.ticker);
           console.log('delete ticker:', params.row.ticker, params.row.id)
+          let obj = {
+            ticker: params.row.ticker,
+            user_id: user.id,
+          }
+          dispatch({type: 'DELETE_WATCHLIST_ARTICLE', payload: obj });
       };
           return (
               <div  style={{ cursor: "pointer" }} disableSelectionOnClick={true} disableClickEventBubbling={true} >

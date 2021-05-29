@@ -17,13 +17,15 @@ CREATE TABLE watchlist (
 	"mentions" INT
 );
 
-//ADD into watchlist
-id user_id ticker mentions
-1		1				AAPL	1576
-2		1				TSLA	960
-3		1				AMD		581
-4		1				MSFT	450
-5		1				NVDA	284
+-- DUMMY DATA for Watchist
+
+INSERT INTO "watchlist" (user_id, ticker, mentions) 
+VALUES 
+(1, 'AAPL', 1576),
+(1, 'TSLA', 960),
+(1, 'AMD', 581),
+(1, 'MSFT', 450),
+(1, 'NVDA', 284);
 
 
 CREATE TABLE articles (
