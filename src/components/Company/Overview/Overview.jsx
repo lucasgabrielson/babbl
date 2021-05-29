@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import {useParams} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 
 import Charts from  '../Charts/Charts';
 import CompanySnippets from '../CompanySnippets/CompanySnippets';
 import Articles from '../Articles/Articles';
 import TickerCard from '../TickerCard/TickerCard';
+import Button from '@material-ui/core/Button';
+
 
 
 
@@ -94,19 +98,39 @@ const useStyles = makeStyles((theme) => ({
     
     justifyContent: 'flex-start',
   },
+  addButton: {
+    display: 'flex',
+    justifyContent: 'center'
+    
+  },
 }));
 
 
-const Overview = () => {
+const Overview = ({addToWatchlist}) => {
 
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const params = useParams();
+  const ticker = useSelector((store)=> {return store.tickers})
+  
+  useEffect (() => {
+    dispatch({type: 'FETCH_TICKERS', payload: {ticker: params.id}});
+  }, []); 
+  
 
   return (
+
+
     <div className={classes.overview}>
+      <div className={classes.addButton}>
+        <Button variant="contained"
+          onClick={() => addToWatchlist(params.id)}>
+        Add to Watchlist</Button>
+        </div>
+      
         <div className={classes.tickerCard}>
           <TickerCard />
         </div>
-        
         
           <div className={classes.middle}>
             <div className={classes.bubbleChartContainer}>

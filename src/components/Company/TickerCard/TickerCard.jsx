@@ -46,6 +46,8 @@ export default function TickerCard() {
   useEffect (() => {
     dispatch({type: 'FETCH_TICKERS', payload: {ticker: params.id}});
   }, []); 
+
+  
 console.log(params);
   return (
     

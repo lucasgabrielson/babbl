@@ -13,9 +13,16 @@ function* fetchUserWatchlist(action) {
 
 function* addWatchlistArticle(action) {
     try {
-        console.log( 'addWatchlistArticle' );
-        const response = yield axios.post(`/api/user_watchlist/?id=${action.payload.user_id}&ticker=${action.payload.ticker}`);
-        yield put({ type: 'FETCH_USER_WATCHLIST' } )
+        console.log( 'addWatchlistArticle', action.payload );
+        
+        const response = yield axios.post(`/api/user_watchlist/${action.payload.user_id}`, 
+            action.payload
+        );
+
+        console.log('This is the response for addWatchlist', action.payload);
+
+
+        yield put({ type: 'FETCH_USER_WATCHLIST', payload: action.payload.user_id} )
     } catch (error) {
         console.log('Error adding user watchlist from database', error);
     }
