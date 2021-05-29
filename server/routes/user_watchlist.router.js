@@ -41,8 +41,8 @@ const router = express.Router();
  */
 router.post('/:id', (req, res) => {
     console.log( 'in api/user_articles POST' );
-    let sqlText = `INSERT INTO watchlist (user_id, ticker) VALUES ($1, $2,)`;
-        pool.query(sqlText, [req.query.id, req.query.ticker])
+    let sqlText = `INSERT INTO watchlist (user_id, ticker, mentions) VALUES ($1, $2, $3)`;
+        pool.query(sqlText, [req.params.id, req.body.ticker, req.body.mentions])
             .then( results => {
                 res.sendStatus(201);
             }).catch( err => {

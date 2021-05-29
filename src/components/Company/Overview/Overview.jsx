@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import {useParams} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 
 import Charts from  '../Charts/Charts';
 import CompanySnippets from '../CompanySnippets/CompanySnippets';
@@ -97,13 +99,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const Overview = () => {
+const Overview = ({addToWatchlist}) => {
 
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const params = useParams();
+  const ticker = useSelector((store)=> {return store.tickers})
+  
+  useEffect (() => {
+    dispatch({type: 'FETCH_TICKERS', payload: {ticker: params.id}});
+  }, []); 
+  
 
   return (
+
+
     <div className={classes.overview}>
         <div className={classes.tickerCard}>
+          <button onClick={() => addToWatchlist(params.id)}>Add</button>
           <TickerCard />
         </div>
         
