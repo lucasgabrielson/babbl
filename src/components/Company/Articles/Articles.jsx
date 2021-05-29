@@ -70,7 +70,6 @@ function CommunityNews(){
   // }, []); 
   
   
-<<<<<<< HEAD
   const babbl_api_articles = useSelector( store => store.babbl_api_articles);
 
   const AAPL_articles = babbl_api_articles.AAPL;
@@ -89,11 +88,8 @@ function CommunityNews(){
       
   //   });
   // }
-=======
   const babbl_api_sorted_articles = useSelector( store => store.babbl_api_sorted_articles);
 
-
->>>>>>> b092fdf582d1771d9347017e7e2ef7c26f439ece
 
   const rows = [
     //3 most recent articles from AAPL

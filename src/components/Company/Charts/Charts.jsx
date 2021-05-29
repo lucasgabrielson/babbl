@@ -99,7 +99,7 @@ function TabPanel(props) {
             <BubbleChart />
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
-            {/* <LineChart /> */}
+            <LineChart />
           </TabPanel>
           
         </SwipeableViews>

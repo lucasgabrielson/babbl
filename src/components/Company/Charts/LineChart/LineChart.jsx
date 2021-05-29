@@ -19,26 +19,50 @@ function LineChart (){
   console.log('params:', params);
 
 
-  let array = [];
+  let array = 
+      [
+        [new Date(2021,6,19), 10, 486.50],
+        [new Date(2021,6,20), 10, 486.50],
+        [new Date(2021,6,21), 10, 486.50],
+        [new Date(2021,6,22), 10, 486.50],
+        [new Date(2021,6,23), 10, 486.50],
+        [new Date(2021,6,24), 10, 486.50],
+        [new Date(2021,6,25), 10, 486.50],
+        [new Date(2021,6,26), 10, 486.50],
+      ];
 
-  if( times[0] !== undefined && prices[0] !== undefined ) {
-    for( let i = 0; i < times[0][ticker].length; i++ ) {
-      console.log(times[0][ticker][i].date.slice(0,4), 
-        times[0][ticker][i].date.slice(5,7), 
-        times[0][ticker][i].date.slice(8,10));
-      array.push(
-        [
-          new Date(
-            times[0][ticker][i].date.slice(0,4), 
-            times[0][ticker][i].date.slice(5,7) - 1, 
-            times[0][ticker][i].date.slice(8,10)
-          ),
-          times[0][ticker][i].value,
-          prices[i]["close"]
-        ]
-      )
-    }
+  if( ticker === 'MSFT' ) {
+    array = 
+      [
+        [new Date(2021,6,19), 10, 486.50],
+        [new Date(2021,6,20), 10, 486.50],
+        [new Date(2021,6,21), 10, 486.50],
+        [new Date(2021,6,22), 10, 486.50],
+        [new Date(2021,6,23), 10, 486.50],
+        [new Date(2021,6,24), 10, 486.50],
+        [new Date(2021,6,25), 10, 486.50],
+        [new Date(2021,6,26), 10, 486.50],
+      ]
   }
+
+  // if( times[0] !== undefined && prices[0] !== undefined ) {
+  //   for( let i = 0; i < times[0][ticker].length; i++ ) {
+  //     console.log(times[0][ticker][i].date.slice(0,4), 
+  //       times[0][ticker][i].date.slice(5,7), 
+  //       times[0][ticker][i].date.slice(8,10));
+  //     array.push(
+  //       [
+  //         new Date(
+  //           times[0][ticker][i].date.slice(0,4), 
+  //           times[0][ticker][i].date.slice(5,7) - 1, 
+  //           times[0][ticker][i].date.slice(8,10)
+  //         ),
+  //         times[0][ticker][i].value,
+  //         prices[i]["close"]
+  //       ]
+  //     )
+  //   }
+  // }
 
   
     return(
@@ -46,7 +70,7 @@ function LineChart (){
         {/* {JSON.stringify(params.id)}
         {JSON.stringify(times)} */}
         {/* {JSON.stringify(prices)} */}
-        {JSON.stringify(array)}
+        {/* {JSON.stringify(array)} */}
         {/* { array.length &&  */}
         <Chart
           width={'100%'}
