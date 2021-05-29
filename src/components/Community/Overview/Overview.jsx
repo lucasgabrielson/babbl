@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   chartMovers: {
     display: 'flex',
     borderRadius: '5px',
-    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+  
     width: '100%',
     minWidth: 'fit-content'
   },
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid white',
     borderRadius: '4px',
     
-    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
+    
   },
   TopTenContainer: {
     display:'flex',
@@ -150,7 +150,7 @@ const Overview = () => {
               
           </div>
         </div>
-        {/* <News /> */}
+        <News />
        
     </div>
     

@@ -41,11 +41,10 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // boxShadow: '2px 5px 10px 5px rgba(0, 0, 0, 0.2)',
     margin: '0px 0px 20px 0px',
     borderRadius: '5px',
-    // border: '2px solid black',
-    // flexWrap: 'nowrap',
+    // border: '1px solid gray',
+    
   },
   carousel: {
     position: 'relative',
@@ -112,7 +111,7 @@ const Dashboard = () => {
       </div>
 
       <div>
-        {/* <ArticleTabs /> */}
+        <ArticleTabs />
       </div>
     </div>
     </div>
