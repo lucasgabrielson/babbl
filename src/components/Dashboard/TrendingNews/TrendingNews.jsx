@@ -103,9 +103,19 @@ function TrendingNews(){
 
   const dispatch = useDispatch();
   
+  const babbl_api_articles = useSelector( store => store.babbl_api_articles);
+
+  const AAPL_articles = babbl_api_articles.AAPL;
+  const AMC_articles = babbl_api_articles.AMC;
+  const AMD_articles = babbl_api_articles.AMD;
+  // const ARKK_articles = babbl_api_articles.ARKK;
+  const EV_articles = babbl_api_articles.EV;
+  const MSFT_articles = babbl_api_articles.MSFT;
+  const NVDA_articles = babbl_api_articles.NVDA;
+  const OS_articles = babbl_api_articles.OS;
+  const PLTR_articles = babbl_api_articles.PLTR;
+  const TSLA_articles = babbl_api_articles.TSLA;
   const babbl_api_sorted_articles = useSelector( store => store.babbl_api_sorted_articles);
-
-
 
   const rows = [
     //3 most recent articles from AAPL

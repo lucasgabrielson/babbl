@@ -28,29 +28,53 @@ function LineChart ({selectedTicker}){
   const times = useSelector((store)=> {return store.timeseries_sentiments});
   const prices = useSelector((store) => {return store.timeseries_prices});
 
-  let array = [];
 
-  if( times[0] !== undefined && prices[0] !== undefined ) {
-    for( let i = 0; i < times[0][selectedTicker].length; i++ ) {
-      console.log(times[0][selectedTicker][i].date.slice(0,4), 
-        times[0][selectedTicker][i].date.slice(5,7), 
-        times[0][selectedTicker][i].date.slice(8,10));
-      array.push(
-        [
-          new Date(
-            times[0][selectedTicker][i].date.slice(0,4), 
-            times[0][selectedTicker][i].date.slice(5,7) - 1, 
-            times[0][selectedTicker][i].date.slice(8,10)
-          ),
-          times[0][selectedTicker][i].value,
-          prices[i]["close"]
-        ]
-      )
-    }
+  let array = 
+      [
+        [new Date(2021,6,19), 10, 486.50],
+        [new Date(2021,6,20), 10, 486.50],
+        [new Date(2021,6,21), 10, 486.50],
+        [new Date(2021,6,22), 10, 486.50],
+        [new Date(2021,6,23), 10, 486.50],
+        [new Date(2021,6,24), 10, 486.50],
+        [new Date(2021,6,25), 10, 486.50],
+        [new Date(2021,6,26), 10, 486.50],
+      ];
+
+  if( selectedTicker === 'MSFT' ) {
+    array = 
+      [
+        [new Date(2021,6,19), 10, 486.50],
+        [new Date(2021,6,20), 10, 486.50],
+        [new Date(2021,6,21), 10, 486.50],
+        [new Date(2021,6,22), 10, 486.50],
+        [new Date(2021,6,23), 10, 486.50],
+        [new Date(2021,6,24), 10, 486.50],
+        [new Date(2021,6,25), 10, 486.50],
+        [new Date(2021,6,26), 10, 486.50],
+      ]
   }
+
+  // if( Array.isArray(times[0][selectedTicker]) && Array.isArray(prices[0]["close"]) ) {
+  //   for( let i = 0; i < times[0][selectedTicker].length; i++ ) {
+  //     array.push(
+  //       [
+  //         new Date(
+  //           times[0][selectedTicker][i].date.slice(0,4), 
+  //           times[0][selectedTicker][i].date.slice(5,7) - 1, 
+  //           times[0][selectedTicker][i].date.slice(8,10)
+  //         ),
+  //         times[0][selectedTicker][i].value,
+  //         prices[i]["close"]
+  //       ]
+  //     )
+  //   }
+  // }
 
     return(
         <div className={classes.lineChartContainer}>
+        {/* {JSON.stringify(times)}
+        {JSON.stringify(prices)} */}
           <Chart
             width={'100%'}
             height={'500'}

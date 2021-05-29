@@ -7,13 +7,23 @@ import {useDispatch, useSelector} from 'react-redux';
 
 
 const useStyles = makeStyles({
-  option: {
-    fontSize: 15,
-    '& > span': {
-      marginRight: 10,
-      fontSize: 18,
+    option: {
+        fontSize: 15,
+        '& > span': {
+            marginRight: 10,
+            fontSize: 18,
+        // Hover with light-grey
+        '&[data-focus="true"]': {
+            backgroundColor: 'white',
+            borderColor: 'transparent',
+        },
+        // Selected has dark-grey
+        '&[aria-selected="true"]': {
+            backgroundColor: 'white',
+            borderColor: 'transparent',
+        },
+        },
     },
-  },
 });
 
 export default function TickerSelect() {
