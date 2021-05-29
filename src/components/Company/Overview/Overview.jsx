@@ -7,6 +7,8 @@ import Charts from  '../Charts/Charts';
 import CompanySnippets from '../CompanySnippets/CompanySnippets';
 import Articles from '../Articles/Articles';
 import TickerCard from '../TickerCard/TickerCard';
+import Button from '@material-ui/core/Button';
+
 
 
 
@@ -96,6 +98,11 @@ const useStyles = makeStyles((theme) => ({
     
     justifyContent: 'flex-start',
   },
+  addButton: {
+    display: 'flex',
+    justifyContent: 'center'
+    
+  },
 }));
 
 
@@ -115,11 +122,15 @@ const Overview = ({addToWatchlist}) => {
 
 
     <div className={classes.overview}>
+      <div className={classes.addButton}>
+        <Button variant="contained"
+          onClick={() => addToWatchlist(params.id)}>
+        Add to Watchlist</Button>
+        </div>
+      
         <div className={classes.tickerCard}>
-          <button onClick={() => addToWatchlist(params.id)}>Add</button>
           <TickerCard />
         </div>
-        
         
           <div className={classes.middle}>
             <div className={classes.bubbleChartContainer}>
