@@ -83,11 +83,11 @@ function* fetchSortedApiArticles(action) {
               finalArray.push(snippet)
             });
           }
-          if(PTON_articles.length != 0){
-            PTON_articles.forEach(snippet => {
-              finalArray.push(snippet)
-            });
-          }
+          // if(PTON_articles.length != 0){
+          //   PTON_articles.forEach(snippet => {
+          //     finalArray.push(snippet)
+          //   });
+          // }
           if(SHOP_articles.length != 0){
             SHOP_articles.forEach(snippet => {
               finalArray.push(snippet)
