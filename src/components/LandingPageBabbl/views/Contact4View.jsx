@@ -1,6 +1,7 @@
 /* eslint-disable */
 
-import React from 'react'
+import React from 'react';
+import { connect, useDispatch } from 'react-redux';
 import { createScope, map, transformProxies } from './helpers'
 
 const scripts = [
