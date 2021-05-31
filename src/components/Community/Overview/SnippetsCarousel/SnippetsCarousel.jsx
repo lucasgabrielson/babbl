@@ -80,7 +80,7 @@ export default function SingleLineGridList() {
   const NVDA_snippets = ticker_snippets.NVDA.snippets;
   const OS_snippets = ticker_snippets.OS.snippets;
   const PLTR_snippets = ticker_snippets.PLTR.snippets;
-  const PTON_snippets = ticker_snippets.PTON.snippets;
+  // const PTON_snippets = ticker_snippets.PTON.snippets;
   const SHOP_snippets = ticker_snippets.SHOP.snippets;
   const TSLA_snippets = ticker_snippets.TSLA.snippets;
 
@@ -132,11 +132,11 @@ export default function SingleLineGridList() {
       setFinalArray(finalArray => [...finalArray, snippet])
     });
   }
-  if(PTON_snippets.length != 0){
-    PTON_snippets.forEach(snippet => {
-      setFinalArray(finalArray => [...finalArray, snippet])
-    });
-  }
+  // if(PTON_snippets.length != 0){
+  //   PTON_snippets.forEach(snippet => {
+  //     setFinalArray(finalArray => [...finalArray, snippet])
+  //   });
+  // }
   if(SHOP_snippets.length != 0){
     SHOP_snippets.forEach(snippet => {
       setFinalArray(finalArray => [...finalArray, snippet])

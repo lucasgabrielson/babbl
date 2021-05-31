@@ -21,11 +21,11 @@ CREATE TABLE watchlist (
 
 INSERT INTO "watchlist" (user_id, ticker, mentions) 
 VALUES 
-(1, 'AAPL', 1576),
-(1, 'TSLA', 960),
-(1, 'AMD', 581),
-(1, 'MSFT', 450),
-(1, 'NVDA', 284);
+(2, 'AAPL', 1576),
+(2, 'TSLA', 960),
+(2, 'AMD', 581),
+(2, 'MSFT', 450),
+(2, 'NVDA', 284);
 
 
 CREATE TABLE articles (
