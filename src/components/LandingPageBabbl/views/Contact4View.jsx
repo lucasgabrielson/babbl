@@ -52,7 +52,11 @@ class Contact4View extends React.Component {
                   <a href="#/dashboard" className="af-class-nav-link af-class-light">Dashboard</a>
                   <a href="#/community" className="af-class-nav-link af-class-light">Community</a>
                   <a href="#/bookmarks" className="af-class-nav-link af-class-light">Bookmarks</a>
-                  <a href="#/" className="af-class-nav-link af-class-light">LogOut</a>
+                  {this.props.user.id ? 
+                    <a href="#/user" className="af-class-nav-link af-class-light" onClick={() => this.props.dispatch({ type: 'LOGOUT' })}>LogOut</a>
+                    : 
+                    <a href="#/user" className="af-class-nav-link af-class-light" onClick={() => this.props.dispatch({ type: 'LOGOUT' })}>Login</a>
+                  }
                   <a href="#" className="af-class-navlink af-class-light af-class-nav-menu w-inline-block" />
                 </nav>
                 <div className="af-class-transparant-menu-button w-nav-button">
@@ -106,6 +110,19 @@ class Contact4View extends React.Component {
   }
 }
 
-export default Contact4View
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // dispatching plain actions
+    logout: () => dispatch({ type: 'LOGOUT' }),
+  }
+}
+
+export default connect(mapStateToProps)(Contact4View);
 
 /* eslint-enable */
