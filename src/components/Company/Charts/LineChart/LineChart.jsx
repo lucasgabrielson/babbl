@@ -80,7 +80,7 @@ function LineChart (){
           data={[
             [
               { type: 'date', label: 'Day'},
-              'Babbl Score',
+              'Sentiment',
               'Closing Price',
             ],
             ...array
@@ -88,13 +88,13 @@ function LineChart (){
           options={{
             chart: {
               title:
-                'Daily Closing Price and Babbl Score',
+                'Daily Closing Price and Sentiment',
             },
             width: 1000,
             height: 500,
             series: {
               // Gives each series an axis name that matches the Y-axis below.
-              0: { axis: 'Babbl Score' },
+              0: { axis: 'Sentiment' },
               1: { axis: 'Price (USD)' },
             },
             axes: {

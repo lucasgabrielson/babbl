@@ -12,7 +12,7 @@ const columns = [
   { field: 'ticker', headerName: 'Ticker', width: 150 },
   { field: 'title', headerName: 'Title',  width: 300},
   { field: 'mentions', headerName: 'Mentions', width: 300 },
-  { field: 'score', headerName: 'Babbl Score', width: 150 },
+  { field: 'score', headerName: 'Sentiment', width: 150 },
   {
     field: "url",
     headerName: "View",
