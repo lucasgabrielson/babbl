@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
+import { useHistory, NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
@@ -18,6 +19,7 @@ function LoginForm() {
   const errors = useSelector(store => store.errors);
   const dispatch = useDispatch();
   const classes = useStyles();
+  const history = useHistory();
 
   const login = (event) => {
     event.preventDefault();
@@ -29,10 +31,13 @@ function LoginForm() {
           username: username,
           password: password,
         },
+
+        
       });
     } else {
       dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
+    history.push('/dashboard/2')
   }; // end login
 
   return (

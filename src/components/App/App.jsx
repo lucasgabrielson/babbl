@@ -135,7 +135,7 @@ function App() {
             exact
             path="/dashboard/:id"
           >
-            <Community />
+            <Dashboard />
           </ProtectedRoute>
 
           <ProtectedRoute
