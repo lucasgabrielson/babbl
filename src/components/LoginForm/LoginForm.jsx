@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {useSelector} from 'react-redux';
 import { useHistory, NavLink } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
@@ -37,7 +37,7 @@ function LoginForm() {
     } else {
       dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
-    history.push('/dashboard/2')
+   history.push('/dashboard/2')
   }; // end login
 
   return (
