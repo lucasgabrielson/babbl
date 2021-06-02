@@ -8,8 +8,6 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { shadows } from '@material-ui/system';
-import Paper from '@material-ui/core/paper';
-
 
 // import components
 import TrendingNews from '../TrendingNews/TrendingNews';
