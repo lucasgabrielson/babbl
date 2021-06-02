@@ -6,7 +6,7 @@
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/lucasgabrielson/babbl.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/lucasgabrielson/babbl.svg?style=social)
 
-# Babbl (Lucas' Project)
+# Babbl 
 
 ## Description
 
@@ -22,10 +22,12 @@ Include one or two screen shots of your project here (optional). Remove if unuse
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
+Before you get started, make sure you have the following software installed on your computer:
 
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
+- [PostrgeSQL](https://www.postgresql.org/)
+- [Nodemon](https://nodemon.io/)
+
 
 ## Installation
 
@@ -34,7 +36,7 @@ How do you get your application up and running? This is a step by step list for 
 If your application has secret keys (for example --  Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the `.env` file.
 
 1. Create a database named `babbl`,
-2. The queries in the `tables.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries, 
+2. The queries in the `database.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries, 
 3. Create .env file and get token from babbl.dev & IEX Cloud
     - BABBL_TOKEN=
     - IEX_CLOUD_API_TOKEN=
@@ -44,24 +46,40 @@ If your application has secret keys (for example --  Twilio), make sure you tell
 7. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
-How does someone use this application? Tell a user story here.
+How to use Babbl:
 
-1. xxx
-2. xxx
-3. xxx
-4. xxx
+1. New users will be brought to the landing page which explains Babbl and offers a way to try Babbl through a button that will lead to the community page.
+
+2. The Community page has a sentiment chart that is populated with the top 10 mentioned companies for the week.  Below that are company snippets from all of the top 10 companies.  Below the snippets are new articles from the top 10 companies.
+
+3. The dashboard link in the header will be reserved for users with an account.  This page will look similar to the community page, but have a watchlist that the user can closely watch companies of interest.  The user can add and remove companies from the watchlist.  The ticker, chart, and snippets will all populate with the selected company from the watchlist.  The news articles below will be all news articles from available companies.  The user will be able to sort by company ect.
+
+4. The select menu in the header will allow the user to select a company and go to the company page.  The user will see company specific ticker information, a sentiment chart and price chart, company specific news snippets and general news articles.  A user will be able to add a company to the watchlist from the company page by clicking the add to watchlist button located near the ticker.
+
 5. xxx
+
 6. 
 
 
 ## Built With
 
-List technologies and frameworks here
+This application uses the following technologies:
+
+- [React](https://reactjs.org/)
+- [Redux](https://maven.apache.org/)
+- [Redux-Saga](https://redux-saga.js.org/)
+- [Express](https://expressjs.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Material-UI](https://material-ui.com/)
+- [Google-Charts](https://developers.google.com/chart/)
+
 
 
 _Note, include this only if you have a license file. GitHub will generate one for you if you want!_
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
+Thanks to all of the staff at [Prime Digital Academy](https://www.primeacademy.io) who equipped us with the skills to make this application a reality, especially our instructor Dev Janna. Thank you to the EMIRP Cohort for the all of the collaboration throughout our group projects during the course.
 
+## Support
+If you have serious issues,  contact [Prime Digital Academy](https://www.primeacademy.io)
 
