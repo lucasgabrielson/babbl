@@ -6,7 +6,7 @@
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/lucasgabrielson/babbl.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/lucasgabrielson/babbl.svg?style=social)
 
-# Babbl (Lucas' Project)
+# Babbl (Lucas' Surreal Project)
 
 ## Description
 
