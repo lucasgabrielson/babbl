@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SwipeableViews from 'react-swipeable-views';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import React from "react";
+import PropTypes from "prop-types";
+import SwipeableViews from "react-swipeable-views";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
-import TrendingNews from '../News/TrendingNews/TrendingNews';
-import CommunityNews from '../News/CommunityNews/CommunityNew';
+import TrendingNews from "../News/TrendingNews/TrendingNews";
+import CommunityNews from "../News/CommunityNews/CommunityNew";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,24 +40,22 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
+    "aria-controls": `full-width-tabpanel-${index}`,
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    boxShadow: 'none',
-    backgroundColor: 'white',
-    width: '100%',
-    // border: '2px solid black'
+    boxShadow: "none",
+    backgroundColor: "white",
+    width: "100%",
   },
   tabs: {
-    backgroundColor: 'white'
-  }
+    backgroundColor: "white",
+  },
 }));
 
 export default function News() {
-  
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -72,7 +70,6 @@ export default function News() {
 
   return (
     <div className={classes.root}>
-
       <Box position="static" color="default">
         <Tabs
           value={value}
@@ -80,16 +77,14 @@ export default function News() {
           onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
-          // variant="fullWidth"
           aria-label="full width tabs example"
         >
           <Tab label="TRENDING NEWS" {...a11yProps(0)} />
           <Tab label="COMMUNITY NEWS" {...a11yProps(1)} />
-          
         </Tabs>
       </Box>
       <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
         onChangeIndex={handleChangeIndex}
       >
@@ -99,7 +94,6 @@ export default function News() {
         <TabPanel value={value} index={1} dir={theme.direction}>
           <CommunityNews />
         </TabPanel>
-        
       </SwipeableViews>
     </div>
   );
