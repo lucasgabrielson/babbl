@@ -7,7 +7,7 @@ import { put, takeLatest } from 'redux-saga/effects';
  *      tickers: 'APPL, AMZN, ... etc'
  *      days: integer
  *      max: integer
- *      type: boolean
+ *      type: boolean [optional]
  *  }
  *  */ 
 

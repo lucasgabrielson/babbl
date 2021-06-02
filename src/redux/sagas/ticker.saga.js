@@ -1,6 +1,15 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
+
+/**
+ * action.payload should be an object 
+ *  {
+ *      ticker: 'APPL'
+ *  }
+ *  */ 
+
+
 function* tickers(action) {
     try {
         console.log( 'tickers', action.payload );
