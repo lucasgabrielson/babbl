@@ -1,34 +1,26 @@
-import React from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import { makeStyles } from '@material-ui/core/styles';
-
-//import Tabs from '../Community/Tabs/Tabs';
-import Overview from '../Community/Overview/Overview';
-import News from '../Community/News/News';
-import CommunityAppBar from '../LandingPageBabbl/views/CommunityAppBar';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { makeStyles } from "@material-ui/core/styles";
+import Overview from "../Community/Overview/Overview";
+import CommunityAppBar from "../LandingPageBabbl/views/CommunityAppBar";
 
 const useStyles = makeStyles((theme) => ({
- 
   communityContainer: {
-    margin: '20px',
-    
-  }
+    margin: "20px",
+  },
 }));
 
 const Community = () => {
-  
-
   const classes = useStyles();
 
   return (
     <div>
-    <CommunityAppBar />
+      <CommunityAppBar />
       <div className={classes.communityContainer}>
-      <Overview />
-      
+        <Overview />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Community;

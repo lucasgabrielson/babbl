@@ -20,7 +20,12 @@ To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.he
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+![Babbl Dashboard](public/appImages/Dashboard.png)
+![Babbl Community](public/appImages/Community.png)
+![Babbl Company](public/appImages/Company.png)
+![Babbl Bookmarks](public/appImages/Bookmarks.png)
+![Babbl LandingPage](public/appImages/LandingPage.png)
+
 
 ### Prerequisites
 
@@ -58,9 +63,6 @@ How to use Babbl:
 
 4. The select menu in the header will allow the user to select a company and go to the company page.  The user will see company specific ticker information, a sentiment chart and price chart, company specific news snippets and general news articles.  A user will be able to add a company to the watchlist from the company page by clicking the add to watchlist button located near the ticker.
 
-5. xxx
-
-6. 
 
 
 ## Built With
